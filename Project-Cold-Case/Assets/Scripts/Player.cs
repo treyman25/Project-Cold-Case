@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float myZLevel = -1.1f;
     [SerializeField] private bool canMove = true;
-    [SerializeField] private float floorY = -3.84f;
+    [SerializeField] private float floorY = -3.5f;
 
 
     // Objects
@@ -152,7 +152,6 @@ public class Player : MonoBehaviour
 
         if (clickedCollider != null)
         {
-            Debug.Log(clickedCollider.transform.gameObject);
             b = clickedCollider.transform.gameObject.GetComponent<Button>();
         }
 
@@ -242,13 +241,17 @@ public class Player : MonoBehaviour
             Vector3 originalPosition = clickedObject.transform.position;
             Vector3 objectCenter = mousePosition + offset;
 
-            if (objectCenter.x > 3 && objectCenter.x < 7 && objectCenter.y > -2.5)
+            float objectHeight = clickedObject.GetComponent<BoxCollider2D>().bounds.size.y;
+
+            objectCenter = new Vector3(objectCenter.x, objectCenter.y - (objectHeight/2), objectCenter.z);
+
+            if (objectCenter.x > 4 && objectCenter.x < 8 && mousePosition.y > -1f)
             {
-                clickedObject.transform.position = new Vector3(originalPosition.x, -1.75f, originalPosition.z);
+                clickedObject.transform.position = new Vector3(originalPosition.x, -.75f + (objectHeight/2), originalPosition.z);
             }
             else
             {
-                clickedObject.transform.position = new Vector3(originalPosition.x, floorY, originalPosition.z);
+                clickedObject.transform.position = new Vector3(originalPosition.x, floorY + (objectHeight/2), originalPosition.z);
             }
         }
     }
