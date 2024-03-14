@@ -247,9 +247,28 @@ public class Player : MonoBehaviour
 
             objectCenter = new Vector3(objectCenter.x, objectCenter.y - (objectHeight/2), objectCenter.z);
 
-            if (objectCenter.x > 4 && objectCenter.x < 8 && mousePosition.y > -1f)
+            if (objectCenter.x > 11 && objectCenter.x < 15 && mousePosition.y > -2f)
             {
-                clickedObject.transform.position = new Vector3(originalPosition.x, -.75f + (objectHeight/2), originalPosition.z);
+                clickedObject.transform.position = new Vector3(originalPosition.x, -1.75f + (objectHeight/2), originalPosition.z);
+            }
+            else if (objectCenter.x > -.5 && objectCenter.x < 3.5)
+            {
+                if (mousePosition.y > 0)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, .125f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > -1)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -.875f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > -2)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.875f + (objectHeight / 2), originalPosition.z);
+                }
+                else
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
+                }
             }
             else
             {
