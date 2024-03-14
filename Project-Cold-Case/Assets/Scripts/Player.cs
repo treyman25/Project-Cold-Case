@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     public GameObject[] objects;
 
     // Utility
-    public GameObject eye;
     private Vector3 mousePosition;
     private bool hasClicked = false;
     private bool canClick = true;
@@ -67,25 +66,19 @@ public class Player : MonoBehaviour
             ProcessClick();
         }
 
-        UpdateEyes();
-
-        // Can't move until destination is reached
         if (isMoving)
         {
-            // If destination is reached
             if ((Vector2)transform.position == targetPosition)
             {
                 HandleArrival();
             }
 
-            // Stops movement on Start
             if (hasClicked)
             {
                 Move();
             }
         }
 
-        // If object has been clicked on
         if (clickedObject != null & !isMoving && hasChosenMove)
         {
             MoveObject();
@@ -94,62 +87,33 @@ public class Player : MonoBehaviour
 
     private void UpdateMousePosition()
     {
-        // Records the mouse position
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    private void UpdateEyes()
-    {
-        // Eyeball Movement
-        eye.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePosition - new Vector3(transform.position.x, transform.position.y));
-    }
-
-    IEnumerator Pulse()
-    {
-        // Make bigger
-        transform.localScale = transform.localScale * 1.1f;
-
-        // Wait
-        yield return new WaitForSeconds(.1f);
-
-        // Make smaller
-        transform.localScale = transform.localScale / 1.1f;
     }
 
     private void MoveToLocation(Vector2 target)
     {
-        // Sets target location
         targetPosition = target;
 
-        // Creates a little target indicator
         myIndicator = Instantiate(targetIndicator, new Vector3(targetPosition.x, targetPosition.y, 1), Quaternion.identity);
 
-        // Start moving
         isMoving = true;
     }
 
     private void HandleArrival()
     {
-        // If there is still an indicator
         if (myIndicator != null)
         {
-            // Get rid of it
             Destroy(myIndicator);
         }
 
-        // If an object has been clicked
         if (clickedObject != null)
         {
-            // Display the appropriate buttons
             DisplayButtons();
 
-            // If placing, not picking up
             if (heldObject.activeSelf)
             {
-                // Toggle held object
                 heldObject.SetActive(!heldObject.activeSelf);
 
-                // Make opaque
                 clickedObject.GetComponent<Object>().SetTransparency(1f);
 
                 if (!clickedObject.GetComponent<Object>().HasBeenMoved())
@@ -158,15 +122,10 @@ public class Player : MonoBehaviour
                     clickedObject.GetComponent<Object>().Moved();
                 }
 
-                // Release object
                 DeselectObject();
             }
         }
 
-        // Trigger pulse for feedback
-        StartCoroutine(Pulse());
-
-        // Stop moving
         isMoving = false;
     }
 
@@ -200,13 +159,10 @@ public class Player : MonoBehaviour
 
     private void DropObject()
     {
-        // Make opaque
         clickedObject.GetComponent<Object>().SetTransparency(1f);
 
-        // Release object
         clickedObject = null;
 
-        // Toggle held object
         heldObject.SetActive(!heldObject.activeSelf);
     }
 
@@ -218,54 +174,40 @@ public class Player : MonoBehaviour
 
     private void ProcessClick()
     {
-
-        // Grab any overlapping collider
         clickedCollider = Physics2D.OverlapPoint(mousePosition);
 
         if (CheckMouseOverButton())
         {
 
         }
-        // Clicking on an object for the first time
         else if (CheckClickedOnObject())
         {
             HideButtons();
 
-            // Get the object
             clickedObject = clickedCollider.transform.gameObject;
 
-            // Start the object's movement ability
             if (clickedObject.GetComponent<Object>().IsMovable())
             {
                 clickedObject.GetComponent<Object>().SetMoving(true);
             }
 
-            // Save the objects most recent stagnant position
             savedPosition = clickedObject.transform.position;
 
-            // Save the offset between the mouse and the object's origin
             offset = clickedObject.transform.position - mousePosition;
 
-            // Set new target position
             float targetX = clickedObject.GetComponent<Object>().GetInteractTarget(transform.position.x);
             targetPosition = new Vector2(targetX, transform.position.y);
 
-            // Creates a little target indicator
             myIndicator = Instantiate(targetIndicator, new Vector3(targetPosition.x, targetPosition.y, 1), Quaternion.identity);
 
-            // Start moving
             isMoving = true;
         }
-        // Placing the object
         else if (CheckClickedToPlaceObject())
         {
-            // Stop clicked object movement
             clickedObject.GetComponent<Object>().SetMoving(false);
 
-            // If the released object is on another object
             if (clickedObject.GetComponent<Object>().IsOverlapping())
             {
-                // Return it to its last saved position
                 clickedObject.transform.position = savedPosition;
 
                 DropObject();
@@ -274,12 +216,10 @@ public class Player : MonoBehaviour
             }
             else
             {
-                // Move to chosen location
                 float targetX = clickedObject.GetComponent<Object>().GetInteractTarget(transform.position.x);
                 MoveToLocation(new Vector2(targetX, transform.position.y));
             }
         }
-        // Clicking on open space
         else if (CheckClickedToMove())
         {
             DeselectObject();
@@ -287,7 +227,6 @@ public class Player : MonoBehaviour
             MoveToLocation(new Vector2(mousePosition.x, transform.position.y));
         }
 
-        // Stops automatic movement on Start
         if (!hasClicked)
         {
             hasClicked = true;
@@ -314,24 +253,19 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        // Move towards target
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
 
-        // Stay in front
         transform.position = new Vector3(transform.position.x, transform.position.y, myZLevel);
     }
 
     private void MoveObject()
     {
-        // Move the object with the mouse on the x axis
         clickedObject.transform.position = new Vector3(mousePosition.x + offset.x, clickedObject.transform.position.y, clickedObject.transform.position.z);
 
         AdjustForShelves();
 
-        // Makes the object transparent
         if (clickedObject.GetComponent<Object>().GetTransparency() != .5f)
         {
-            // Make half transparent
             clickedObject.GetComponent<Object>().SetTransparency(.5f);
         }
     }
