@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float myZLevel = -1.1f;
     [SerializeField] private bool canMove = true;
+    [SerializeField] private float floorY = -3.84f;
+
 
     // Objects
     public GameObject[] objects;
@@ -27,11 +29,11 @@ public class Player : MonoBehaviour
     private GameObject myIndicator;
 
     // Object Movement
-    public GameObject heldObject;
     private Collider2D clickedCollider;
     private GameObject clickedObject;
     private Vector3 offset;
     private bool hasChosenMove = false;
+    private bool isHoldingObject = false;
 
     // Object Breaking
     private bool canBreak = false;
@@ -110,9 +112,9 @@ public class Player : MonoBehaviour
         {
             DisplayButtons();
 
-            if (heldObject.activeSelf)
+            if (isHoldingObject)
             {
-                heldObject.SetActive(!heldObject.activeSelf);
+                isHoldingObject = false;
 
                 clickedObject.GetComponent<Object>().SetTransparency(1f);
 
@@ -163,7 +165,7 @@ public class Player : MonoBehaviour
 
         clickedObject = null;
 
-        heldObject.SetActive(!heldObject.activeSelf);
+        isHoldingObject = false;
     }
 
     private void DeselectObject()
@@ -175,15 +177,12 @@ public class Player : MonoBehaviour
     private void ProcessClick()
     {
         clickedCollider = Physics2D.OverlapPoint(mousePosition);
-        Debug.Log(clickedCollider);
 
         if (CheckMouseOverButton())
         {
-            Debug.Log("Clicked Button");
         }
         else if (CheckClickedOnObject())
         {
-            Debug.Log("Clicked On Object");
 
             HideButtons();
 
@@ -207,8 +206,6 @@ public class Player : MonoBehaviour
         }
         else if (CheckClickedToPlaceObject())
         {
-            Debug.Log("Clicked To Place Object");
-
             clickedObject.GetComponent<Object>().SetMoving(false);
 
             if (clickedObject.GetComponent<Object>().IsOverlapping())
@@ -227,8 +224,6 @@ public class Player : MonoBehaviour
         }
         else if (CheckClickedToMove())
         {
-            Debug.Log("Clicked To Move");
-
             DeselectObject();
 
             MoveToLocation(new Vector2(mousePosition.x, transform.position.y));
@@ -253,7 +248,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                clickedObject.transform.position = new Vector3(originalPosition.x, -3.84f, originalPosition.z);
+                clickedObject.transform.position = new Vector3(originalPosition.x, floorY, originalPosition.z);
             }
         }
     }
@@ -281,7 +276,7 @@ public class Player : MonoBehaviour
     {
         hasChosenMove = true;
         HideButtons();
-        heldObject.SetActive(true);
+        isHoldingObject = true;
     }
 
     public void ChooseInspectObject()
