@@ -146,12 +146,12 @@ public class Player : MonoBehaviour
 
     private bool CheckMouseOverButton()
     {
-
         Button b = null;
 
         if (clickedCollider != null)
         {
             b = clickedCollider.transform.gameObject.GetComponent<Button>();
+            Debug.Log(b);
         }
 
         return b != null;
