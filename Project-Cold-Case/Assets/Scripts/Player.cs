@@ -150,8 +150,8 @@ public class Player : MonoBehaviour
 
         if (clickedCollider != null)
         {
+            Debug.Log(clickedCollider.transform.gameObject);
             b = clickedCollider.transform.gameObject.GetComponent<Button>();
-            Debug.Log(b);
         }
 
         return b != null;
@@ -175,13 +175,16 @@ public class Player : MonoBehaviour
     private void ProcessClick()
     {
         clickedCollider = Physics2D.OverlapPoint(mousePosition);
+        Debug.Log(clickedCollider);
 
         if (CheckMouseOverButton())
         {
-
+            Debug.Log("Clicked Button");
         }
         else if (CheckClickedOnObject())
         {
+            Debug.Log("Clicked On Object");
+
             HideButtons();
 
             clickedObject = clickedCollider.transform.gameObject;
@@ -204,6 +207,8 @@ public class Player : MonoBehaviour
         }
         else if (CheckClickedToPlaceObject())
         {
+            Debug.Log("Clicked To Place Object");
+
             clickedObject.GetComponent<Object>().SetMoving(false);
 
             if (clickedObject.GetComponent<Object>().IsOverlapping())
@@ -222,6 +227,8 @@ public class Player : MonoBehaviour
         }
         else if (CheckClickedToMove())
         {
+            Debug.Log("Clicked To Move");
+
             DeselectObject();
 
             MoveToLocation(new Vector2(mousePosition.x, transform.position.y));
