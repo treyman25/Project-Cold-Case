@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float myZLevel = -1.1f;
     [SerializeField] private bool canMove = true;
     [SerializeField] private float floorY = -3.5f;
+    [SerializeField] private float leftBound = -8;
+    [SerializeField] private float rightBound = 20;
 
 
     // Objects
@@ -133,7 +135,7 @@ public class Player : MonoBehaviour
 
     private bool CheckClickedToMove()
     {
-        return hasChosenMove == false && isMoving == false && canMove == true && mousePosition.x > -8 && mousePosition.x < 8;
+        return hasChosenMove == false && isMoving == false && canMove == true && mousePosition.x > leftBound && mousePosition.x < rightBound;
     }
 
     private bool CheckClickedOnObject()
@@ -437,5 +439,10 @@ public class Player : MonoBehaviour
             StartCoroutine(PrintInspectText("\"You feel stronger. Like you can break things.\""));
             canBreak = true;
         }
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
     }
 }
