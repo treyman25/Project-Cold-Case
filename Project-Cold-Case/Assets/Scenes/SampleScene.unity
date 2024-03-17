@@ -793,7 +793,7 @@ MonoBehaviour:
   breakButton1: {fileID: 582387059}
   breakButton2: {fileID: 2135613713}
   goBackButton: {fileID: 1046166884}
-  openFridgeButton: {fileID: 0}
+  openFridgeButton: {fileID: 131826257}
   pastBackground: {fileID: 1108587215}
   floorText: {fileID: 824483471}
   fridge: {fileID: 756688614}
@@ -3306,7 +3306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873372038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.88, y: -1.5, z: 0}
+  m_LocalPosition: {x: 5.88, y: -1.5, z: -1}
   m_LocalScale: {x: -1.65, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3465,6 +3465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2229521916577163112, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4820036524080377312, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -3479,7 +3483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4820036524080377312, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4820036524080377312, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3776,7 +3780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140380565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.88, y: -2.5, z: 0}
+  m_LocalPosition: {x: 5.88, y: -2.5, z: -1}
   m_LocalScale: {x: -1.65, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
