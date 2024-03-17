@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float leftBound = -8;
     [SerializeField] private float rightBound = 20;
 
-
     // Objects
     public GameObject[] objects;
 
@@ -46,6 +45,7 @@ public class Player : MonoBehaviour
     public GameObject breakButton1;
     public GameObject breakButton2;
     public GameObject goBackButton;
+    public GameObject openFridgeButton;
 
     // Time Travel
     public GameObject pastBackground;
@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
 
     // Text
     public TextMeshProUGUI floorText;
+
+    // Special Objects
+    public GameObject fridge;
+    public GameObject fridgeInterior;
+    private bool fridgeOpen = false;
 
 
     void Start()
@@ -352,6 +357,7 @@ public class Player : MonoBehaviour
         breakButton1.SetActive(false);
         breakButton2.SetActive(false);
         goBackButton.SetActive(false);
+        openFridgeButton.SetActive(false);
     }
 
     private void DisplayButtons()
@@ -391,6 +397,14 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 goBackButton.SetActive(true);
+            }
+        }
+
+        if (clickedObject.CompareTag("Fridge") && !fridgeOpen && inPast)
+        {
+            if (hasChosenMove == false)
+            {
+                openFridgeButton.SetActive(true);
             }
         }
     }
@@ -444,6 +458,11 @@ public class Player : MonoBehaviour
 
         AM.ApplyCombos();
         AM.ResetActions();
+
+        if (fridgeOpen)
+        {
+            CloseFridge();
+        }
     }
 
     public GameObject[] GetObjects()
@@ -463,5 +482,19 @@ public class Player : MonoBehaviour
     public float GetSpeed()
     {
         return speed;
+    }
+
+    public void OpenFridge()
+    {
+        fridgeOpen = true;
+        fridgeInterior.SetActive(true);
+        AM.UsedAction(fridge, "Opened");
+        DeselectObject();
+    }
+
+    public void CloseFridge()
+    {
+        fridgeOpen = false;
+        fridgeInterior.SetActive(false);
     }
 }
