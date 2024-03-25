@@ -32,6 +32,8 @@ public class Object : MonoBehaviour
 
     // Hidable
     private bool isHidden = false;
+    private bool canHide = false;
+    private GameObject hiddenObject;
 
 
     private void Start()
@@ -42,6 +44,8 @@ public class Object : MonoBehaviour
         originalPosition = transform.position;
 
         SR = GetComponent<SpriteRenderer>();
+
+        canHide = isHider;
     }
 
     public bool IsInspectable()
@@ -66,7 +70,12 @@ public class Object : MonoBehaviour
 
     public bool IsHider()
     {
-        return isHider;
+        return canHide;
+    }
+    
+    public void HideObject(GameObject hidden)
+    {
+        hiddenObject = hidden;
     }
 
     public Vector2 GetHiderBounds()
@@ -94,10 +103,7 @@ public class Object : MonoBehaviour
         {
             if (isMoving)
             {
-                if (CheckHidable(collision.gameObject))
-                {
-                }
-                else if (!isOverlapping)
+                if (!isOverlapping && !CheckHidable(collision.gameObject))
                 {
                     isOverlapping = true;
 
@@ -108,6 +114,7 @@ public class Object : MonoBehaviour
             {
                 if (CheckHidable(collision.gameObject) && !isHidden)
                 {
+                    collision.gameObject.GetComponent<Object>().HideObject(this.gameObject);
                     Hide(true);
                 }
             }
@@ -159,6 +166,8 @@ public class Object : MonoBehaviour
         }
 
         Hide(false);
+
+        canHide = isHider;
     }
 
     public bool HasBeenMoved()
@@ -182,6 +191,12 @@ public class Object : MonoBehaviour
         {
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
             Hide(true);
+            canHide = false;
+            if (hiddenObject)
+            {
+                hiddenObject.GetComponent<Object>().Hide(false);
+                hiddenObject = null;
+            }
         }
     }
 
