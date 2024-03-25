@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7040546309228539726}
   m_Layer: 0
   m_Name: Mousetrap
-  m_TagString: Untagged
+  m_TagString: Mousetrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,8 +130,12 @@ MonoBehaviour:
   isInspectable: 1
   isMovable: 1
   isBreakable: 0
+  isHider: 0
+  HiderX: 0
+  HiderY: 0
   myText: Alex must have a rat problem.
   brokenVersion: {fileID: 0}
+  specialComboObject: []
 --- !u!61 &7040546309228539726
 BoxCollider2D:
   m_ObjectHideFlags: 0

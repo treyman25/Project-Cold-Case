@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
 
             clickedObject = clickedCollider.transform.gameObject;
 
-            if (clickedObject.GetComponent<Object>().IsMovable())
+            if (clickedObject.GetComponent<Object>().IsMovable() && inPast)
             {
                 clickedObject.GetComponent<Object>().SetMoving(true);
             }

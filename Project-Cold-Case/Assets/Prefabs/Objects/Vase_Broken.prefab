@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 503146890259389393}
   - component: {fileID: 8656715069396563005}
   - component: {fileID: 7203959814696303941}
-  - component: {fileID: 6034760318810300731}
+  - component: {fileID: 6771487200698611800}
   m_Layer: 0
   m_Name: Vase_Broken
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &503146890259389393
 SpriteRenderer:
@@ -130,9 +130,13 @@ MonoBehaviour:
   isInspectable: 1
   isMovable: 0
   isBreakable: 0
+  isHider: 0
+  HiderX: 0
+  HiderY: 0
   myText: A broken vase.
   brokenVersion: {fileID: 0}
---- !u!61 &6034760318810300731
+  specialComboObject: []
+--- !u!61 &6771487200698611800
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +168,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.23614454}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -175,5 +179,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.22, y: 0.99771094}
+  m_Size: {x: 8.22, y: 1.47}
   m_EdgeRadius: 0

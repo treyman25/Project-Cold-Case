@@ -3925,6 +3925,7 @@ MonoBehaviour:
   HiderY: 0
   myText: A fridge.
   brokenVersion: {fileID: 0}
+  specialComboObject: []
 --- !u!1001 &1208940535363690881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3996,6 +3997,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4024730485257238723, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_Name
+      value: Cheese
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024730485257238723, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
+      propertyPath: m_TagString
       value: Cheese
       objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
@@ -4476,6 +4481,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5877320073581298135, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_Name
+      value: Mousetrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877320073581298135, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
+      propertyPath: m_TagString
       value: Mousetrap
       objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}

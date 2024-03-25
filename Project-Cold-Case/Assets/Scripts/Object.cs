@@ -35,6 +35,11 @@ public class Object : MonoBehaviour
     private bool canHide = false;
     private GameObject hiddenObject;
 
+    // Combos
+    public GameObject[] specialComboObject;
+    private bool specialComboApplied = false;
+    private GameObject[] createdSpecialComboObject;
+
 
     private void Start()
     {
@@ -78,6 +83,11 @@ public class Object : MonoBehaviour
         hiddenObject = hidden;
     }
 
+    public GameObject GetHidden()
+    {
+        return hiddenObject;
+    }
+
     public Vector2 GetHiderBounds()
     {
         return new Vector2(HiderX, HiderY);
@@ -100,10 +110,10 @@ public class Object : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Object>() != null)
-        {
+        { 
             if (isMoving)
             {
-                if (!isOverlapping && !CheckHidable(collision.gameObject))
+                if (!isOverlapping && !CheckHidable(collision.gameObject) && GetSpecialComboId(collision.gameObject) == 0)
                 {
                     isOverlapping = true;
 
@@ -117,8 +127,14 @@ public class Object : MonoBehaviour
                     collision.gameObject.GetComponent<Object>().HideObject(this.gameObject);
                     Hide(true);
                 }
+
+                if (GetSpecialComboId(collision.gameObject) != 0  && !specialComboApplied)
+                {
+                    ApplySpecialComboId(GetSpecialComboId(collision.gameObject), collision.gameObject);
+                }
             }
         }
+        Debug.Log(collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -168,6 +184,16 @@ public class Object : MonoBehaviour
         Hide(false);
 
         canHide = isHider;
+        hiddenObject = null;
+
+        specialComboApplied = false;
+        if (createdSpecialComboObject != null && createdSpecialComboObject.Length > 0)
+        {
+            foreach (var createdObject in createdSpecialComboObject)
+            {
+                Destroy(createdObject);
+            }
+        }
     }
 
     public bool HasBeenMoved()
@@ -189,7 +215,11 @@ public class Object : MonoBehaviour
     {
         if (brokenVersion != null)
         {
+            float offset = GetVerticalOffset(brokenVersion, gameObject);
+
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
+            myBrokenVersion.transform.Translate(0, offset, 2);
+
             Hide(true);
             canHide = false;
             if (hiddenObject)
@@ -235,5 +265,42 @@ public class Object : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private int GetSpecialComboId(GameObject other)
+    {
+        if (other.CompareTag("Mousetrap") && this.CompareTag("Cheese"))
+        {
+            return 1;
+        }
+        return 0;
+    }
+    private void ApplySpecialComboId(int id, GameObject other)
+    {
+        specialComboApplied = true;
+
+        switch (id)
+        {
+            case 1:
+                Hide(true);
+                other.GetComponent<Object>().Hide(true);
+
+                float offset = GetVerticalOffset(other, specialComboObject[0]);
+
+                createdSpecialComboObject[0] = Instantiate(specialComboObject[0], other.transform.position, Quaternion.identity);
+                createdSpecialComboObject[0].transform.Translate(0, offset, 0);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private float GetVerticalOffset(GameObject first, GameObject second)
+    {
+        float firstHeight = first.GetComponent<Collider2D>().bounds.size.y;
+        float secondHeight = second.GetComponent<Collider2D>().bounds.size.y;
+
+        return (firstHeight - secondHeight) / 4;
     }
 }
