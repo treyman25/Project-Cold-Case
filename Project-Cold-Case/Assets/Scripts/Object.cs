@@ -134,7 +134,6 @@ public class Object : MonoBehaviour
                 }
             }
         }
-        Debug.Log(collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
