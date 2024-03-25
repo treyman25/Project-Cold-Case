@@ -10,7 +10,7 @@ public class Object : MonoBehaviour
     [SerializeField] private bool isBreakable;
 
     // Animation
-    private Animator myAnimator;
+    //private Animator myAnimator;
     SpriteRenderer SR;
 
     // Inspectable
@@ -32,7 +32,7 @@ public class Object : MonoBehaviour
     {
         originalPosition = transform.position;
 
-        myAnimator = GetComponent<Animator>();
+        //myAnimator = GetComponent<Animator>();
         originalPosition = transform.position;
 
         SR = GetComponent<SpriteRenderer>();
@@ -78,11 +78,7 @@ public class Object : MonoBehaviour
         {
             isOverlapping = true;
 
-            if (myAnimator != null)
-            {
-                myAnimator.SetBool("isOverlapping", true);
-            }
-
+            OverlapTint(true);
         }
     }
 
@@ -91,10 +87,8 @@ public class Object : MonoBehaviour
         if (collision.gameObject.GetComponent<Object>() != null)
         {
             isOverlapping = false;
-            if (myAnimator != null)
-            {
-                myAnimator.SetBool("isOverlapping", false);
-            }
+
+            OverlapTint(false);
         }
     }
 
@@ -130,9 +124,9 @@ public class Object : MonoBehaviour
         if (myBrokenVersion != null)
         {
             Destroy(myBrokenVersion);
-            SR.enabled = true;
-            GetComponent<Collider2D>().enabled = true;
         }
+
+        Hide(false);
     }
 
     public bool HasBeenMoved()
@@ -155,8 +149,25 @@ public class Object : MonoBehaviour
         if (brokenVersion != null)
         {
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
-            SR.enabled = false;
-            GetComponent<Collider2D>().enabled = false;
+            Hide(true);
+        }
+    }
+
+    public void Hide(bool value)
+    {
+        SR.enabled = !value;
+        GetComponent<Collider2D>().enabled = !value;
+    }
+
+    private void OverlapTint(bool value)
+    {
+        if (value)
+        {
+            SR.color = Color.red;
+        }
+        else
+        {
+            SR.color = Color.white;
         }
     }
 }
