@@ -68,9 +68,9 @@ public class Object : MonoBehaviour
         return isOverlapping;
     }
 
-    public bool IsHider()
+    public bool CanHide()
     {
-        return canHide;
+        return canHide && hiddenObject == null;
     }
     
     public void HideObject(GameObject hidden)
@@ -221,7 +221,7 @@ public class Object : MonoBehaviour
 
     private bool CheckHidable(GameObject hider)
     {
-        if (hider.GetComponent<Object>().IsHider())
+        if (hider.GetComponent<Object>().CanHide())
         {
             Bounds myBounds = GetComponent<Collider2D>().bounds;
             Vector2 hiderBounds = hider.GetComponent<Object>().GetHiderBounds();
