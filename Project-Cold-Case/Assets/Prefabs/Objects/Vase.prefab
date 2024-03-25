@@ -130,6 +130,7 @@ MonoBehaviour:
   isInspectable: 1
   isMovable: 1
   isBreakable: 1
+  isHider: 1
   myText: A vase.
   brokenVersion: {fileID: 8609536020230178155, guid: d8f95d1179926204ebc3b79971c2aea5, type: 3}
 --- !u!61 &2628715341194157750

@@ -3920,6 +3920,9 @@ MonoBehaviour:
   isInspectable: 1
   isMovable: 0
   isBreakable: 0
+  isHider: 0
+  HiderX: 0
+  HiderY: 0
   myText: A fridge.
   brokenVersion: {fileID: 0}
 --- !u!1001 &1208940535363690881
@@ -4405,6 +4408,14 @@ PrefabInstance:
     - target: {fileID: 1850448407565507448, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_Name
       value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
+      propertyPath: HiderX
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
+      propertyPath: HiderY
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8332957033535137051, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_RootOrder

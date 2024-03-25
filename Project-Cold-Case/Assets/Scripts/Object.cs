@@ -8,6 +8,9 @@ public class Object : MonoBehaviour
     [SerializeField] private bool isInspectable;
     [SerializeField] private bool isMovable;
     [SerializeField] private bool isBreakable;
+    [SerializeField] private bool isHider;
+    [SerializeField] private float HiderX;
+    [SerializeField] private float HiderY;
 
     // Animation
     //private Animator myAnimator;
@@ -26,6 +29,9 @@ public class Object : MonoBehaviour
     // Breakable
     public GameObject brokenVersion;
     private GameObject myBrokenVersion;
+
+    // Hidable
+    private bool isHidden = false;
 
 
     private void Start()
@@ -58,6 +64,16 @@ public class Object : MonoBehaviour
         return isOverlapping;
     }
 
+    public bool IsHider()
+    {
+        return isHider;
+    }
+
+    public Vector2 GetHiderBounds()
+    {
+        return new Vector2(HiderX, HiderY);
+    }
+
     public void SetMoving(bool value)
     {
         isMoving = value;
@@ -74,11 +90,27 @@ public class Object : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Object>() != null && isMoving && !isOverlapping)
+        if (collision.gameObject.GetComponent<Object>() != null)
         {
-            isOverlapping = true;
+            if (isMoving)
+            {
+                if (CheckHidable(collision.gameObject))
+                {
+                }
+                else if (!isOverlapping)
+                {
+                    isOverlapping = true;
 
-            OverlapTint(true);
+                    OverlapTint(true);
+                }
+            }
+            else
+            {
+                if (CheckHidable(collision.gameObject) && !isHidden)
+                {
+                    Hide(true);
+                }
+            }
         }
     }
 
@@ -155,6 +187,7 @@ public class Object : MonoBehaviour
 
     public void Hide(bool value)
     {
+        isHidden = value;
         SR.enabled = !value;
         GetComponent<Collider2D>().enabled = !value;
     }
@@ -169,5 +202,23 @@ public class Object : MonoBehaviour
         {
             SR.color = Color.white;
         }
+    }
+
+    private bool CheckHidable(GameObject hider)
+    {
+        if (hider.GetComponent<Object>().IsHider())
+        {
+            Bounds myBounds = GetComponent<Collider2D>().bounds;
+            Vector2 hiderBounds = hider.GetComponent<Object>().GetHiderBounds();
+            if (myBounds.size.x < hiderBounds.x && myBounds.size.y < hiderBounds.y)
+            {
+                return true;
+            }
+            if (myBounds.size.y < hiderBounds.x && myBounds.size.x < hiderBounds.y)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
