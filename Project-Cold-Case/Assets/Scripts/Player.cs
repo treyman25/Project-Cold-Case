@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
     private bool canClick = true;
 
     // Character Movement
-    public GameObject targetIndicator;
     private Vector2 targetPosition;
     private bool isMoving = false;
     private Vector3 savedPosition;
@@ -102,8 +101,6 @@ public class Player : MonoBehaviour
     private void MoveToLocation(Vector2 target)
     {
         targetPosition = target;
-
-        myIndicator = Instantiate(targetIndicator, new Vector3(targetPosition.x, targetPosition.y, 1), Quaternion.identity);
 
         isMoving = true;
     }
@@ -205,8 +202,6 @@ public class Player : MonoBehaviour
 
             float targetX = clickedObject.GetComponent<Object>().GetInteractTarget(transform.position.x);
             targetPosition = new Vector2(targetX, transform.position.y);
-
-            myIndicator = Instantiate(targetIndicator, new Vector3(targetPosition.x, targetPosition.y, 1), Quaternion.identity);
 
             isMoving = true;
         }
