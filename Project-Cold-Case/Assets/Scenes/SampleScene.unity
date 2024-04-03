@@ -860,7 +860,7 @@ MonoBehaviour:
   canMove: 1
   floorY: -3.5
   leftBound: -8
-  rightBound: 20
+  rightBound: 16
   objects:
   - {fileID: 1879394037}
   - {fileID: 1437854443}
@@ -3509,7 +3509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748856636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.79, y: 0.15, z: 10}
+  m_LocalPosition: {x: -5.94, y: 0.15, z: 10}
   m_LocalScale: {x: 0.42547, y: 0.42547, z: 0.42547}
   m_ConstrainProportionsScale: 0
   m_Children: []

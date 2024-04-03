@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool canMove = true;
     [SerializeField] private float floorY = -3.5f;
     [SerializeField] private float leftBound = -8;
-    [SerializeField] private float rightBound = 20;
+    [SerializeField] private float rightBound = 16;
 
     // Objects
     public GameObject[] objects;
