@@ -314,6 +314,24 @@ public class Object : MonoBehaviour
         }
     }
 
+    public void ApplySpecialComboId(int id)
+    {
+        specialComboApplied = true;
+        Debug.Log("Special Combo #" + id);
+
+        switch (id)
+        {
+            case 2:
+                Hide(true);
+                createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.348f, transform.position.z), Quaternion.identity);
+
+                break;
+
+            default:
+                break;
+        }
+    }
+
     private float GetVerticalOffset(GameObject first, GameObject second)
     {
         float firstHeight = first.GetComponent<Collider2D>().bounds.size.y;

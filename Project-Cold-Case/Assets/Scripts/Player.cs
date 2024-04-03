@@ -521,12 +521,6 @@ public class Player : MonoBehaviour
     private void ApplyStartCondition()
     {
         objects[5].GetComponent<Object>().Hide(true);
-        GameObject knife = objects[1];
-        knife.GetComponent<Object>().Hide(true);
-        GameObject[] knifeVariants = knife.GetComponent<Object>().GetVariants();
-        if (knifeVariants != null)
-        {
-            GameObject bloodyKnife = Instantiate(knifeVariants[0], new Vector3(-2.85f, -3.32f, 0), Quaternion.identity);
-        }
+        objects[1].GetComponent<Object>().ApplySpecialComboId(2);
     }
 }

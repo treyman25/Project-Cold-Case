@@ -98,26 +98,15 @@ public class ActionManager : MonoBehaviour
     {
         GameObject knife = allObjects[1];
         GameObject timeMachine = allObjects[0];
-        GameObject[] knifeVariants = knife.GetComponent<Object>().GetVariants();
         if (!knife.GetComponent<Object>().IsHidden() && knife.transform.position.x < timeMachine.transform.position.x)
         {
-            knife.GetComponent<Object>().Hide(true);
-            if (knifeVariants != null)
-            {
-                GameObject bloodyKnife = Instantiate(knifeVariants[0], new Vector3(5.84f, -3.32f, 0), Quaternion.identity);
-            }
+            knife.GetComponent<Object>().ApplySpecialComboId(2);
         }
 
-        if (action1 != null)
+        GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
+        if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && !player.CanBreak())
         {
-            if (action1 == "Moved" && action2 == "Moved" && action3 == "Moved")
-            {
-                GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
-                if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && player.CanBreak())
-                {
-                    player.TriggerCanBreak();
-                }
-            }
+            player.TriggerCanBreak();
         }
     }
 }
