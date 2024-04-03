@@ -8,6 +8,7 @@ TagManager:
   - Fridge
   - Cheese
   - Mousetrap
+  - Knife
   layers:
   - Default
   - TransparentFX

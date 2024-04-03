@@ -96,16 +96,27 @@ public class ActionManager : MonoBehaviour
 
     public void ApplyCombos()
     {
-        GameObject[] objectArray = { object1, object2, object3 };
-        string[] actionArray = { action1, action2, action3 };
-
-
-        if (action1 == "Moved" && action2 == "Moved" && action3 == "Moved")
+        GameObject knife = allObjects[1];
+        GameObject timeMachine = allObjects[0];
+        GameObject[] knifeVariants = knife.GetComponent<Object>().GetVariants();
+        if (!knife.GetComponent<Object>().IsHidden() && knife.transform.position.x < timeMachine.transform.position.x)
         {
-            GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
-            if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && !player.CanBreak())
+            knife.GetComponent<Object>().Hide(true);
+            if (knifeVariants != null)
             {
-                player.TriggerCanBreak();
+                GameObject bloodyKnife = Instantiate(knifeVariants[0], new Vector3(5.84f, -3.32f, 0), Quaternion.identity);
+            }
+        }
+
+        if (action1 != null)
+        {
+            if (action1 == "Moved" && action2 == "Moved" && action3 == "Moved")
+            {
+                GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
+                if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && player.CanBreak())
+                {
+                    player.TriggerCanBreak();
+                }
             }
         }
     }

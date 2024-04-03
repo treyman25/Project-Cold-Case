@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         AM = GameObject.Find("ActionManager").GetComponent<ActionManager>();
+
+        ApplyStartCondition();
     }
 
     void Update()
@@ -465,6 +467,8 @@ public class Player : MonoBehaviour
         {
             CloseFridge();
         }
+
+        objects[5].GetComponent<Object>().Hide(true);
     }
 
     private void ShowDayDecor(bool value)
@@ -512,5 +516,17 @@ public class Player : MonoBehaviour
     {
         fridgeOpen = false;
         fridgeInterior.SetActive(false);
+    }
+
+    private void ApplyStartCondition()
+    {
+        objects[5].GetComponent<Object>().Hide(true);
+        GameObject knife = objects[1];
+        knife.GetComponent<Object>().Hide(true);
+        GameObject[] knifeVariants = knife.GetComponent<Object>().GetVariants();
+        if (knifeVariants != null)
+        {
+            GameObject bloodyKnife = Instantiate(knifeVariants[0], new Vector3(-2.85f, -3.32f, 0), Quaternion.identity);
+        }
     }
 }

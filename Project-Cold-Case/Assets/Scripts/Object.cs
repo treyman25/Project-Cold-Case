@@ -75,6 +75,11 @@ public class Object : MonoBehaviour
         return isOverlapping;
     }
 
+    public bool IsHidden()
+    {
+        return isHidden;
+    }
+
     public bool CanHide()
     {
         return canHide && hiddenObject == null;
@@ -214,6 +219,11 @@ public class Object : MonoBehaviour
     public string GetInspectText()
     {
         return myText;
+    }
+
+    public GameObject[] GetVariants()
+    {
+        return variant;
     }
 
     public void Break()
