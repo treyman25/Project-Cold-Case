@@ -102,17 +102,8 @@ public class ActionManager : MonoBehaviour
 
         if (action1 == "Moved" && action2 == "Moved" && action3 == "Moved")
         {
-            int shelfCount = 0;
-
-            foreach (var item in objectArray)
-            {
-                if (item.transform.position.y > -2.5)
-                {
-                    shelfCount++;
-                }
-            }
-
-            if (shelfCount >= 3)
+            GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
+            if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && !player.CanBreak())
             {
                 player.TriggerCanBreak();
             }

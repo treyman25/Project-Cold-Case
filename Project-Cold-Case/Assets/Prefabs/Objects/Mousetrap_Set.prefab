@@ -106,6 +106,7 @@ MonoBehaviour:
   isHider: 0
   HiderX: 0
   HiderY: 0
+  isVariant: 1
   myText: Alex must have a rat problem.
   brokenVersion: {fileID: 0}
   specialComboObject: []

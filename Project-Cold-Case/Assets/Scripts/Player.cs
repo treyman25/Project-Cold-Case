@@ -47,7 +47,9 @@ public class Player : MonoBehaviour
     public GameObject openFridgeButton;
 
     // Time Travel
-    public GameObject pastBackground;
+    public GameObject darkOverlay;
+    public GameObject dayWindow1;
+    public GameObject dayWindow2;
     private bool inPast = false;
     private ActionManager AM;
 
@@ -58,6 +60,8 @@ public class Player : MonoBehaviour
     public GameObject fridge;
     public GameObject fridgeInterior;
     private bool fridgeOpen = false;
+    public GameObject fixedTimeMachine;
+    public GameObject timeMachine;
 
 
     void Start()
@@ -429,12 +433,15 @@ public class Player : MonoBehaviour
 
         foreach (var item in objects)
         {
-            item.GetComponent<Object>().ResetObject();
+            if (!item.CompareTag("TimeMachine"))
+            {
+                item.GetComponent<Object>().ResetObject();
+            }
         }
 
         AM.ResetActions();
 
-        pastBackground.SetActive(true);
+        ShowDayDecor(true);
 
         canClick = true;
     }
@@ -447,7 +454,7 @@ public class Player : MonoBehaviour
 
         inPast = false;
 
-        pastBackground.SetActive(false);
+        ShowDayDecor(false);
 
         canClick = true;
 
@@ -460,6 +467,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void ShowDayDecor(bool value)
+    {
+        darkOverlay.SetActive(!value);
+        dayWindow1.SetActive(value);
+        dayWindow2.SetActive(value);
+    }
+
     public GameObject[] GetObjects()
     {
         return objects;
@@ -470,6 +484,8 @@ public class Player : MonoBehaviour
         if (!canBreak)
         {
             StartCoroutine(PrintInspectText("\"You feel stronger. Like you can break things.\""));
+            fixedTimeMachine.SetActive(true);
+            timeMachine.SetActive(false);
             canBreak = true;
         }
     }
@@ -477,6 +493,11 @@ public class Player : MonoBehaviour
     public float GetSpeed()
     {
         return speed;
+    }
+
+    public bool CanBreak()
+    {
+        return canBreak;
     }
 
     public void OpenFridge()

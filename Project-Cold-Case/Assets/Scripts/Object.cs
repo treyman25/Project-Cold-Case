@@ -11,6 +11,7 @@ public class Object : MonoBehaviour
     [SerializeField] private bool isHider;
     [SerializeField] private float HiderX;
     [SerializeField] private float HiderY;
+    [SerializeField] private bool isVariant;
 
     // Animation
     //private Animator myAnimator;
@@ -36,9 +37,10 @@ public class Object : MonoBehaviour
     private GameObject hiddenObject;
 
     // Combos
-    public GameObject[] specialComboObject;
+    private GameObject myCollision;
+    public GameObject[] variant;
     private bool specialComboApplied = false;
-    private GameObject[] createdSpecialComboObject;
+    private GameObject createdVariant;
 
 
     private void Start()
@@ -130,7 +132,8 @@ public class Object : MonoBehaviour
 
                 if (GetSpecialComboId(collision.gameObject) != 0  && !specialComboApplied)
                 {
-                    ApplySpecialComboId(GetSpecialComboId(collision.gameObject), collision.gameObject);
+                    myCollision = collision.gameObject;
+                    ApplySpecialComboId(GetSpecialComboId(collision.gameObject), myCollision);
                 }
             }
         }
@@ -180,18 +183,21 @@ public class Object : MonoBehaviour
             Destroy(myBrokenVersion);
         }
 
+        if (createdVariant != null)
+        {
+            Destroy(createdVariant);
+        }
+
         Hide(false);
 
         canHide = isHider;
         hiddenObject = null;
 
         specialComboApplied = false;
-        if (createdSpecialComboObject != null && createdSpecialComboObject.Length > 0)
+
+        if (isVariant)
         {
-            foreach (var createdObject in createdSpecialComboObject)
-            {
-                Destroy(createdObject);
-            }
+            Destroy(gameObject);
         }
     }
 
@@ -277,17 +283,20 @@ public class Object : MonoBehaviour
     private void ApplySpecialComboId(int id, GameObject other)
     {
         specialComboApplied = true;
+        Debug.Log("Special Combo #" + id);
 
         switch (id)
         {
             case 1:
+                Vector3 otherPosition = other.transform.position;
+                float offset = GetVerticalOffset(other, variant[0]);
+
                 Hide(true);
                 other.GetComponent<Object>().Hide(true);
 
-                float offset = GetVerticalOffset(other, specialComboObject[0]);
+                createdVariant = Instantiate(variant[0], otherPosition, Quaternion.identity);
+                createdVariant.transform.Translate(0, offset, 0);
 
-                createdSpecialComboObject[0] = Instantiate(specialComboObject[0], other.transform.position, Quaternion.identity);
-                createdSpecialComboObject[0].transform.Translate(0, offset, 0);
                 break;
 
             default:
