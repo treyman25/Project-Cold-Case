@@ -9,8 +9,8 @@ public class Object : MonoBehaviour
     [SerializeField] private bool isMovable;
     [SerializeField] private bool isBreakable;
     [SerializeField] private bool isHider;
-    [SerializeField] private float HiderX;
-    [SerializeField] private float HiderY;
+    [SerializeField] private float hiderX;
+    [SerializeField] private float hiderY;
     [SerializeField] private bool isVariant;
 
     // Animation
@@ -97,7 +97,7 @@ public class Object : MonoBehaviour
 
     public Vector2 GetHiderBounds()
     {
-        return new Vector2(HiderX, HiderY);
+        return new Vector2(hiderX, hiderY);
     }
 
     public void SetMoving(bool value)
