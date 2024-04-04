@@ -259,11 +259,11 @@ public class Player : MonoBehaviour
                 }
                 else if (mousePosition.y > -1)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, -.875f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -.68f + (objectHeight / 2), originalPosition.z);
                 }
                 else if (mousePosition.y > -2)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.875f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.9f + (objectHeight / 2), originalPosition.z);
                 }
                 else
                 {
