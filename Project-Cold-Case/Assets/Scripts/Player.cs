@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private bool canClick = true;
 
     // Character Movement
+    private Animator Anim;
     private Vector2 targetPosition;
     private bool isMoving = false;
     private Vector3 savedPosition;
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Anim = GetComponent<Animator>();
         AM = GameObject.Find("ActionManager").GetComponent<ActionManager>();
 
         ApplyStartCondition();
@@ -110,6 +112,7 @@ public class Player : MonoBehaviour
         targetPosition = target;
 
         isMoving = true;
+        Anim.SetBool("isMoving", true);
     }
 
     private void HandleArrival()
@@ -135,6 +138,7 @@ public class Player : MonoBehaviour
         }
 
         isMoving = false;
+        Anim.SetBool("isMoving", false);
     }
 
     private bool CheckClickedToMove()
@@ -206,6 +210,7 @@ public class Player : MonoBehaviour
             targetPosition = new Vector2(targetX, transform.position.y);
 
             isMoving = true;
+            Anim.SetBool("isMoving", true);
         }
         else if (CheckClickedToPlaceObject())
         {

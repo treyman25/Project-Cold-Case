@@ -842,7 +842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &456989666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -903,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456989665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: -2}
+  m_LocalPosition: {x: 0, y: -0.25, z: 6}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -942,6 +942,7 @@ GameObject:
   - component: {fileID: 498146445}
   - component: {fileID: 498146444}
   - component: {fileID: 498146443}
+  - component: {fileID: 498146446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -984,6 +985,8 @@ MonoBehaviour:
   darkOverlay: {fileID: 1108587215}
   dayWindow1: {fileID: 1138409773}
   dayWindow2: {fileID: 824412575}
+  transitionPast: {fileID: 456989665}
+  transitionPresent: {fileID: 742794766}
   floorText: {fileID: 824483471}
   fridge: {fileID: 756688614}
   fridgeInterior: {fileID: 2229521915383764612}
@@ -1049,7 +1052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498146442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3327, y: -1.3, z: 0}
+  m_LocalPosition: {x: -1.3327, y: -1.33, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1057,6 +1060,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &498146446
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498146442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 593bcdee95586ce4485f362cf955e36c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,8 +1490,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574272434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: 0.2, z: 2}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -2.9, y: 0.2, z: 1.5669}
+  m_LocalScale: {x: 0.223224, y: 0.223224, z: 0.223224}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1838,7 +1862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &742794767
 Transform:
   m_ObjectHideFlags: 0
@@ -1847,7 +1871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742794766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: -2}
+  m_LocalPosition: {x: 0, y: -0.25, z: 6}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4468,21 +4492,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheese
       objectReference: {fileID: 0}
-    - target: {fileID: 4024730485257238723, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
-      propertyPath: m_TagString
-      value: Cheese
-      objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.95
+      value: 4.14
       objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.352
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4535,7 +4555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4311745312254112519, guid: 3a79ed1a18bd7fe4e97bd4037d7be085, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.85
+      value: -2.8721
       objectReference: {fileID: 0}
     - target: {fileID: 4311745312254112519, guid: 3a79ed1a18bd7fe4e97bd4037d7be085, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4543,7 +4563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4311745312254112519, guid: 3a79ed1a18bd7fe4e97bd4037d7be085, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.45078
       objectReference: {fileID: 0}
     - target: {fileID: 4311745312254112519, guid: 3a79ed1a18bd7fe4e97bd4037d7be085, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4920,21 +4940,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mousetrap
       objectReference: {fileID: 0}
-    - target: {fileID: 5877320073581298135, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
-      propertyPath: m_TagString
-      value: Mousetrap
-      objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.17
+      value: 12.06
       objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.63
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_LocalPosition.z
