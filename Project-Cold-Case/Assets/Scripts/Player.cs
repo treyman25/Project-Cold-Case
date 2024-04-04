@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private Vector2 targetPosition;
     private bool isMoving = false;
     private Vector3 savedPosition;
+    private bool isFacingRight = true;
 
     // Object Movement
     private Collider2D clickedCollider;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
     private bool canBreak = false;
 
     // Menus
+    public GameObject myCanvas;
     public GameObject inspectButton;
     public GameObject moveButton;
     public GameObject breakButton1;
@@ -286,6 +288,25 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+        Vector3 myScale = transform.localScale;
+        Vector3 canvasScale = myCanvas.transform.localScale;
+
+        if (targetPosition.x < transform.position.x && isFacingRight)
+        {
+            isFacingRight = false;
+            myScale.x *= -1;
+            canvasScale.x *= -1;
+        }
+        else if (targetPosition.x > transform.position.x && !isFacingRight)
+        {
+            isFacingRight = true;
+            myScale.x *= -1;
+            canvasScale.x *= -1;
+        }
+
+        transform.localScale = myScale;
+        myCanvas.transform.localScale = canvasScale;
+
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
 
         transform.position = new Vector3(transform.position.x, transform.position.y, myZLevel);

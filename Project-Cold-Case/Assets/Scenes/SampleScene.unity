@@ -976,6 +976,7 @@ MonoBehaviour:
   - {fileID: 756688614}
   - {fileID: 2147179805}
   - {fileID: 872854232}
+  myCanvas: {fileID: 1241770242}
   inspectButton: {fileID: 1126672682}
   moveButton: {fileID: 1674836473}
   breakButton1: {fileID: 582387059}
