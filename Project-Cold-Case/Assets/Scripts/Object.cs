@@ -205,6 +205,11 @@ public class Object : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (gameObject.CompareTag("Cheese"))
+        {
+            Hide(true);
+        }
     }
 
     public bool HasBeenMoved()

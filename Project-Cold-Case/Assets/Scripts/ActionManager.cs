@@ -104,27 +104,23 @@ public class ActionManager : MonoBehaviour
         }
 
         GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
+        GameObject cheese = allObjects[2];
+
         if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && !player.CanBreak())
         {
             player.TriggerCanBreak();
             loadedTrap.GetComponent<Object>().ApplySpecialComboId(3);
         }
-        else
+        else if (loadedTrap != null)
         {
             loadedTrap.GetComponent<Object>().ApplySpecialComboId(4);
-        }
-
-        GameObject cheese = allObjects[2];
-        if (!cheese.GetComponent<Object>().IsHidden())
+        } else if (cheese.transform.position.y < -3.2f)
         {
-            if (cheese.transform.position.y < -3.2f)
-            {
-                cheese.GetComponent<Object>().Hide(true);
-            }
-            else
-            {
-                cheese.GetComponent<Object>().ApplySpecialComboId(5);
-            }
+            cheese.GetComponent<Object>().Hide(true);
         }
+        else
+        {
+            cheese.GetComponent<Object>().ApplySpecialComboId(5);
+        }        
     }
 }

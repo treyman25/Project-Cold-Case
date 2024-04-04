@@ -476,11 +476,6 @@ public class Player : MonoBehaviour
             {
                 item.GetComponent<Object>().ResetObject();
             }
-
-            if (item.CompareTag("Cheese"))
-            {
-                item.GetComponent<Object>().Hide(true);
-            }
         }
 
         AM.ResetActions();
