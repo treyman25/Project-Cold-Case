@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     private Vector2 targetPosition;
     private bool isMoving = false;
     private Vector3 savedPosition;
-    private GameObject myIndicator;
 
     // Object Movement
     private Collider2D clickedCollider;
@@ -113,11 +112,6 @@ public class Player : MonoBehaviour
 
     private void HandleArrival()
     {
-        if (myIndicator != null)
-        {
-            Destroy(myIndicator);
-        }
-
         if (clickedObject != null)
         {
             DisplayButtons();
@@ -292,7 +286,10 @@ public class Player : MonoBehaviour
 
     private void MoveObject()
     {
-        clickedObject.transform.position = new Vector3(mousePosition.x + offset.x, clickedObject.transform.position.y, clickedObject.transform.position.z);
+        if (mousePosition.x + offset.x < 16.2 && mousePosition.x + offset.x > - 8)
+        {
+            clickedObject.transform.position = new Vector3(mousePosition.x + offset.x, clickedObject.transform.position.y, clickedObject.transform.position.z);
+        }
 
         AdjustForShelves();
 
@@ -502,6 +499,16 @@ public class Player : MonoBehaviour
     public bool CanBreak()
     {
         return canBreak;
+    }
+
+    public bool IsHoldingObject()
+    {
+        return isHoldingObject;
+    }
+
+    public bool IsMoving()
+    {
+        return isMoving;
     }
 
     public void OpenFridge()

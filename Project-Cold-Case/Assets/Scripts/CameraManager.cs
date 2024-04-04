@@ -9,8 +9,12 @@ public class CameraManager : MonoBehaviour
     private float camX;
     private float playerX;
     private float speed;
+    private Vector3 mousePosition;
 
-    private bool isMoving = false;
+    private bool isFollowingPlayer = false;
+    private bool isFollowingMouse = false;
+    private bool playerIsMoving = false;
+    private bool playerIsCarrying = false;
 
     void Start()
     {
@@ -19,16 +23,31 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         camX = transform.position.x;
 
         playerX = player.transform.position.x;
 
-        if (camX - playerX > 5 || camX - playerX < -5)
+        playerIsMoving = player.GetComponent<Player>().IsMoving();
+        playerIsCarrying = player.GetComponent<Player>().IsHoldingObject();
+
+        if (!playerIsCarrying)
         {
-            isMoving = true;
+            isFollowingMouse = false;
         }
 
-        if (isMoving)
+        if (!isFollowingMouse && (playerIsMoving && camX - playerX > 5 || camX - playerX < -5))
+        {
+            isFollowingPlayer = true;
+        }
+        else if (playerIsCarrying && (camX - mousePosition.x > 6 || camX - mousePosition.x < -6))
+        {
+            isFollowingMouse = true;
+        }
+
+
+        if (isFollowingPlayer)
         {
             if (camX - playerX > 2)
             {
@@ -40,7 +59,19 @@ public class CameraManager : MonoBehaviour
             }
             else
             {
-                isMoving = false;
+                isFollowingPlayer = false;
+            }
+        }
+
+        if (isFollowingMouse)
+        {
+            if (camX - mousePosition.x > 5 && mousePosition.x > -10)
+            {
+                transform.Translate(Time.deltaTime * -speed, 0, 0);
+            }
+            else if (camX - mousePosition.x < -5 && mousePosition.x < 18)
+            {
+                transform.Translate(Time.deltaTime * speed, 0, 0);
             }
         }
     }
