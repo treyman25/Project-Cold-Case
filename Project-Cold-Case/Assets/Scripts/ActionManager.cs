@@ -107,6 +107,11 @@ public class ActionManager : MonoBehaviour
         if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && !player.CanBreak())
         {
             player.TriggerCanBreak();
+            loadedTrap.GetComponent<Object>().ApplySpecialComboId(3);
+        }
+        else
+        {
+            loadedTrap.GetComponent<Object>().ApplySpecialComboId(4);
         }
     }
 }

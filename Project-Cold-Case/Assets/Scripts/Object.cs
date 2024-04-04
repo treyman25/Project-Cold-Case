@@ -190,6 +190,7 @@ public class Object : MonoBehaviour
 
         if (createdVariant != null)
         {
+            createdVariant.GetComponent<Object>().ResetObject();
             Destroy(createdVariant);
         }
 
@@ -319,11 +320,29 @@ public class Object : MonoBehaviour
         specialComboApplied = true;
         Debug.Log("Special Combo #" + id);
 
+        float offset;
+
         switch (id)
         {
             case 2:
                 Hide(true);
                 createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.41f, transform.position.z), Quaternion.identity);
+
+                break;
+
+            case 3:
+                Hide(true);
+                createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
+                offset = GetVerticalOffset(gameObject, variant[0]);
+                createdVariant.transform.Translate(0, offset, 0);
+
+                break;
+
+            case 4:
+                Hide(true);
+                createdVariant = Instantiate(variant[1], transform.position, Quaternion.identity);
+                offset = GetVerticalOffset(gameObject, variant[1]);
+                createdVariant.transform.Translate(0, offset, 0);
 
                 break;
 
