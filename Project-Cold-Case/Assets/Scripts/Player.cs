@@ -121,6 +121,8 @@ public class Player : MonoBehaviour
     {
         if (clickedObject != null)
         {
+            Turn(clickedObject.transform.position.x);
+
             DisplayButtons();
 
             if (isHoldingObject)
@@ -288,16 +290,25 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+        Turn(targetPosition.x);
+
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, myZLevel);
+    }
+
+    private void Turn (float targetX)
+    {
         Vector3 myScale = transform.localScale;
         Vector3 canvasScale = myCanvas.transform.localScale;
 
-        if (targetPosition.x < transform.position.x && isFacingRight)
+        if (targetX < transform.position.x && isFacingRight)
         {
             isFacingRight = false;
             myScale.x *= -1;
             canvasScale.x *= -1;
         }
-        else if (targetPosition.x > transform.position.x && !isFacingRight)
+        else if (targetX > transform.position.x && !isFacingRight)
         {
             isFacingRight = true;
             myScale.x *= -1;
@@ -306,10 +317,6 @@ public class Player : MonoBehaviour
 
         transform.localScale = myScale;
         myCanvas.transform.localScale = canvasScale;
-
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
-
-        transform.position = new Vector3(transform.position.x, transform.position.y, myZLevel);
     }
 
     private void MoveObject()
