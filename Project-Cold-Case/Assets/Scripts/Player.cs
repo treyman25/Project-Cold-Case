@@ -476,6 +476,11 @@ public class Player : MonoBehaviour
             {
                 item.GetComponent<Object>().ResetObject();
             }
+
+            if (item.CompareTag("Cheese"))
+            {
+                item.GetComponent<Object>().Hide(true);
+            }
         }
 
         AM.ResetActions();
@@ -561,6 +566,7 @@ public class Player : MonoBehaviour
         fridgeOpen = true;
         fridgeInterior.SetActive(true);
         AM.UsedAction(fridge, "Opened");
+        objects[2].GetComponent<Object>().Hide(false);
         DeselectObject();
     }
 
@@ -574,6 +580,6 @@ public class Player : MonoBehaviour
     {
         objects[5].GetComponent<Object>().Hide(true);
         objects[1].GetComponent<Object>().ApplySpecialComboId(2);
-        objects[2].GetComponent<Object>().ApplySpecialComboId(5);
+        objects[2].GetComponent<Object>().Hide(true);
     }
 }
