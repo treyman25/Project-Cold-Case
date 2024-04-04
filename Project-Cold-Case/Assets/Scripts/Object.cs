@@ -323,7 +323,7 @@ public class Object : MonoBehaviour
         {
             case 2:
                 Hide(true);
-                createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.348f, transform.position.z), Quaternion.identity);
+                createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.41f, transform.position.z), Quaternion.identity);
 
                 break;
 
