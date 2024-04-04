@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4024730485257238723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.35, y: -3.33, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.371835, y: 0.371835, z: 0.74367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,8 +104,8 @@ MonoBehaviour:
   isMovable: 1
   isBreakable: 0
   isHider: 0
-  HiderX: 0
-  HiderY: 0
+  hiderX: 0
+  hiderY: 0
   isVariant: 0
   myText: This is a nice block of fetta.
   brokenVersion: {fileID: 0}

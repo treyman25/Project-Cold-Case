@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     public GameObject dayWindow2;
     private bool inPast = false;
     private ActionManager AM;
+    public GameObject transitionPast;
+    public GameObject transitionPresent;
 
     // Text
     public TextMeshProUGUI floorText;
@@ -426,7 +428,12 @@ public class Player : MonoBehaviour
 
         goBackButton.SetActive(false);
 
-        yield return new WaitForSeconds(1);
+        transitionPast.SetActive(true);
+        transitionPast.GetComponent<Animator>().SetTrigger("PlayTransition");
+
+        yield return new WaitForSeconds(1.5f);
+
+        transitionPast.SetActive(false);
 
         inPast = true;
 
@@ -449,7 +456,12 @@ public class Player : MonoBehaviour
     {
         canClick = false;
 
-        yield return new WaitForSeconds(1);
+        transitionPresent.SetActive(true);
+        transitionPresent.GetComponent<Animator>().SetTrigger("PlayTransition");
+
+        yield return new WaitForSeconds(1.5f);
+
+        transitionPresent.SetActive(false);
 
         inPast = false;
 

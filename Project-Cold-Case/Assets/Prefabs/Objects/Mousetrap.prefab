@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5877320073581298135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.18, y: -3.305, z: 0}
-  m_LocalScale: {x: 0.42748025, y: 0.42748025, z: 0.42748025}
+  m_LocalScale: {x: 0.31790423, y: 0.31790423, z: 0.31790423}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,11 +131,12 @@ MonoBehaviour:
   isMovable: 1
   isBreakable: 0
   isHider: 0
-  HiderX: 0
-  HiderY: 0
+  hiderX: 0
+  hiderY: 0
+  isVariant: 0
   myText: Alex must have a rat problem.
   brokenVersion: {fileID: 0}
-  specialComboObject: []
+  variant: []
 --- !u!61 &7040546309228539726
 BoxCollider2D:
   m_ObjectHideFlags: 0
