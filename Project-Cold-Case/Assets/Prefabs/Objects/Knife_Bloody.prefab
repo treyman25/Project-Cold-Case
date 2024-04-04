@@ -131,8 +131,8 @@ MonoBehaviour:
   isMovable: 1
   isBreakable: 0
   isHider: 0
-  HiderX: 0
-  HiderY: 0
+  hiderX: 0
+  hiderY: 0
   isVariant: 0
   myText: This was the murder weapon used to deliver the lacerations to the victim.
   brokenVersion: {fileID: 0}
