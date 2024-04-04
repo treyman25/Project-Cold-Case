@@ -298,7 +298,7 @@ public class Object : MonoBehaviour
 
         switch (id)
         {
-            case 1:
+            case 1: // Loaded Trap
                 Vector3 otherPosition = other.transform.position;
                 float offset = GetVerticalOffset(other, variant[0]);
 
@@ -324,13 +324,13 @@ public class Object : MonoBehaviour
 
         switch (id)
         {
-            case 2:
+            case 2: // Bloody Knife
                 Hide(true);
                 createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.41f, transform.position.z), Quaternion.identity);
 
                 break;
 
-            case 3:
+            case 3: // Rat Trap
                 Hide(true);
                 createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
                 offset = GetVerticalOffset(gameObject, variant[0]);
@@ -338,11 +338,17 @@ public class Object : MonoBehaviour
 
                 break;
 
-            case 4:
+            case 4: // Moldy Trap
                 Hide(true);
                 createdVariant = Instantiate(variant[1], transform.position, Quaternion.identity);
                 offset = GetVerticalOffset(gameObject, variant[1]);
                 createdVariant.transform.Translate(0, offset, 0);
+
+                break;
+
+            case 5: // Moldy Cheese
+                Hide(true);
+                createdVariant = Instantiate(variant[1], transform.position, Quaternion.identity);
 
                 break;
 

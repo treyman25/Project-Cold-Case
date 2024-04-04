@@ -113,5 +113,18 @@ public class ActionManager : MonoBehaviour
         {
             loadedTrap.GetComponent<Object>().ApplySpecialComboId(4);
         }
+
+        GameObject cheese = allObjects[2];
+        if (!cheese.GetComponent<Object>().IsHidden())
+        {
+            if (cheese.transform.position.y < -3.2f)
+            {
+                cheese.GetComponent<Object>().Hide(true);
+            }
+            else
+            {
+                cheese.GetComponent<Object>().ApplySpecialComboId(5);
+            }
+        }
     }
 }

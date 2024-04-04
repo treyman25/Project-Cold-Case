@@ -574,5 +574,6 @@ public class Player : MonoBehaviour
     {
         objects[5].GetComponent<Object>().Hide(true);
         objects[1].GetComponent<Object>().ApplySpecialComboId(2);
+        objects[2].GetComponent<Object>().ApplySpecialComboId(5);
     }
 }
