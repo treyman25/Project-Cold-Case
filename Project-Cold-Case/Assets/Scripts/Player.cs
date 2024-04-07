@@ -307,12 +307,24 @@ public class Player : MonoBehaviour
             isFacingRight = false;
             myScale.x *= -1;
             canvasScale.x *= -1;
+            inspectButton.transform.Translate(-3.5f, 0, 0);
+            moveButton.transform.Translate(-3.5f, 0, 0);
+            breakButton1.transform.Translate(-3.5f, 0, 0);
+            breakButton2.transform.Translate(-3.5f, 0, 0);
+            goBackButton.transform.Translate(-3.5f, 0, 0);
+            openFridgeButton.transform.Translate(-3.5f, 0, 0);
         }
         else if (targetX > transform.position.x && !isFacingRight)
         {
             isFacingRight = true;
             myScale.x *= -1;
             canvasScale.x *= -1;
+            inspectButton.transform.Translate(3.5f, 0, 0);
+            moveButton.transform.Translate(3.5f, 0, 0);
+            breakButton1.transform.Translate(3.5f, 0, 0);
+            breakButton2.transform.Translate(3.5f, 0, 0);
+            goBackButton.transform.Translate(3.5f, 0, 0);
+            openFridgeButton.transform.Translate(3.5f, 0, 0);
         }
 
         transform.localScale = myScale;
