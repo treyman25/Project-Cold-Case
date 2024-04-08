@@ -42,6 +42,9 @@ public class Object : MonoBehaviour
     private bool specialComboApplied = false;
     private GameObject createdVariant;
 
+    // Sound
+    public AudioClip[] audioclips;
+
 
     private void Start()
     {

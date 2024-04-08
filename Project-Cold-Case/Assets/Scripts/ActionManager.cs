@@ -118,9 +118,13 @@ public class ActionManager : MonoBehaviour
         {
             cheese.GetComponent<Object>().Hide(true);
         }
-        else
+        else if (cheese.transform.position.x > 7  || cheese.transform.position.x < 4)
         {
             cheese.GetComponent<Object>().ApplySpecialComboId(5);
-        }        
+        }
+        else
+        {
+            cheese.GetComponent<Object>().Hide(true);
+        }
     }
 }

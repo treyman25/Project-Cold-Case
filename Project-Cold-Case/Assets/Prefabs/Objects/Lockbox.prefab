@@ -130,8 +130,13 @@ MonoBehaviour:
   isInspectable: 1
   isMovable: 1
   isBreakable: 0
-  myText: A lockbox.
+  isHider: 0
+  hiderX: 0
+  hiderY: 0
+  isVariant: 0
+  myText: I wonder what's in here, I need to find clues.
   brokenVersion: {fileID: 0}
+  variant: []
 --- !u!61 &4378480041788055417
 BoxCollider2D:
   m_ObjectHideFlags: 0

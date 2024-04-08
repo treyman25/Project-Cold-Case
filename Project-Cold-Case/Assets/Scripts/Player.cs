@@ -67,11 +67,17 @@ public class Player : MonoBehaviour
     public GameObject fixedTimeMachine;
     public GameObject timeMachine;
 
+    // Sound
+    private AudioSource source;
+    public AudioClip pastClip;
+    public AudioClip presentClip;
+
 
     void Start()
     {
         Anim = GetComponent<Animator>();
         AM = GameObject.Find("ActionManager").GetComponent<ActionManager>();
+        source = GetComponent<AudioSource>();
 
         ApplyStartCondition();
     }
@@ -114,6 +120,7 @@ public class Player : MonoBehaviour
         targetPosition = target;
 
         isMoving = true;
+        source.Play();
         Anim.SetBool("isMoving", true);
     }
 
@@ -142,6 +149,7 @@ public class Player : MonoBehaviour
         }
 
         isMoving = false;
+        source.Stop();
         Anim.SetBool("isMoving", false);
     }
 
@@ -214,6 +222,7 @@ public class Player : MonoBehaviour
             targetPosition = new Vector2(targetX, transform.position.y);
 
             isMoving = true;
+            source.Play();
             Anim.SetBool("isMoving", true);
         }
         else if (CheckClickedToPlaceObject())
@@ -475,6 +484,7 @@ public class Player : MonoBehaviour
 
         transitionPast.SetActive(true);
         transitionPast.GetComponent<Animator>().SetTrigger("PlayTransition");
+        AudioSource.PlayClipAtPoint(pastClip, Camera.main.transform.position, .1f);
 
         yield return new WaitForSeconds(1.5f);
 
@@ -501,8 +511,11 @@ public class Player : MonoBehaviour
     {
         canClick = false;
 
+        yield return new WaitForSeconds(.5f);
+
         transitionPresent.SetActive(true);
         transitionPresent.GetComponent<Animator>().SetTrigger("PlayTransition");
+        AudioSource.PlayClipAtPoint(presentClip, Camera.main.transform.position, .2f);
 
         yield return new WaitForSeconds(1.5f);
 

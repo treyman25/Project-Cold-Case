@@ -131,10 +131,10 @@ MonoBehaviour:
   isMovable: 0
   isBreakable: 0
   isHider: 0
-  HiderX: 0
-  HiderY: 0
+  hiderX: 0
+  hiderY: 0
   isVariant: 0
-  myText: A strange machine.
+  myText: This is definitely a time machine, but how does it work?
   brokenVersion: {fileID: 0}
   variant: []
 --- !u!61 &2070341149003814182
