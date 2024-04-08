@@ -242,7 +242,9 @@ public class Object : MonoBehaviour
             float offset = GetVerticalOffset(brokenVersion, gameObject);
 
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
-            myBrokenVersion.transform.Translate(0, offset, 2);
+            myBrokenVersion.transform.Translate(0, offset - .1f, 2);
+
+            AudioSource.PlayClipAtPoint(audioclips[0], transform.position, 1f);
 
             Hide(true);
             canHide = false;
@@ -315,6 +317,8 @@ public class Object : MonoBehaviour
 
                 createdVariant = Instantiate(variant[0], otherPosition, Quaternion.identity);
                 createdVariant.transform.Translate(0, offset, 0);
+
+                AudioSource.PlayClipAtPoint(audioclips[0], createdVariant.transform.position, 0.5f);
 
                 break;
 

@@ -71,6 +71,9 @@ public class Player : MonoBehaviour
     private AudioSource source;
     public AudioClip pastClip;
     public AudioClip presentClip;
+    public AudioClip pickupClip;
+    public AudioClip putdownClip;
+    public AudioClip fridgeClip;
 
 
     void Start()
@@ -135,6 +138,7 @@ public class Player : MonoBehaviour
             if (isHoldingObject)
             {
                 isHoldingObject = false;
+                AudioSource.PlayClipAtPoint(putdownClip, transform.position, 6f);
 
                 clickedObject.GetComponent<Object>().SetTransparency(1f);
 
@@ -360,6 +364,7 @@ public class Player : MonoBehaviour
         hasChosenMove = true;
         HideButtons();
         isHoldingObject = true;
+        AudioSource.PlayClipAtPoint(pickupClip, transform.position, 1);
     }
 
     public void ChooseInspectObject()
@@ -484,7 +489,7 @@ public class Player : MonoBehaviour
 
         transitionPast.SetActive(true);
         transitionPast.GetComponent<Animator>().SetTrigger("PlayTransition");
-        AudioSource.PlayClipAtPoint(pastClip, Camera.main.transform.position, .1f);
+        AudioSource.PlayClipAtPoint(pastClip, Camera.main.transform.position, .05f);
 
         yield return new WaitForSeconds(1.5f);
 
@@ -505,6 +510,8 @@ public class Player : MonoBehaviour
         ShowDayDecor(true);
 
         canClick = true;
+
+        CloseFridge();
     }
 
     IEnumerator PresentTransition()
@@ -515,7 +522,7 @@ public class Player : MonoBehaviour
 
         transitionPresent.SetActive(true);
         transitionPresent.GetComponent<Animator>().SetTrigger("PlayTransition");
-        AudioSource.PlayClipAtPoint(presentClip, Camera.main.transform.position, .2f);
+        AudioSource.PlayClipAtPoint(presentClip, Camera.main.transform.position, .1f);
 
         yield return new WaitForSeconds(1.5f);
 
@@ -584,6 +591,7 @@ public class Player : MonoBehaviour
     public void OpenFridge()
     {
         fridgeOpen = true;
+        AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
         fridgeInterior.SetActive(true);
         AM.UsedAction(fridge, "Opened");
         objects[2].GetComponent<Object>().Hide(false);

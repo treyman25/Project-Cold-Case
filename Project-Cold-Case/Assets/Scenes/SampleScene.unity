@@ -996,6 +996,9 @@ MonoBehaviour:
   timeMachine: {fileID: 1879394037}
   pastClip: {fileID: 8300000, guid: 5f64b45a70d936f4aa8e5b4f98e9f93c, type: 3}
   presentClip: {fileID: 8300000, guid: dbcb51dda9aa1234292950a41d38261a, type: 3}
+  pickupClip: {fileID: 8300000, guid: 9908afc2f758d8e41a802ce5f43eeca2, type: 3}
+  putdownClip: {fileID: 8300000, guid: 7463f7208e10b844c8b4723e1719d36c, type: 3}
+  fridgeClip: {fileID: 8300000, guid: e1fbffda27c2cd84e993f5cb79483738, type: 3}
 --- !u!212 &498146444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1097,7 +1100,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 31287c0ae41621b47ab542ffb15307be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1302,7 +1305,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ca5743f6860461045982fad38672f5d6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5005,7 +5008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5987972493576755535, guid: e685f7edf9b2d9a46b2f6aef69746054, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.76
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 5987972493576755535, guid: e685f7edf9b2d9a46b2f6aef69746054, type: 3}
       propertyPath: m_LocalPosition.y

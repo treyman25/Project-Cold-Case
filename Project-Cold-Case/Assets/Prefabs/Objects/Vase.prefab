@@ -137,6 +137,8 @@ MonoBehaviour:
   myText: A vase.
   brokenVersion: {fileID: 8609536020230178155, guid: d8f95d1179926204ebc3b79971c2aea5, type: 3}
   variant: []
+  audioclips:
+  - {fileID: 8300000, guid: 549876c3da66f4349af10e865198f9d3, type: 3}
 --- !u!61 &2628715341194157750
 BoxCollider2D:
   m_ObjectHideFlags: 0

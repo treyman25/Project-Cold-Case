@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &503146890259389393
 SpriteRenderer:
@@ -131,11 +131,13 @@ MonoBehaviour:
   isMovable: 0
   isBreakable: 0
   isHider: 0
-  HiderX: 0
-  HiderY: 0
+  hiderX: 0
+  hiderY: 0
+  isVariant: 0
   myText: A broken vase.
   brokenVersion: {fileID: 0}
-  specialComboObject: []
+  variant: []
+  audioclips: []
 --- !u!61 &6771487200698611800
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.23881836}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -179,5 +181,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.22, y: 1.47}
+  m_Size: {x: 8.22, y: 0.99236333}
   m_EdgeRadius: 0

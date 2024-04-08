@@ -112,6 +112,8 @@ MonoBehaviour:
   variant:
   - {fileID: 4494886735567718468, guid: 241abe9880b307a4a9e805b8c6ea0add, type: 3}
   - {fileID: 6604851831157648013, guid: 62503fadc2522a64d9b3348428fd703b, type: 3}
+  audioclips:
+  - {fileID: 8300000, guid: e5388a8a126f2a949a03c9c8afc9cfad, type: 3}
 --- !u!50 &3769265197278228968
 Rigidbody2D:
   serializedVersion: 4
