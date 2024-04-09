@@ -516,7 +516,6 @@ public class Player : MonoBehaviour
 
         if (canBreak && !canBreakText)
         {
-            Debug.Log("hi");
             StartCoroutine(PrintInspectText("Ouch! Did that just zap me?"));
             canBreakText = true;
         }
