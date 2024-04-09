@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
 
     // Object Breaking
     private bool canBreak = false;
+    private bool canBreakText = false;
 
     // Menus
     public GameObject myCanvas;
@@ -512,6 +513,13 @@ public class Player : MonoBehaviour
         canClick = true;
 
         CloseFridge();
+
+        if (canBreak && !canBreakText)
+        {
+            Debug.Log("hi");
+            StartCoroutine(PrintInspectText("Ouch! Did that just zap me?"));
+            canBreakText = true;
+        }
     }
 
     IEnumerator PresentTransition()
@@ -561,7 +569,6 @@ public class Player : MonoBehaviour
     {
         if (!canBreak)
         {
-            StartCoroutine(PrintInspectText("\"You feel stronger. Like you can break things.\""));
             fixedTimeMachine.SetActive(true);
             timeMachine.SetActive(false);
             canBreak = true;
