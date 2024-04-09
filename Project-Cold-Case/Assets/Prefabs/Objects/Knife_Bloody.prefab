@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5190427222817842693}
   m_Layer: 0
   m_Name: Knife_Bloody
-  m_TagString: Knife
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 0}
+  audioclips: []
 --- !u!61 &5190427222817842693
 BoxCollider2D:
   m_ObjectHideFlags: 0

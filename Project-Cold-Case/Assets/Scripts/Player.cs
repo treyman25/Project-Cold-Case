@@ -601,6 +601,7 @@ public class Player : MonoBehaviour
         fridgeInterior.SetActive(true);
         AM.UsedAction(fridge, "Opened");
         objects[2].GetComponent<Object>().Hide(false);
+        objects[2].transform.Translate(0, 0, -3);
         DeselectObject();
     }
 
@@ -614,6 +615,5 @@ public class Player : MonoBehaviour
     {
         objects[5].GetComponent<Object>().Hide(true);
         objects[1].GetComponent<Object>().ApplySpecialComboId(2);
-        objects[2].GetComponent<Object>().Hide(true);
     }
 }

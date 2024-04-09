@@ -56,6 +56,11 @@ public class Object : MonoBehaviour
         SR = GetComponent<SpriteRenderer>();
 
         canHide = isHider;
+
+        if (CompareTag("Knife"))
+        {
+            Hide(true);
+        }
     }
 
     public bool IsInspectable()
@@ -259,8 +264,15 @@ public class Object : MonoBehaviour
     public void Hide(bool value)
     {
         isHidden = value;
-        SR.enabled = !value;
-        GetComponent<Collider2D>().enabled = !value;
+        if (SR != null)
+        {
+            SR.enabled = !value;
+        }
+        
+        if (GetComponent<Collider2D>() != null)
+        {
+            GetComponent<Collider2D>().enabled = !value;
+        }
     }
 
     private void OverlapTint(bool value)
