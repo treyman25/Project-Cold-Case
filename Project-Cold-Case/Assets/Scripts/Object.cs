@@ -14,11 +14,11 @@ public class Object : MonoBehaviour
     [SerializeField] private bool isVariant;
 
     // Animation
-    //private Animator myAnimator;
     SpriteRenderer SR;
 
     // Inspectable
     public string myText;
+    private string inspectText;
 
     // Movable
     private bool isOverlapping = false;
@@ -50,12 +50,13 @@ public class Object : MonoBehaviour
     {
         originalPosition = transform.position;
 
-        //myAnimator = GetComponent<Animator>();
         originalPosition = transform.position;
 
         SR = GetComponent<SpriteRenderer>();
 
         canHide = isHider;
+
+        inspectText = myText;
     }
 
     public bool IsInspectable()
@@ -91,6 +92,7 @@ public class Object : MonoBehaviour
     public void HideObject(GameObject hidden)
     {
         hiddenObject = hidden;
+        inspectText += " It holds " + hidden.tag.ToLower() + ".";
     }
 
     public GameObject GetHidden()
@@ -132,7 +134,7 @@ public class Object : MonoBehaviour
             }
             else
             {
-                if (CheckHidable(collision.gameObject) && !isHidden)
+                if (CheckHidable(collision.gameObject) && !isHidden && collision.gameObject.GetComponent<Object>().isMoving == false)
                 {
                     collision.gameObject.GetComponent<Object>().HideObject(this.gameObject);
                     Hide(true);
@@ -213,6 +215,8 @@ public class Object : MonoBehaviour
         {
             Hide(true);
         }
+
+        inspectText = myText;
     }
 
     public bool HasBeenMoved()
@@ -227,7 +231,7 @@ public class Object : MonoBehaviour
 
     public string GetInspectText()
     {
-        return myText;
+        return inspectText;
     }
 
     public GameObject[] GetVariants()

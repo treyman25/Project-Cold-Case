@@ -4904,10 +4904,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeMachine_Fixed
       objectReference: {fileID: 0}
-    - target: {fileID: 4436484761333592867, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5120442162602968247, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -5013,10 +5009,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lockbox
       objectReference: {fileID: 0}
-    - target: {fileID: 6119833014077175008, guid: e685f7edf9b2d9a46b2f6aef69746054, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5033,14 +5025,6 @@ PrefabInstance:
     - target: {fileID: 1850448407565507448, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_Name
       value: Vase
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
-      propertyPath: HiderX
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
-      propertyPath: HiderY
-      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8332957033535137051, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_RootOrder

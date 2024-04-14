@@ -9,6 +9,8 @@ TagManager:
   - Cheese
   - Mousetrap
   - Knife
+  - Lockbox
+  - Vase
   layers:
   - Default
   - TransparentFX
