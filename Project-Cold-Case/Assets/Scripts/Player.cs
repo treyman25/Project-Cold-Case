@@ -18,9 +18,10 @@ public class Player : MonoBehaviour
     public GameObject[] objects;
 
     // Utility
+    public GameObject blackOverlay;
     private Vector3 mousePosition;
     private bool hasClicked = false;
-    private bool canClick = true;
+    private bool canClick = false;
 
     // Character Movement
     private Animator Anim;
@@ -83,7 +84,7 @@ public class Player : MonoBehaviour
         AM = GameObject.Find("ActionManager").GetComponent<ActionManager>();
         source = GetComponent<AudioSource>();
 
-        ApplyStartCondition();
+        StartCoroutine(StartGameFadeIn(1));
     }
 
     void Update()
@@ -548,8 +549,6 @@ public class Player : MonoBehaviour
         {
             CloseFridge();
         }
-
-        objects[5].GetComponent<Object>().Hide(true);
     }
 
     private void ShowDayDecor(bool value)
@@ -611,9 +610,22 @@ public class Player : MonoBehaviour
         fridgeInterior.SetActive(false);
     }
 
-    private void ApplyStartCondition()
+    private IEnumerator StartGameFadeIn(float time)
     {
-        objects[5].GetComponent<Object>().Hide(true);
-        objects[1].GetComponent<Object>().ApplySpecialComboId(2);
+        yield return new WaitForEndOfFrame();
+        AM.ApplyCombos();
+
+        SpriteRenderer fader = blackOverlay.GetComponent<SpriteRenderer>();
+        Color currentColor = fader.color;
+
+        while (fader.color.a > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            currentColor.a -= Time.deltaTime / time;
+            fader.color = currentColor;
+        }
+
+        blackOverlay.SetActive(false);
+        canClick = true;
     }
 }

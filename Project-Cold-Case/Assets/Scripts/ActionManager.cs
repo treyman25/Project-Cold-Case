@@ -126,5 +126,7 @@ public class ActionManager : MonoBehaviour
         {
             cheese.GetComponent<Object>().Hide(true);
         }
+
+        allObjects[5].GetComponent<Object>().Hide(true);
     }
 }

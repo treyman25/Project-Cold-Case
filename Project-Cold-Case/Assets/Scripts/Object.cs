@@ -56,11 +56,6 @@ public class Object : MonoBehaviour
         SR = GetComponent<SpriteRenderer>();
 
         canHide = isHider;
-
-        if (CompareTag("Knife"))
-        {
-            Hide(true);
-        }
     }
 
     public bool IsInspectable()
