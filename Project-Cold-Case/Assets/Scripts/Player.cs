@@ -141,6 +141,7 @@ public class Player : MonoBehaviour
             {
                 isHoldingObject = false;
                 AudioSource.PlayClipAtPoint(putdownClip, transform.position, 6f);
+                Anim.SetTrigger("Place");
 
                 clickedObject.GetComponent<Object>().SetTransparency(1f);
 
@@ -367,6 +368,7 @@ public class Player : MonoBehaviour
         HideButtons();
         isHoldingObject = true;
         AudioSource.PlayClipAtPoint(pickupClip, transform.position, 1);
+        Anim.SetTrigger("Grab");
     }
 
     public void ChooseInspectObject()
