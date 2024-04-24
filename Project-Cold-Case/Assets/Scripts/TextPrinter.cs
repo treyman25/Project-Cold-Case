@@ -24,7 +24,7 @@ public class TextPrinter : MonoBehaviour
 
     IEnumerator PrintText(string printText)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(.5f);
 
         string currentText = "";
 
@@ -39,6 +39,10 @@ public class TextPrinter : MonoBehaviour
 
 
         yield return new WaitForSeconds(2);
+
+        myTMPro.text = "";
+
+        yield return new WaitForSeconds(.5f);
 
         SceneManager.LoadScene("SampleScene");
     }

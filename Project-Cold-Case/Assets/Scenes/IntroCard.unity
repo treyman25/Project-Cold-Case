@@ -649,10 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb24e1ccf8b22624f8aabc1513bd7919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: 'New Text a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a a a a a a New Text a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
-    New Text a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a a a New Text a a a a a a a a a a a a a a a a
-    a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a '
+  myText: When completed, this ultimate weapon will spell certain doom for the small
+    band of rebels struggling to restore freedom to the galaxy...
   myTMPro: {fileID: 360576454}
