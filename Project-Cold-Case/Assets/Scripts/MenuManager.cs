@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("IntroCard");
     }
 
     public void LoadCredits()

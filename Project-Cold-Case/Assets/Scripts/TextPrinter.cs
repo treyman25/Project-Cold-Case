@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextPrinter : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class TextPrinter : MonoBehaviour
 
     IEnumerator PrintText(string printText)
     {
+        yield return new WaitForSeconds(2);
 
         string currentText = "";
 
@@ -37,5 +39,7 @@ public class TextPrinter : MonoBehaviour
 
 
         yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("SampleScene");
     }
 }
