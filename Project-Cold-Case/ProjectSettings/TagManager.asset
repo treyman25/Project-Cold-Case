@@ -12,6 +12,7 @@ TagManager:
   - Lockbox
   - Vase
   - Printer
+  - Flash Drive
   layers:
   - Default
   - TransparentFX
