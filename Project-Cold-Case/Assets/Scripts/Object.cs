@@ -310,18 +310,24 @@ public class Object : MonoBehaviour
         {
             return 1;
         }
+        else if (other.CompareTag("Printer") && this.CompareTag("Flash Drive"))
+        {
+            return 2;
+        }
         return 0;
     }
     private void ApplySpecialComboId(int id, GameObject other)
     {
         specialComboApplied = true;
         Debug.Log("Special Combo #" + id);
+        Vector3 otherPosition;
+        float offset;
 
         switch (id)
         {
             case 1: // Loaded Trap
-                Vector3 otherPosition = other.transform.position;
-                float offset = GetVerticalOffset(other, variant[0]);
+                otherPosition = other.transform.position;
+                offset = GetVerticalOffset(other, variant[0]);
 
                 Hide(true);
                 other.GetComponent<Object>().Hide(true);
@@ -331,6 +337,16 @@ public class Object : MonoBehaviour
 
                 AudioSource.PlayClipAtPoint(audioclips[0], createdVariant.transform.position, 0.5f);
 
+                break;
+
+            case 2: // USB Printer
+                otherPosition = other.transform.position;
+
+                Hide(true);
+                other.GetComponent<Object>().Hide(true);
+
+                createdVariant = Instantiate(variant[0], otherPosition, Quaternion.identity);
+                createdVariant.transform.Translate(.131f, 0, 0);
                 break;
 
             default:
