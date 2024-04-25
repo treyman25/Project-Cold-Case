@@ -13,6 +13,7 @@ TagManager:
   - Vase
   - Printer
   - Flash Drive
+  - Machine
   layers:
   - Default
   - TransparentFX

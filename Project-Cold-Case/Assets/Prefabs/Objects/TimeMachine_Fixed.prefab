@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5447256703221959512
 SpriteRenderer:
@@ -133,7 +133,7 @@ MonoBehaviour:
   isHider: 0
   hiderX: 0
   hiderY: 0
-  isVariant: 1
+  isVariant: 0
   myText: A strange machine.
   brokenVersion: {fileID: 0}
   variant: []

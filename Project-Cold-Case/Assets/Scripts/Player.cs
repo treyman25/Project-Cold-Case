@@ -61,6 +61,9 @@ public class Player : MonoBehaviour
 
     // Text
     public TextMeshProUGUI floorText;
+    public TextMeshProUGUI ObjectText1;
+    public TextMeshProUGUI ObjectText2;
+    public TextMeshProUGUI ObjectText3;
 
     // Special Objects
     public GameObject fridge;
@@ -85,6 +88,11 @@ public class Player : MonoBehaviour
         source = GetComponent<AudioSource>();
 
         StartCoroutine(StartGameFadeIn(1));
+
+        floorText.text = "";
+        ObjectText1.text = "";
+        ObjectText2.text = "";
+        ObjectText3.text = "";
     }
 
     void Update()
@@ -329,6 +337,9 @@ public class Player : MonoBehaviour
             breakButton2.transform.Translate(-3.5f, 0, 0);
             goBackButton.transform.Translate(-3.5f, 0, 0);
             openFridgeButton.transform.Translate(-3.5f, 0, 0);
+            ObjectText1.transform.Translate(-3.5f, 0, 0);
+            ObjectText2.transform.Translate(-3.5f, 0, 0);
+            ObjectText3.transform.Translate(-3.5f, 0, 0);
         }
         else if (targetX > transform.position.x && !isFacingRight)
         {
@@ -341,6 +352,9 @@ public class Player : MonoBehaviour
             breakButton2.transform.Translate(3.5f, 0, 0);
             goBackButton.transform.Translate(3.5f, 0, 0);
             openFridgeButton.transform.Translate(3.5f, 0, 0);
+            ObjectText1.transform.Translate(3.5f, 0, 0);
+            ObjectText2.transform.Translate(3.5f, 0, 0);
+            ObjectText3.transform.Translate(3.5f, 0, 0);
         }
 
         transform.localScale = myScale;
@@ -421,15 +435,21 @@ public class Player : MonoBehaviour
         breakButton2.SetActive(false);
         goBackButton.SetActive(false);
         openFridgeButton.SetActive(false);
+
+        ObjectText1.text = "";
+        ObjectText2.text = "";
+        ObjectText3.text = "";
     }
 
     private void DisplayButtons()
     {
+        int numButtons = 0;
         if (clickedObject.GetComponent<Object>().IsMovable() && inPast)
         {
             if (hasChosenMove == false)
             {
                 moveButton.SetActive(true);
+                numButtons++;
             }
             else
             {
@@ -440,6 +460,7 @@ public class Player : MonoBehaviour
         if (clickedObject.GetComponent<Object>().IsInspectable())
         {
             inspectButton.SetActive(true);
+            numButtons++;
         }
 
         if (clickedObject.GetComponent<Object>().IsBreakable() && inPast && canBreak)
@@ -447,19 +468,22 @@ public class Player : MonoBehaviour
             if (clickedObject.GetComponent<Object>().IsMovable())
             {
                 breakButton1.SetActive(true);
+                numButtons++;
             }
             else
             {
                 breakButton2.SetActive(true);
+                numButtons++;
             }
 
         }
 
-        if (clickedObject.CompareTag("TimeMachine"))
+        if (clickedObject.CompareTag("Machine"))
         {
             if (hasChosenMove == false)
             {
                 goBackButton.SetActive(true);
+                numButtons++;
             }
         }
 
@@ -468,7 +492,23 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 openFridgeButton.SetActive(true);
+                numButtons++;
             }
+        }
+
+        switch (numButtons)
+        {
+            case 1:
+                ObjectText1.text = clickedObject.tag;
+                break;
+            case 2:
+                ObjectText2.text = clickedObject.tag;
+                break;
+            case 3:
+                ObjectText3.text = clickedObject.tag;
+                break;
+            default:
+                break;
         }
     }
 
@@ -503,7 +543,7 @@ public class Player : MonoBehaviour
 
         foreach (var item in objects)
         {
-            if (!item.CompareTag("TimeMachine"))
+            if (!item.CompareTag("Machine"))
             {
                 item.GetComponent<Object>().ResetObject();
             }

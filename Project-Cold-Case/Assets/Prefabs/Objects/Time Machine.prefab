@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2070341149003814182}
   m_Layer: 0
   m_Name: Time Machine
-  m_TagString: TimeMachine
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   myText: This is definitely a time machine, but how does it work?
   brokenVersion: {fileID: 0}
   variant: []
+  audioclips: []
 --- !u!61 &2070341149003814182
 BoxCollider2D:
   m_ObjectHideFlags: 0
