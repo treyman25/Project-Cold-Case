@@ -11,6 +11,7 @@ TagManager:
   - Knife
   - Lockbox
   - Vase
+  - Printer
   layers:
   - Default
   - TransparentFX
