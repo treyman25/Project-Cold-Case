@@ -90,9 +90,9 @@ public class Player : MonoBehaviour
         StartCoroutine(StartGameFadeIn(1));
 
         floorText.text = "";
-        ObjectText1.text = "";
-        ObjectText2.text = "";
-        ObjectText3.text = "";
+        ObjectText1.gameObject.SetActive(false);
+        ObjectText2.gameObject.SetActive(false);
+        ObjectText3.gameObject.SetActive(false);
     }
 
     void Update()
@@ -436,9 +436,9 @@ public class Player : MonoBehaviour
         goBackButton.SetActive(false);
         openFridgeButton.SetActive(false);
 
-        ObjectText1.text = "";
-        ObjectText2.text = "";
-        ObjectText3.text = "";
+        ObjectText1.gameObject.SetActive(false);
+        ObjectText2.gameObject.SetActive(false);
+        ObjectText3.gameObject.SetActive(false);
     }
 
     private void DisplayButtons()
@@ -499,12 +499,15 @@ public class Player : MonoBehaviour
         switch (numButtons)
         {
             case 1:
+                ObjectText1.gameObject.SetActive(true);
                 ObjectText1.text = clickedObject.tag;
                 break;
             case 2:
+                ObjectText2.gameObject.SetActive(true);
                 ObjectText2.text = clickedObject.tag;
                 break;
             case 3:
+                ObjectText3.gameObject.SetActive(true);
                 ObjectText3.text = clickedObject.tag;
                 break;
             default:
