@@ -402,8 +402,22 @@ public class Player : MonoBehaviour
 
     public void ChooseBreakObject()
     {
-        clickedObject.GetComponent<Object>().Break();
-        AM.UsedAction(clickedObject, "Broken");
+        if (canBreak)
+        {
+            clickedObject.GetComponent<Object>().Break();
+            AM.UsedAction(clickedObject, "Broken");
+        }
+        else
+        {
+            string printText = "";
+
+            if (clickedObject != null)
+            {
+                printText = "I don't feel strong enough to break that right now.";
+            }
+
+            StartCoroutine(PrintInspectText(printText));
+        }
         DeselectObject();
     }
 
@@ -465,7 +479,7 @@ public class Player : MonoBehaviour
             numButtons++;
         }
 
-        if (clickedObject.GetComponent<Object>().IsBreakable() && inPast && canBreak)
+        if (clickedObject.GetComponent<Object>().IsBreakable() && inPast)
         {
             if (clickedObject.GetComponent<Object>().IsMovable())
             {
