@@ -201,8 +201,12 @@ public class Object : MonoBehaviour
 
         Hide(false);
 
+        if (hiddenObject != null)
+        {
+            hiddenObject = null;
+        }
+
         canHide = isHider;
-        hiddenObject = null;
 
         specialComboApplied = false;
 
