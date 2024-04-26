@@ -227,6 +227,9 @@ public class Object : MonoBehaviour
     public void Moved()
     {
         hasBeenMoved = true;
+        float offset = GetVerticalOffset(brokenVersion, gameObject);
+        hiddenObject.transform.position = transform.position;
+        hiddenObject.transform.Translate(0, offset, 0);
     }
 
     public string GetInspectText()

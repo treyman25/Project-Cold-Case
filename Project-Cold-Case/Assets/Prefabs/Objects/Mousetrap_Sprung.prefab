@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2501191940618426965}
   m_Layer: 0
   m_Name: Mousetrap_Sprung
-  m_TagString: Untagged
+  m_TagString: Mousetrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   variant:
   - {fileID: 0}
   - {fileID: 5402815044157260523, guid: 85bd8e0f93456bf4a9bead1e3697093b, type: 3}
+  audioclips: []
 --- !u!50 &5622844837409780927
 Rigidbody2D:
   serializedVersion: 4

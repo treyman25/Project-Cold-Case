@@ -156,8 +156,10 @@ public class Player : MonoBehaviour
                 if (!clickedObject.GetComponent<Object>().HasBeenMoved())
                 {
                     AM.UsedAction(clickedObject, "Moved");
-                    clickedObject.GetComponent<Object>().Moved();
+                    
                 }
+
+                clickedObject.GetComponent<Object>().Moved();
 
                 DeselectObject();
             }
