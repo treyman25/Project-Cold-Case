@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private Vector3 mousePosition;
     private bool hasClicked = false;
     private bool canClick = false;
+    private SpriteRenderer SR;
 
     // Character Movement
     private Animator Anim;
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
     {
         Anim = GetComponent<Animator>();
         AM = GameObject.Find("ActionManager").GetComponent<ActionManager>();
+        SR = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
 
         StartCoroutine(StartGameFadeIn(1));
@@ -556,6 +558,12 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
+        if (!canBreak)
+        {
+            speed = 4;
+            SetTransparency(.8f);
+        }
+
         transitionPast.SetActive(false);
 
         inPast = true;
@@ -594,6 +602,9 @@ public class Player : MonoBehaviour
         AudioSource.PlayClipAtPoint(presentClip, Camera.main.transform.position, .1f);
 
         yield return new WaitForSeconds(1.5f);
+
+        speed = 5;
+        SetTransparency(1);
 
         transitionPresent.SetActive(false);
 
@@ -688,5 +699,12 @@ public class Player : MonoBehaviour
 
         blackOverlay.SetActive(false);
         canClick = true;
+    }
+
+    private void SetTransparency(float percentage)
+    {
+        Color newColor = SR.color;
+        newColor.a = percentage;
+        SR.color = newColor;
     }
 }
