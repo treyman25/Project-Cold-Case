@@ -440,7 +440,7 @@ public class Player : MonoBehaviour
 
         canClick = true;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         floorText.text = "";
     }
@@ -706,5 +706,10 @@ public class Player : MonoBehaviour
         Color newColor = SR.color;
         newColor.a = percentage;
         SR.color = newColor;
+    }
+
+    public void DisplayDialogue(string text)
+    {
+        StartCoroutine(PrintInspectText(text));
     }
 }
