@@ -111,6 +111,7 @@ MonoBehaviour:
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 4494886735567718468, guid: 241abe9880b307a4a9e805b8c6ea0add, type: 3}
+  audioclips: []
 --- !u!50 &1272966624035420322
 Rigidbody2D:
   serializedVersion: 4

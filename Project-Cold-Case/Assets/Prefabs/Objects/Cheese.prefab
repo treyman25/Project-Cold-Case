@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2804743243643029826}
   - component: {fileID: 5463183377721972725}
   - component: {fileID: 3769265197278228968}
-  - component: {fileID: 3269897187402611820}
+  - component: {fileID: 6224639012438572156}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Cheese
@@ -141,7 +141,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3269897187402611820
+--- !u!61 &6224639012438572156
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

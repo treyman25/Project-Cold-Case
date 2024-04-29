@@ -138,6 +138,7 @@ MonoBehaviour:
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 6572319548434795184, guid: a9e3e15b0997c754b9a5eb5bf38a311f, type: 3}
+  audioclips: []
 --- !u!61 &1189809988728542394
 BoxCollider2D:
   m_ObjectHideFlags: 0

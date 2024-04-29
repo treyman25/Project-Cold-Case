@@ -257,7 +257,7 @@ public class Object : MonoBehaviour
             float offset = GetVerticalOffset(brokenVersion, gameObject);
 
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
-            myBrokenVersion.transform.Translate(0, offset-.2f, 2);
+            myBrokenVersion.transform.Translate(0, offset, 2);
 
             AudioSource.PlayClipAtPoint(audioclips[0], transform.position, 1f);
 
@@ -266,6 +266,7 @@ public class Object : MonoBehaviour
             if (hiddenObject)
             {
                 hiddenObject.GetComponent<Object>().Hide(false);
+
                 hiddenObject = null;
             }
 
@@ -421,9 +422,9 @@ public class Object : MonoBehaviour
 
     private float GetVerticalOffset(GameObject first, GameObject second)
     {
-        float firstHeight = first.GetComponent<Collider2D>().bounds.size.y;
-        float secondHeight = second.GetComponent<Collider2D>().bounds.size.y;
+        float firstHeight = first.GetComponent<Collider2D>().bounds.extents.y;
+        float secondHeight = second.GetComponent<Collider2D>().bounds.extents.y;
 
-        return (firstHeight - secondHeight) / 4;
+        return (firstHeight - secondHeight) + (secondHeight / 4);
     }
 }

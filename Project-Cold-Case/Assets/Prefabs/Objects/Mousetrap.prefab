@@ -137,6 +137,7 @@ MonoBehaviour:
   myText: Alex must have a rat problem.
   brokenVersion: {fileID: 0}
   variant: []
+  audioclips: []
 --- !u!61 &7040546309228539726
 BoxCollider2D:
   m_ObjectHideFlags: 0
