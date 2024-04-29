@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     public GameObject breakButton2;
     public GameObject goBackButton;
     public GameObject openFridgeButton;
+    public GameObject openLockboxButton;
 
     // Time Travel
     public GameObject darkOverlay;
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
     private bool fridgeOpen = false;
     public GameObject fixedTimeMachine;
     public GameObject timeMachine;
+    private bool hasPrinted = false;
 
     // Sound
     private AudioSource source;
@@ -337,6 +339,7 @@ public class Player : MonoBehaviour
             breakButton2.transform.Translate(-3.5f, 0, 0);
             goBackButton.transform.Translate(-3.5f, 0, 0);
             openFridgeButton.transform.Translate(-3.5f, 0, 0);
+            openLockboxButton.transform.Translate(-3.5f, 0, 0);
             ObjectText1.transform.Translate(-3.5f, 0, 0);
             ObjectText2.transform.Translate(-3.5f, 0, 0);
             ObjectText3.transform.Translate(-3.5f, 0, 0);
@@ -352,6 +355,7 @@ public class Player : MonoBehaviour
             breakButton2.transform.Translate(3.5f, 0, 0);
             goBackButton.transform.Translate(3.5f, 0, 0);
             openFridgeButton.transform.Translate(3.5f, 0, 0);
+            openLockboxButton.transform.Translate(3.5f, 0, 0);
             ObjectText1.transform.Translate(3.5f, 0, 0);
             ObjectText2.transform.Translate(3.5f, 0, 0);
             ObjectText3.transform.Translate(3.5f, 0, 0);
@@ -450,6 +454,7 @@ public class Player : MonoBehaviour
         breakButton2.SetActive(false);
         goBackButton.SetActive(false);
         openFridgeButton.SetActive(false);
+        openLockboxButton.SetActive(false);
 
         ObjectText1.gameObject.SetActive(false);
         ObjectText2.gameObject.SetActive(false);
@@ -507,6 +512,15 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 openFridgeButton.SetActive(true);
+                numButtons++;
+            }
+        }
+
+        if (clickedObject.CompareTag("Lockbox") && inPast)
+        {
+            if (hasChosenMove == false)
+            {
+                openLockboxButton.SetActive(true);
                 numButtons++;
             }
         }
@@ -679,6 +693,20 @@ public class Player : MonoBehaviour
     {
         fridgeOpen = false;
         fridgeInterior.SetActive(false);
+    }
+
+    public void OpenLockbox()
+    {
+        if (hasPrinted)
+        {
+
+        }
+        else
+        {
+            StartCoroutine(PrintInspectText("It's locked. I'll have to find the code."));
+        }
+
+        DeselectObject();
     }
 
     private IEnumerator StartGameFadeIn(float time)
