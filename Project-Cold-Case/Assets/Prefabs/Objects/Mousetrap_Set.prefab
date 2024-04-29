@@ -107,7 +107,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 1
-  myText: Alex must have a rat problem.
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 3434597269600156609, guid: 211d923e3d4670f44a26160a77fb0baf, type: 3}

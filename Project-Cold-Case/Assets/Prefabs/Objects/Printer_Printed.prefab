@@ -107,7 +107,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 1
-  myText: it printed something!
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

@@ -152,7 +152,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 0
-  myText: a flash drive... must contain some information
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 6654715412401658633, guid: 6bbd7a7836dd79744b90cff72d9db0bb, type: 3}

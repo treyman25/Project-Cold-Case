@@ -134,7 +134,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 0
-  myText: This is the knife that's going to be used in the murder.
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 6572319548434795184, guid: a9e3e15b0997c754b9a5eb5bf38a311f, type: 3}

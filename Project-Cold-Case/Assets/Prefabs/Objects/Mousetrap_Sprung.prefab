@@ -107,7 +107,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 1
-  myText: There's the rat... I've gotta check those wires.
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 0}

@@ -134,7 +134,9 @@ MonoBehaviour:
   hiderX: 0.4
   hiderY: 1.8
   isVariant: 0
-  myText: A vase.
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 8609536020230178155, guid: d8f95d1179926204ebc3b79971c2aea5, type: 3}
   variant:
   - {fileID: 5367941852379173351, guid: c47132cb815dd9e4b98ae5c54f7245ae, type: 3}

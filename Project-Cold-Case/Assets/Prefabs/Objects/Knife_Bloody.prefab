@@ -134,7 +134,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 1
-  myText: This was the murder weapon used to deliver the lacerations to the victim.
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 0}

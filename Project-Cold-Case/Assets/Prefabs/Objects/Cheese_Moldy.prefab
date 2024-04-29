@@ -107,7 +107,9 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 0
-  myText: This isn't a nice block of fetta anymore.
+  myText:
+  - 
+  - 
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 4494886735567718468, guid: 241abe9880b307a4a9e805b8c6ea0add, type: 3}
