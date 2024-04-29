@@ -15,6 +15,7 @@ TagManager:
   - Flash Drive
   - Machine
   - Newspapers
+  - Family Photo
   layers:
   - Default
   - TransparentFX

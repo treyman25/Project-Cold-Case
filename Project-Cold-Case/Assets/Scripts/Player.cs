@@ -228,11 +228,6 @@ public class Player : MonoBehaviour
 
             clickedObject = clickedCollider.transform.gameObject;
 
-            if (clickedObject.GetComponent<Object>().IsMovable() && inPast)
-            {
-                clickedObject.GetComponent<Object>().SetMoving(true);
-            }
-
             savedPosition = clickedObject.transform.position;
 
             offset = clickedObject.transform.position - mousePosition;
@@ -382,6 +377,10 @@ public class Player : MonoBehaviour
 
     public void ChooseMoveObject()
     {
+        
+        clickedObject.GetComponent<Object>().SetMoving(true);
+        
+
         hasChosenMove = true;
         HideButtons();
         isHoldingObject = true;
