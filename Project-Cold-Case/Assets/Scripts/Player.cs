@@ -557,7 +557,7 @@ public class Player : MonoBehaviour
 
         if (!canBreak)
         {
-            speed = 4;
+            speed = 3.5f;
             SetTransparency(.8f);
         }
 
