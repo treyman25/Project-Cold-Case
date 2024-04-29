@@ -134,7 +134,7 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 0
-  myText: A strange machine.
+  myText: What a strange machine...
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

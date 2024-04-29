@@ -393,10 +393,17 @@ public class Player : MonoBehaviour
     public void ChooseInspectObject()
     {
         string printText = "";
+        int id = 0;
+
+        if (!inPast)
+        {
+            id = 1;
+        }
+
 
         if (clickedObject != null)
         {
-            printText = clickedObject.GetComponent<Object>().GetInspectText();
+            printText = clickedObject.GetComponent<Object>().GetInspectText(id);
         }
 
         StartCoroutine(PrintInspectText(printText));
@@ -596,11 +603,7 @@ public class Player : MonoBehaviour
 
         CloseFridge();
 
-        if (canBreak && !canBreakText)
-        {
-            StartCoroutine(PrintInspectText("Ouch! Did that just zap me?"));
-            canBreakText = true;
-        }
+        
     }
 
     IEnumerator PresentTransition()
@@ -633,6 +636,12 @@ public class Player : MonoBehaviour
         if (fridgeOpen)
         {
             CloseFridge();
+        }
+
+        if (canBreak && !canBreakText)
+        {
+            StartCoroutine(PrintInspectText("Alex must have fixed this wire before he was killed."));
+            canBreakText = true;
         }
     }
 

@@ -17,7 +17,7 @@ public class Object : MonoBehaviour
     SpriteRenderer SR;
 
     // Inspectable
-    public string myText;
+    public string[] myText;
     private string inspectText;
 
     // Movable
@@ -56,7 +56,7 @@ public class Object : MonoBehaviour
 
         canHide = isHider;
 
-        inspectText = myText;
+        inspectText = null;
     }
 
     public bool IsInspectable()
@@ -220,7 +220,7 @@ public class Object : MonoBehaviour
             Hide(true);
         }
 
-        inspectText = myText;
+        inspectText = null;
     }
 
     public bool HasBeenMoved()
@@ -240,9 +240,16 @@ public class Object : MonoBehaviour
 
     }
 
-    public string GetInspectText()
+    public string GetInspectText(int id)
     {
-        return inspectText;
+        if (inspectText != null)
+        {
+            return inspectText;
+        }
+        else
+        {
+            return myText[id];
+        }
     }
 
     public GameObject[] GetVariants()
