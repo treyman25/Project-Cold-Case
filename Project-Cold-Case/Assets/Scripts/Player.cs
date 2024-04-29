@@ -699,7 +699,8 @@ public class Player : MonoBehaviour
     {
         if (hasPrinted)
         {
-
+            StartCoroutine(PrintInspectText("The code worked!"));
+            AM.UsedAction(objects[5], "Opened");
         }
         else
         {
@@ -738,5 +739,10 @@ public class Player : MonoBehaviour
     public void DisplayDialogue(string text)
     {
         StartCoroutine(PrintInspectText(text));
+    }
+
+    public void HasPrinted(bool value)
+    {
+        hasPrinted = value;
     }
 }

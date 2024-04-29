@@ -364,6 +364,10 @@ public class Object : MonoBehaviour
 
                 createdVariant = Instantiate(variant[0], otherPosition, Quaternion.identity);
                 createdVariant.transform.Translate(.131f, 0, 0);
+
+                Player p = GameObject.Find("Player").GetComponent<Player>();
+                p.HasPrinted(true);
+
                 break;
 
             default:
