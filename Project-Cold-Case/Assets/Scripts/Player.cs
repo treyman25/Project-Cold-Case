@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
     private ActionManager AM;
     public GameObject transitionPast;
     public GameObject transitionPresent;
+    public GameObject HUD;
 
     // Text
     public TextMeshProUGUI floorText;
@@ -377,10 +378,7 @@ public class Player : MonoBehaviour
 
     public void ChooseMoveObject()
     {
-        
         clickedObject.GetComponent<Object>().SetMoving(true);
-        
-
         hasChosenMove = true;
         HideButtons();
         isHoldingObject = true;
@@ -575,6 +573,7 @@ public class Player : MonoBehaviour
             }
         }
 
+        HUD.SetActive(true);
         AM.ResetActions();
 
         ShowDayDecor(true);
@@ -615,6 +614,7 @@ public class Player : MonoBehaviour
 
         AM.ApplyCombos();
         AM.ResetActions();
+        HUD.SetActive(false);
 
         if (fridgeOpen)
         {

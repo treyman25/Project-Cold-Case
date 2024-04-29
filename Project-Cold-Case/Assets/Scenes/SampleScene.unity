@@ -1262,6 +1262,7 @@ MonoBehaviour:
   dayWindow2: {fileID: 824412575}
   transitionPast: {fileID: 456989665}
   transitionPresent: {fileID: 742794766}
+  HUD: {fileID: 234498277}
   floorText: {fileID: 824483471}
   ObjectText1: {fileID: 1855574453}
   ObjectText2: {fileID: 944788150}
