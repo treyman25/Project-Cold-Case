@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &2847057585730101096
 SpriteRenderer:
@@ -154,7 +154,8 @@ MonoBehaviour:
   isVariant: 0
   myText: a flash drive... must contain some information
   brokenVersion: {fileID: 0}
-  variant: []
+  variant:
+  - {fileID: 6654715412401658633, guid: 6bbd7a7836dd79744b90cff72d9db0bb, type: 3}
   audioclips: []
 --- !u!50 &6570053990226454160
 Rigidbody2D:

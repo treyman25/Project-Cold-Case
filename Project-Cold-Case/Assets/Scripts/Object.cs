@@ -268,6 +268,11 @@ public class Object : MonoBehaviour
                 hiddenObject.GetComponent<Object>().Hide(false);
                 hiddenObject = null;
             }
+
+            if (CompareTag("Vase"))
+            {
+                ApplySpecialComboId(6);
+            }
         }
     }
 
@@ -399,6 +404,13 @@ public class Object : MonoBehaviour
             case 5: // Moldy Cheese
                 Hide(true);
                 createdVariant = Instantiate(variant[1], transform.position, Quaternion.identity);
+
+                break;
+
+            case 6: // Flash Drive
+                createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
+                createdVariant.transform.Translate(0, -.79f, 0);
+                createdVariant.transform.Rotate(0, 0, 90);
 
                 break;
 
