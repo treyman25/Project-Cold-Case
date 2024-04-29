@@ -135,8 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - 
-  - 
+  - It has a code but I'm not sure what it is quite yet.
+  - It has a code but I'm not sure what it is quite yet.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

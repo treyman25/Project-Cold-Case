@@ -153,8 +153,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - 
-  - 
+  - This was hidden inside the vase for one reason or another.
+  - This was hidden inside the vase for one reason or another.
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 6654715412401658633, guid: 6bbd7a7836dd79744b90cff72d9db0bb, type: 3}

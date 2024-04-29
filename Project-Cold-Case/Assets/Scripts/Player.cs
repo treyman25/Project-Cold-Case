@@ -713,7 +713,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            StartCoroutine(PrintInspectText("It's locked. I'll have to find the code."));
+            StartCoroutine(PrintInspectText("It has a code but I'm not sure what it is quite yet."));
         }
 
         DeselectObject();

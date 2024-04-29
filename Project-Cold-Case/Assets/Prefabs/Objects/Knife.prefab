@@ -135,8 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - 
-  - 
+  - Now that I have a closer look, this must be an antique.
+  - It's not bloody anymore.
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 6572319548434795184, guid: a9e3e15b0997c754b9a5eb5bf38a311f, type: 3}

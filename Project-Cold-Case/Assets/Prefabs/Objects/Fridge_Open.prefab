@@ -135,8 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - 
-  - 
+  - Who leaves something in front of a fridge? I can't open it all the way.
+  - I wonder how old this fridge is?
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

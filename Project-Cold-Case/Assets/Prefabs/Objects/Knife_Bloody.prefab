@@ -135,8 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 1
   myText:
-  - 
-  - 
+  - This must be the murder weapon.
+  - This must be the murder weapon.
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 0}

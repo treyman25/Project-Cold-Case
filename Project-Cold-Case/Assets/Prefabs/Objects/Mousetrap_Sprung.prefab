@@ -108,8 +108,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 1
   myText:
-  - 
-  - 
+  - Alex must have a rat problem.
+  - There's the rat... I've gotta check those wires.
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 0}
