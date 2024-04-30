@@ -611,8 +611,6 @@ public class Player : MonoBehaviour
         canClick = true;
 
         CloseFridge();
-
-        
     }
 
     IEnumerator PresentTransition()
@@ -753,12 +751,6 @@ public class Player : MonoBehaviour
         newColor.a = percentage;
         SR.color = newColor;
     }
-
-    public void DisplayDialogue(string text)
-    {
-        StartCoroutine(PrintInspectText(text));
-    }
-
     public void HasPrinted(bool value)
     {
         hasPrinted = value;
