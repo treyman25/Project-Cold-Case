@@ -89,8 +89,9 @@ public class Player : MonoBehaviour
 
     // Dialogues
     private bool canBreakText = false;
-    private bool firstPastText = false;
-    private bool firstPresentText = false;
+    private bool firstPastText = true;
+    private bool firstPresentText = true;
+    private bool printStartText = false;
 
     void Start()
     {
@@ -803,11 +804,16 @@ public class Player : MonoBehaviour
         }
 
         blackOverlay.SetActive(false);
-        StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
+        canClick = true;
 
-        yield return new WaitForSeconds(4.8f);
+        if (printStartText)
+        {
+            StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
 
-        StartCoroutine(PrintInspectText("The autopsy says he died from a stab wound, let's piece together what happened here."));
+            yield return new WaitForSeconds(4.8f);
+
+            StartCoroutine(PrintInspectText("The autopsy says he died from a stab wound, let's piece together what happened here."));
+        }
     }
 
     private void SetTransparency(float percentage)
