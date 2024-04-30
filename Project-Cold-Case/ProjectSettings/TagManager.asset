@@ -16,6 +16,7 @@ TagManager:
   - Machine
   - Newspapers
   - Family Photo
+  - Note
   layers:
   - Default
   - TransparentFX
