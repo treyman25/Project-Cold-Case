@@ -778,6 +778,7 @@ public class Player : MonoBehaviour
         if (hasPrinted)
         {
             StartCoroutine(PrintInspectText("The code worked!"));
+            objects[5].GetComponent<Object>().ApplySpecialComboId(7);
             AM.UsedAction(objects[5], "Opened");
         }
         else

@@ -439,6 +439,14 @@ public class Object : MonoBehaviour
 
                 break;
 
+            case 7: // Opened Lockbox
+                Hide(true);
+                createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
+                offset = GetVerticalOffset(gameObject, variant[0]);
+                createdVariant.transform.Translate(0, offset, 0);
+
+                break;
+
             default:
                 break;
         }
