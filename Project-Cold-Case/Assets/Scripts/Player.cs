@@ -90,9 +90,9 @@ public class Player : MonoBehaviour
 
     // Dialogues
     private bool canBreakText = false;
-    private bool firstPastText = true;
-    private bool firstPresentText = true;
-    private bool printStartText = false;
+    private bool firstPastText = false;
+    private bool firstPresentText = false;
+    private bool printStartText = true;
 
     void Start()
     {
