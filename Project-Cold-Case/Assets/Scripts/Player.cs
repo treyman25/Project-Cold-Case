@@ -698,12 +698,6 @@ public class Player : MonoBehaviour
             CloseFridge();
         }
 
-        if (canBreak && !canBreakText)
-        {
-            StartCoroutine(PrintInspectText("Alex must have fixed this wire before he was killed."));
-            canBreakText = true;
-        }
-
         if (!firstPresentText)
         {
             StartCoroutine(PrintInspectText("That's going to take some getting used to..."));
@@ -713,6 +707,11 @@ public class Player : MonoBehaviour
             StartCoroutine(PrintInspectText("That aside, let's see how things have changed based on what I've done."));
 
             firstPresentText = true;
+        }
+        else if (canBreak && !canBreakText)
+        {
+            StartCoroutine(PrintInspectText("Alex must have fixed this wire before he was killed."));
+            canBreakText = true;
         }
 
         if (hasPrinted)
