@@ -145,15 +145,21 @@ MonoBehaviour:
   hiderX: 0
   hiderY: 0
   isVariant: 0
-  myText: []
+  myText:
+  - Alex seems to be a book worm to the untrained eye but the mixture of time travel
+    Sci-Fi novels is a distraction from these time travel research documents hidden
+    within, clever Alex, but not clever enough.
+  - Alex seems to be a book worm to the untrained eye but the mixture of time travel
+    Sci-Fi novels is a distraction from these time travel research documents hidden
+    within, clever Alex, but not clever enough.
   brokenVersion: {fileID: 0}
   variant:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8644830659582632518}
+  - {fileID: 3556146845752040531}
+  - {fileID: 2683301585398182660}
+  - {fileID: 772253143078432067}
+  - {fileID: 5691134600830305881}
+  - {fileID: 4996457703747936180}
   audioclips: []
 --- !u!50 &742128889945455083
 Rigidbody2D:

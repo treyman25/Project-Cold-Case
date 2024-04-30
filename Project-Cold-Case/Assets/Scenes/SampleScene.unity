@@ -522,11 +522,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139010869}
   m_CullTransparentMesh: 1
---- !u!1 &166603823 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5691134600830305881, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-  m_PrefabInstance: {fileID: 7296178785563041132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &227495586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,11 +2209,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4024730485257238723, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
   m_PrefabInstance: {fileID: 1971342672274014928}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &573537531 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8644830659582632518, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-  m_PrefabInstance: {fileID: 7296178785563041132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &574272434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,11 +2473,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 160, y: 40}
   m_EdgeRadius: 0
---- !u!1 &587272239 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4996457703747936180, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-  m_PrefabInstance: {fileID: 7296178785563041132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &742794766
 GameObject:
   m_ObjectHideFlags: 0
@@ -4365,11 +4350,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460895451}
   m_CullTransparentMesh: 1
---- !u!1 &1515764939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3556146845752040531, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-  m_PrefabInstance: {fileID: 7296178785563041132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1525642207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,11 +4856,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1662807209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 772253143078432067, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-  m_PrefabInstance: {fileID: 7296178785563041132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1674836473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5597,11 +5572,6 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2344370854517616025, guid: 091167d9d39e81545bfa7e9a09485544, type: 3}
   m_PrefabInstance: {fileID: 7013617620022316827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1911769778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2683301585398182660, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-  m_PrefabInstance: {fileID: 7296178785563041132}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928491079
 GameObject:
@@ -6827,34 +6797,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: myText.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: variant.Array.data[0]
-      value: 
-      objectReference: {fileID: 573537531}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: variant.Array.data[1]
-      value: 
-      objectReference: {fileID: 1515764939}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: variant.Array.data[2]
-      value: 
-      objectReference: {fileID: 1911769778}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: variant.Array.data[3]
-      value: 
-      objectReference: {fileID: 1662807209}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: variant.Array.data[4]
-      value: 
-      objectReference: {fileID: 166603823}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: variant.Array.data[5]
-      value: 
-      objectReference: {fileID: 587272239}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
