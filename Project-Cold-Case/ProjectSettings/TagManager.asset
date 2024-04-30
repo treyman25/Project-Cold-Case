@@ -17,6 +17,7 @@ TagManager:
   - Newspapers
   - Family Photo
   - Note
+  - Books
   layers:
   - Default
   - TransparentFX

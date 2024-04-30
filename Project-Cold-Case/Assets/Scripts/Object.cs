@@ -310,7 +310,7 @@ public class Object : MonoBehaviour
         }
     }
 
-    private void OverlapTint(bool value)
+    public void OverlapTint(bool value)
     {
         if (value)
         {
@@ -319,6 +319,28 @@ public class Object : MonoBehaviour
         else
         {
             SR.color = Color.white;
+        }
+
+        if (CompareTag("Books"))
+        {
+            if (value)
+            {
+                variant[0].GetComponent<SpriteRenderer>().color = Color.red;
+                variant[1].GetComponent<SpriteRenderer>().color = Color.red;
+                variant[2].GetComponent<SpriteRenderer>().color = Color.red;
+                variant[3].GetComponent<SpriteRenderer>().color = Color.red;
+                variant[4].GetComponent<SpriteRenderer>().color = Color.red;
+                variant[5].GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                variant[0].GetComponent<SpriteRenderer>().color = Color.white;
+                variant[1].GetComponent<SpriteRenderer>().color = Color.white;
+                variant[2].GetComponent<SpriteRenderer>().color = Color.white;
+                variant[3].GetComponent<SpriteRenderer>().color = Color.white;
+                variant[4].GetComponent<SpriteRenderer>().color = Color.white;
+                variant[5].GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
 
