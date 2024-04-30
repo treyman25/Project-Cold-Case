@@ -108,8 +108,9 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - 
-  - 
+  - I'm 8 days in the past. Does that make this paper up to date now?
+  - This is a paper from the day of the murder. I suppose even people off the grid
+    can be interested in the news.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

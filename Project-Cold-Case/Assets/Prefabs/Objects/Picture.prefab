@@ -108,8 +108,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - 
-  - 
+  - This must be Alex's family. There's also a date on the picture...must be significant.
+  - This must be Alex's family. There's also a date on the picture...must be significant.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []
