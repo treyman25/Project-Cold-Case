@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 97.03}
+  m_AnchoredPosition: {x: 0, y: 150.3}
   m_SizeDelta: {x: 597.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360576454
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -649,6 +649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb24e1ccf8b22624f8aabc1513bd7919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: When completed, this ultimate weapon will spell certain doom for the small
-    band of rebels struggling to restore freedom to the galaxy...
+  myText: The year is 2037 and your name is Hunter Shields. You're a young FBI detective
+    renowned for your incredible intelligence and deductive reasoning. You've gone
+    out and solved the most difficult of cold cases but now you're on the scene to
+    solve the warmest case of them all. You now have to solve the case of a murdered
+    ex government agent, Alex Quinn. It's time to find out what truly happened and
+    make sure you solve another seemingly impossible case.
   myTMPro: {fileID: 360576454}
