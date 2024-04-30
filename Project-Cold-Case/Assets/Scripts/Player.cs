@@ -649,7 +649,7 @@ public class Player : MonoBehaviour
             StartCoroutine(PrintInspectText("Based on the fact I was only told he was an ex-government " +
                 "employee and the oddities of his living quarters..."));
 
-            yield return new WaitForSeconds(6.8f);
+            yield return new WaitForSeconds(7f);
 
             Turn(7);
 
@@ -817,7 +817,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
 
-            yield return new WaitForSeconds(4.8f);
+            yield return new WaitForSeconds(5.2f);
 
             StartCoroutine(PrintInspectText("The autopsy says he died from a stab wound, let's piece together what happened here."));
         }
