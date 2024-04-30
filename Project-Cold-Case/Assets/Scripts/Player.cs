@@ -649,7 +649,7 @@ public class Player : MonoBehaviour
             StartCoroutine(PrintInspectText("Based on the fact I was only told he was an ex-government " +
                 "employee and the oddities of his living quarters..."));
 
-            yield return new WaitForSeconds(6.6f);
+            yield return new WaitForSeconds(6.8f);
 
             Turn(7);
 
