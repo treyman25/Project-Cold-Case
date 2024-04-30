@@ -6674,10 +6674,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Picture
       objectReference: {fileID: 0}
-    - target: {fileID: 7671077522379533796, guid: 74bad7f5f8080c9428362517b84fec9f, type: 3}
-      propertyPath: m_TagString
-      value: Family Photo
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

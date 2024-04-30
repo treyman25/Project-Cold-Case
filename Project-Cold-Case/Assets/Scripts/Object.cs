@@ -271,7 +271,12 @@ public class Object : MonoBehaviour
             float offset = GetVerticalOffset(brokenVersion, gameObject);
 
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
-            myBrokenVersion.transform.Translate(0, offset, 2);
+
+            if (CompareTag("Vase"))
+            {
+                myBrokenVersion.transform.Translate(0, offset, 2);
+            }
+            
 
             AudioSource.PlayClipAtPoint(audioclips[0], transform.position, 1f);
 
