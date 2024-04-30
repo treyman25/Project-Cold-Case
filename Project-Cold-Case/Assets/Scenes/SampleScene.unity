@@ -1659,7 +1659,7 @@ MonoBehaviour:
   transitionPast: {fileID: 456989665}
   transitionPresent: {fileID: 742794766}
   HUD: {fileID: 234498277}
-  floorText: {fileID: 824483471}
+  inspectText: {fileID: 824483471}
   ObjectText1: {fileID: 1855574453}
   ObjectText2: {fileID: 944788150}
   ObjectText3: {fileID: 404168512}
@@ -2826,7 +2826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866279202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.84, y: 0.29371, z: 1}
+  m_LocalPosition: {x: -0.67, y: -0.18, z: 1}
   m_LocalScale: {x: 25.554373, y: 9.722672, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6048,7 +6048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144482583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.376347, y: -0.9526319, z: -5}
+  m_LocalPosition: {x: -33.376347, y: -0.9526319, z: -22.38867}
   m_LocalScale: {x: 0.981657, y: 0.981657, z: 0.981657}
   m_ConstrainProportionsScale: 1
   m_Children: []

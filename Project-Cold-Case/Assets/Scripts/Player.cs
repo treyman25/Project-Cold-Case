@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
     public GameObject HUD;
 
     // Text
-    public TextMeshProUGUI floorText;
+    public TextMeshProUGUI inspectText;
     public TextMeshProUGUI ObjectText1;
     public TextMeshProUGUI ObjectText2;
     public TextMeshProUGUI ObjectText3;
@@ -97,7 +97,8 @@ public class Player : MonoBehaviour
 
         StartCoroutine(StartGameFadeIn(1));
 
-        floorText.text = "";
+        inspectText.text = "";
+        inspectText.gameObject.SetActive(false);
         ObjectText1.gameObject.SetActive(false);
         ObjectText2.gameObject.SetActive(false);
         ObjectText3.gameObject.SetActive(false);
@@ -438,22 +439,25 @@ public class Player : MonoBehaviour
     {
         canClick = false;
 
+        inspectText.gameObject.SetActive(true);
+
         string currentText = "";
 
         for (int i = 0; i < printText.Length; i++)
         {
             currentText += printText[i];
 
-            floorText.text = currentText;
+            inspectText.text = currentText;
 
             yield return new WaitForSeconds(.05f);
         }
 
-        canClick = true;
-
         yield return new WaitForSeconds(1);
 
-        floorText.text = "";
+        canClick = true;
+
+        inspectText.text = "";
+        inspectText.gameObject.SetActive(false);
     }
 
     private void HideButtons()
