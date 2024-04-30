@@ -140,6 +140,8 @@ MonoBehaviour:
   brokenVersion: {fileID: 0}
   variant:
   - {fileID: 6572319548434795184, guid: a9e3e15b0997c754b9a5eb5bf38a311f, type: 3}
+  - {fileID: 4467900898034893867, guid: 1d15e450fddedca4c88e798b9ea8db91, type: 3}
+  - {fileID: 3492884150507078776, guid: 11460ccc2f07ebb47bd7158f53768788, type: 3}
   audioclips: []
 --- !u!61 &1189809988728542394
 BoxCollider2D:

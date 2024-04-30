@@ -98,9 +98,16 @@ public class ActionManager : MonoBehaviour
     {
         GameObject knife = allObjects[1];
         GameObject timeMachine = allObjects[0];
-        if (!knife.GetComponent<Object>().IsHidden() && knife.transform.position.x < timeMachine.transform.position.x)
+        if (!knife.GetComponent<Object>().IsHidden())
         {
-            knife.GetComponent<Object>().ApplySpecialComboId(2);
+            if (knife.transform.position.x < timeMachine.transform.position.x)
+            {
+                knife.GetComponent<Object>().ApplySpecialComboId(2);
+            }
+            else
+            {
+                knife.GetComponent<Object>().ApplySpecialComboId(1);
+            }
         }
 
         GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");

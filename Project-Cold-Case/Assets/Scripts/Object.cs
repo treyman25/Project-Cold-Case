@@ -41,6 +41,7 @@ public class Object : MonoBehaviour
     public GameObject[] variant;
     private bool specialComboApplied = false;
     private GameObject createdVariant;
+    private GameObject createdVariant2;
 
     // Sound
     public AudioClip[] audioclips;
@@ -197,6 +198,12 @@ public class Object : MonoBehaviour
         {
             createdVariant.GetComponent<Object>().ResetObject();
             Destroy(createdVariant);
+        }
+
+        if (createdVariant2 != null)
+        {
+            createdVariant2.GetComponent<Object>().ResetObject();
+            Destroy(createdVariant2);
         }
 
         Hide(false);
@@ -391,9 +398,15 @@ public class Object : MonoBehaviour
 
         switch (id)
         {
-            case 2: // Bloody Knife
+            case 1: // Strangled Note
+                createdVariant = Instantiate(variant[2], new Vector3(4.17749357f, -3.05999994f, 0), Quaternion.identity);
+
+                break;
+
+            case 2: // Bloody Knife && Stab Note
                 Hide(true);
                 createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.41f, transform.position.z), Quaternion.identity);
+                createdVariant2 = Instantiate(variant[1], new Vector3(4.17749357f, -3.05999994f, 0), Quaternion.identity);
 
                 break;
 
