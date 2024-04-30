@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
 
     // Object Breaking
     private bool canBreak = false;
-    private bool canBreakText = false;
 
     // Menus
     public GameObject myCanvas;
@@ -87,6 +86,11 @@ public class Player : MonoBehaviour
     public GameObject dayWindow2;
     public GameObject floorBlood;
     public GameObject fridgeBlood;
+
+    // Dialogues
+    private bool canBreakText = false;
+    private bool firstPastText = false;
+    private bool firstPresentText = false;
 
     void Start()
     {
@@ -608,9 +612,55 @@ public class Player : MonoBehaviour
         floorBlood.SetActive(false);
         fridgeBlood.SetActive(false);
 
+        CloseFridge();
+
         canClick = true;
 
-        CloseFridge();
+        if (!firstPastText)
+        {
+            StartCoroutine(PrintInspectText("???"));
+
+            yield return new WaitForSeconds(.25f);
+
+            Turn(transform.position.x - 2 * (7 - transform.position.x));
+
+            yield return new WaitForSeconds(.25f);
+
+            Turn(7);
+
+            yield return new WaitForSeconds(.5f);
+
+            Turn(transform.position.x - 2 * (7 - transform.position.x));
+
+            yield return new WaitForSeconds(.5f);
+
+            Turn(7);
+
+            StartCoroutine(PrintInspectText("What happened to me? The crime scene is different, " +
+                "as if no crime was committed."));
+
+            yield return new WaitForSeconds(5.5f);
+
+            Turn(transform.position.x - 2 * (7 - transform.position.x));
+
+            StartCoroutine(PrintInspectText("Based on the fact I was only told he was an ex-government " +
+                "employee and the oddities of his living quarters..."));
+
+            yield return new WaitForSeconds(6.6f);
+
+            Turn(7);
+
+            StartCoroutine(PrintInspectText("He must've been working on time travel, " +
+                "and this is the fruits of his labor."));
+
+            yield return new WaitForSeconds(5.6f);
+
+            Turn(transform.position.x - 2 * (7 - transform.position.x));
+
+            StartCoroutine(PrintInspectText("Let's see what I can do now that I've been sent back in time."));
+
+            firstPastText = true;
+        }
     }
 
     IEnumerator PresentTransition()
@@ -649,6 +699,17 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PrintInspectText("Alex must have fixed this wire before he was killed."));
             canBreakText = true;
+        }
+
+        if (!firstPresentText)
+        {
+            StartCoroutine(PrintInspectText("That's going to take some getting used to..."));
+
+            yield return new WaitForSeconds(4f);
+
+            StartCoroutine(PrintInspectText("That aside, let's see how things have changed based on what I've done."));
+
+            firstPresentText = true;
         }
     }
 
@@ -742,7 +803,11 @@ public class Player : MonoBehaviour
         }
 
         blackOverlay.SetActive(false);
-        StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene. The autopsy says he died from a stab wound, let's piece together what happened here."));
+        StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
+
+        yield return new WaitForSeconds(4.8f);
+
+        StartCoroutine(PrintInspectText("The autopsy says he died from a stab wound, let's piece together what happened here."));
     }
 
     private void SetTransparency(float percentage)
