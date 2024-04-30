@@ -103,6 +103,7 @@ public class ActionManager : MonoBehaviour
             if (knife.transform.position.x < timeMachine.transform.position.x)
             {
                 knife.GetComponent<Object>().ApplySpecialComboId(2);
+                player.PlaceBlood();
             }
             else
             {

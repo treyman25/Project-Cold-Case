@@ -53,9 +53,6 @@ public class Player : MonoBehaviour
     public GameObject openLockboxButton;
 
     // Time Travel
-    public GameObject darkOverlay;
-    public GameObject dayWindow1;
-    public GameObject dayWindow2;
     private bool inPast = false;
     private ActionManager AM;
     public GameObject transitionPast;
@@ -84,6 +81,12 @@ public class Player : MonoBehaviour
     public AudioClip putdownClip;
     public AudioClip fridgeClip;
 
+    // Decor
+    public GameObject darkOverlay;
+    public GameObject dayWindow1;
+    public GameObject dayWindow2;
+    public GameObject floorBlood;
+    public GameObject fridgeBlood;
 
     void Start()
     {
@@ -598,6 +601,8 @@ public class Player : MonoBehaviour
         AM.ResetActions();
 
         ShowDayDecor(true);
+        floorBlood.SetActive(false);
+        fridgeBlood.SetActive(false);
 
         canClick = true;
 
@@ -753,5 +758,11 @@ public class Player : MonoBehaviour
     public void HasPrinted(bool value)
     {
         hasPrinted = value;
+    }
+
+    public void PlaceBlood()
+    {
+        floorBlood.SetActive(true);
+        fridgeBlood.SetActive(true);
     }
 }

@@ -820,13 +820,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277787424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2382393, y: -3.512, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.957383, y: -5.278814, z: -22.388676}
+  m_LocalScale: {x: 0.86110294, y: 0.86110294, z: 0.86110294}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 1658916552}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280803083
 GameObject:
@@ -1656,9 +1656,6 @@ MonoBehaviour:
   goBackButton: {fileID: 1046166884}
   openFridgeButton: {fileID: 131826257}
   openLockboxButton: {fileID: 470700395}
-  darkOverlay: {fileID: 1108587215}
-  dayWindow1: {fileID: 1138409773}
-  dayWindow2: {fileID: 824412575}
   transitionPast: {fileID: 456989665}
   transitionPresent: {fileID: 742794766}
   HUD: {fileID: 234498277}
@@ -1675,6 +1672,11 @@ MonoBehaviour:
   pickupClip: {fileID: 8300000, guid: 9908afc2f758d8e41a802ce5f43eeca2, type: 3}
   putdownClip: {fileID: 8300000, guid: 7463f7208e10b844c8b4723e1719d36c, type: 3}
   fridgeClip: {fileID: 8300000, guid: e1fbffda27c2cd84e993f5cb79483738, type: 3}
+  darkOverlay: {fileID: 1108587215}
+  dayWindow1: {fileID: 1138409773}
+  dayWindow2: {fileID: 824412575}
+  floorBlood: {fileID: 277787424}
+  fridgeBlood: {fileID: 1565928755}
 --- !u!212 &498146444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4591,13 +4593,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565928755}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.187, y: -3.108, z: 0.5}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.045628, y: -4.5830426, z: -21.527573}
+  m_LocalScale: {x: 0.86110294, y: 0.86110294, z: 0.86110294}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 1658916552}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622516040
 GameObject:
@@ -4780,6 +4782,8 @@ Transform:
   - {fileID: 885433066}
   - {fileID: 1025163849}
   - {fileID: 1765071755}
+  - {fileID: 1565928757}
+  - {fileID: 277787426}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
