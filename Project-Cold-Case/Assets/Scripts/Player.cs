@@ -740,7 +740,7 @@ public class Player : MonoBehaviour
         }
 
         blackOverlay.SetActive(false);
-        canClick = true;
+        StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene. The autopsy says he died from a stab wound, let's piece together what happened here."));
     }
 
     private void SetTransparency(float percentage)
