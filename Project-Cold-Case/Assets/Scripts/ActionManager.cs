@@ -134,5 +134,10 @@ public class ActionManager : MonoBehaviour
         {
             cheese.GetComponent<Object>().Hide(true);
         }
+
+        GameObject frame = allObjects[11];
+
+        // Update if moved
+        frame.transform.position = new Vector3(0.328000009f, -0.400000006f, 0);
     }
 }
