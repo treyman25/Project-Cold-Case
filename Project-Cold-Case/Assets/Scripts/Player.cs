@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     public GameObject dayWindow2;
     public GameObject floorBlood;
     public GameObject fridgeBlood;
+    public GameObject scatteredBooks;
 
     // Dialogues
     private bool canBreakText = false;
@@ -612,6 +613,7 @@ public class Player : MonoBehaviour
         ShowDayDecor(true);
         floorBlood.SetActive(false);
         fridgeBlood.SetActive(false);
+        scatteredBooks.SetActive(false);
 
         CloseFridge();
 
@@ -711,6 +713,11 @@ public class Player : MonoBehaviour
             StartCoroutine(PrintInspectText("That aside, let's see how things have changed based on what I've done."));
 
             firstPresentText = true;
+        }
+
+        if (hasPrinted)
+        {
+            objects[5].GetComponent<Object>().ApplySpecialComboId(7);
         }
     }
 
@@ -832,5 +839,10 @@ public class Player : MonoBehaviour
     {
         floorBlood.SetActive(true);
         fridgeBlood.SetActive(true);
+    }
+
+    public void ScatterBooks()
+    {
+        scatteredBooks.SetActive(true);
     }
 }

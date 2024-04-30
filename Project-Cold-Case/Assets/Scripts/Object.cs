@@ -325,21 +325,17 @@ public class Object : MonoBehaviour
         {
             if (value)
             {
-                variant[0].GetComponent<SpriteRenderer>().color = Color.red;
-                variant[1].GetComponent<SpriteRenderer>().color = Color.red;
-                variant[2].GetComponent<SpriteRenderer>().color = Color.red;
-                variant[3].GetComponent<SpriteRenderer>().color = Color.red;
-                variant[4].GetComponent<SpriteRenderer>().color = Color.red;
-                variant[5].GetComponent<SpriteRenderer>().color = Color.red;
+                foreach (var book in variant)
+                {
+                    book.GetComponent<SpriteRenderer>().color = Color.red;
+                }
             }
             else
             {
-                variant[0].GetComponent<SpriteRenderer>().color = Color.white;
-                variant[1].GetComponent<SpriteRenderer>().color = Color.white;
-                variant[2].GetComponent<SpriteRenderer>().color = Color.white;
-                variant[3].GetComponent<SpriteRenderer>().color = Color.white;
-                variant[4].GetComponent<SpriteRenderer>().color = Color.white;
-                variant[5].GetComponent<SpriteRenderer>().color = Color.white;
+                foreach (var book in variant)
+                {
+                    book.GetComponent<SpriteRenderer>().color = Color.white;
+                }
             }
         }
     }

@@ -98,6 +98,7 @@ public class ActionManager : MonoBehaviour
     {
         GameObject knife = allObjects[1];
         GameObject timeMachine = allObjects[0];
+
         if (!knife.GetComponent<Object>().IsHidden())
         {
             if (knife.transform.position.x < timeMachine.transform.position.x)
@@ -139,5 +140,13 @@ public class ActionManager : MonoBehaviour
 
         // Update if moved
         frame.transform.position = new Vector3(0.328000009f, -0.400000006f, 0);
+
+        GameObject books = allObjects[8];
+
+        //if (books.transform.position.x > -1 && books.transform.position.x < 5)
+        //{
+        //    books.GetComponent<Object>().Hide(true);
+        //    player.ScatterBooks();
+        //}
     }
 }
