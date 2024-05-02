@@ -231,7 +231,7 @@ public class Object : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (gameObject.CompareTag("Cheese"))
+        if (gameObject.CompareTag("Cheese") || gameObject.CompareTag("Pickles"))
         {
             Hide(true);
         }
