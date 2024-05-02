@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
     public GameObject floorBlood;
     public GameObject fridgeBlood;
     public GameObject scatteredBooks;
+    public GameObject tape;
 
     // Dialogues
     private bool canBreakText = false;
@@ -725,6 +726,7 @@ public class Player : MonoBehaviour
         darkOverlay.SetActive(!value);
         dayWindow1.SetActive(value);
         dayWindow2.SetActive(value);
+        tape.SetActive(!value);
     }
 
     public GameObject[] GetObjects()
