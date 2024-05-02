@@ -277,13 +277,11 @@ public class Object : MonoBehaviour
     {
         if (brokenVersion != null)
         {
-            float offset = GetVerticalOffset(brokenVersion, gameObject);
-
             myBrokenVersion = Instantiate(brokenVersion, transform.position, Quaternion.identity);
 
             if (CompareTag("Vase"))
             {
-                myBrokenVersion.transform.Translate(0, offset, 2);
+                myBrokenVersion.transform.Translate(0, 0, 2);
             }
             
 
