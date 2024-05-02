@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     private bool hasClicked = false;
     private bool canClick = false;
     private SpriteRenderer SR;
+    public Texture2D objectCursor;
+    private bool isDefaultCursor = true;
 
     // Character Movement
     private Animator Anim;
@@ -160,6 +162,8 @@ public class Player : MonoBehaviour
     private void UpdateMousePosition()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        ObjectCursor(CheckMouseOverObject());
     }
 
     private void MoveToLocation(Vector2 target)
@@ -229,6 +233,19 @@ public class Player : MonoBehaviour
         }
 
         return b != null;
+    }
+
+    private bool CheckMouseOverObject()
+    {
+        Collider2D touchedCollider = Physics2D.OverlapPoint(mousePosition);
+        Object o = null;
+
+        if (touchedCollider != null)
+        {
+            o = touchedCollider.transform.gameObject.GetComponent<Object>();
+        }
+
+        return o != null;
     }
 
     private void DropObject()
@@ -900,5 +917,19 @@ public class Player : MonoBehaviour
     public void CancelQuit()
     {
         quitMenu.SetActive(false);
+    }
+
+    private void ObjectCursor(bool overObject)
+    {
+        if (overObject && isDefaultCursor)
+        {
+            isDefaultCursor = false;
+            Cursor.SetCursor(objectCursor, Vector2.zero, CursorMode.Auto);
+        }
+        else if (!overObject && !isDefaultCursor)
+        {
+            isDefaultCursor = true;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
     }
 }
