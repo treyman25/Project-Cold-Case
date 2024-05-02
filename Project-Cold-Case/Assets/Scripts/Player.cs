@@ -95,6 +95,12 @@ public class Player : MonoBehaviour
     private bool firstPresentText = true;
     private bool printStartText = false;
 
+    // Pausing
+    public GameObject pauseMenu;
+    public GameObject quitMenu;
+    private bool couldClick = false;
+    private bool isPaused = false;
+
     void Start()
     {
         Anim = GetComponent<Animator>();
@@ -136,6 +142,18 @@ public class Player : MonoBehaviour
         if (clickedObject != null & !isMoving && hasChosenMove)
         {
             MoveObject();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                Pause();
+            }
+            else
+            {
+                Resume();
+            }
         }
     }
 
@@ -847,5 +865,40 @@ public class Player : MonoBehaviour
     public void ScatterBooks()
     {
         scatteredBooks.SetActive(true);
+    }
+
+    private void Pause()
+    {
+        couldClick = canClick;
+        canClick = false;
+
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+
+        isPaused = true;
+    }
+
+    public void Resume()
+    {
+        canClick = couldClick;
+
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+
+        isPaused = false;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    public void ChooseQuit()
+    {
+        quitMenu.SetActive(true);
+    }
+
+    public void CancelQuit()
+    {
+        quitMenu.SetActive(false);
     }
 }

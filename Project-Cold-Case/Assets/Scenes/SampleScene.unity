@@ -789,7 +789,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 498146443}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChangeToPast
+        m_MethodName: ChooseQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2363,6 +2363,8 @@ MonoBehaviour:
   fridgeBlood: {fileID: 1565928755}
   scatteredBooks: {fileID: 6477721380428490876}
   tape: {fileID: 948962774}
+  pauseMenu: {fileID: 1454239497}
+  quitMenu: {fileID: 640512361}
 --- !u!212 &498146444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5899,7 +5901,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 498146443}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChangeToPast
+        m_MethodName: CancelQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7525,7 +7527,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 498146443}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChooseMoveObject
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8153,7 +8155,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 498146443}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChooseMoveObject
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
