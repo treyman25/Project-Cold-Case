@@ -18,6 +18,7 @@ TagManager:
   - Family Photo
   - Note
   - Books
+  - Chair
   layers:
   - Default
   - TransparentFX

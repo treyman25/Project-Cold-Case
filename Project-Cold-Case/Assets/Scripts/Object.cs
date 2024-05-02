@@ -46,6 +46,9 @@ public class Object : MonoBehaviour
     // Sound
     public AudioClip[] audioclips;
 
+    // Spawning
+    private float floorY = -3.5f;
+
 
     private void Start()
     {
@@ -58,6 +61,12 @@ public class Object : MonoBehaviour
         canHide = isHider;
 
         inspectText = null;
+
+        if (isVariant)
+        {
+            SnapToGround();
+        }
+
     }
 
     public bool IsInspectable()
@@ -481,5 +490,38 @@ public class Object : MonoBehaviour
         float secondHeight = second.GetComponent<Collider2D>().bounds.extents.y;
 
         return (firstHeight - secondHeight) + (secondHeight / 4);
+    }
+
+    private void SnapToGround()
+    {
+        float objectHeight = GetComponent<SpriteRenderer>().bounds.size.y;
+
+        if (transform.position.x > 11 && transform.position.x < 15 && transform.position.y > -2f)
+        {
+            transform.position = new Vector3(originalPosition.x, -1.75f + (objectHeight / 2), originalPosition.z);
+        }
+        else if (transform.position.x > -.4 && transform.position.x < 3.4)
+        {
+            if (transform.position.y > 0)
+            {
+                transform.position = new Vector3(originalPosition.x, .457f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > -1)
+            {
+                transform.position = new Vector3(originalPosition.x, -.68f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > -2)
+            {
+                transform.position = new Vector3(originalPosition.x, -1.9f + (objectHeight / 2), originalPosition.z);
+            }
+            else
+            {
+                transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
+            }
+        }
+        else
+        {
+            transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
+        }
     }
 }
