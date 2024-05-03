@@ -438,7 +438,7 @@ public class Object : MonoBehaviour
 
             case 2: // Bloody Knife && Stab Note
                 Hide(true);
-                createdVariant = Instantiate(variant[0], new Vector3(transform.position.x, -3.41f, transform.position.z), Quaternion.identity);
+                createdVariant = Instantiate(variant[0], new Vector3(-2.31999993f, -3.41967106f, 0), Quaternion.identity);
                 createdVariant2 = Instantiate(variant[1], new Vector3(4.17749357f, -3.05999994f, 0), Quaternion.identity);
 
                 break;
@@ -483,6 +483,13 @@ public class Object : MonoBehaviour
             case 8: // Printed Printer
                 Hide(true);
                 createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
+
+                break;
+
+            case 9: // Bloody Dumbbell && Bludgeon Note
+                Hide(true);
+                createdVariant = Instantiate(variant[0], new Vector3(-2.06435418f, -3.20000005f, 0), Quaternion.identity);
+                createdVariant2 = Instantiate(variant[1], new Vector3(4.17749357f, -3.05999994f, 0), Quaternion.identity);
 
                 break;
 

@@ -99,7 +99,7 @@ public class ActionManager : MonoBehaviour
         GameObject knife = allObjects[1];
         GameObject timeMachine = allObjects[0];
 
-        if (knife.transform.position.x < timeMachine.transform.position.x && !knife.GetComponent<Object>().IsHidden())
+        if (!knife.GetComponent<Object>().IsHidden())
         {
             knife.GetComponent<Object>().ApplySpecialComboId(2);
             player.PlaceBlood();

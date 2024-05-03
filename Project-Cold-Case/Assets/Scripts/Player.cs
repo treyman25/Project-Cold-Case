@@ -95,10 +95,10 @@ public class Player : MonoBehaviour
     public GameObject tape;
 
     // Dialogues
-    private bool canBreakText = false;
-    private bool firstPastText = false;
-    private bool firstPresentText = false;
-    private bool printStartText = true;
+    private bool canBreakText = true; // f
+    private bool firstPastText = true; // f
+    private bool firstPresentText = true; // f
+    private bool printStartText = false; // t
 
     // Pausing
     public GameObject pauseMenu;
