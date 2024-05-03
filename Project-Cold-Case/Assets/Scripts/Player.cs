@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
     public GameObject quitMenu;
     private bool couldClick = false;
     private bool isPaused = false;
+    private bool wasCursorVisible = true;
 
     void Start()
     {
@@ -943,6 +944,11 @@ public class Player : MonoBehaviour
     {
         canClick = couldClick;
 
+        if (!isPrinting && !finishedTextOnScreen)
+        {
+            canClick = true;
+        }
+
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
 
@@ -965,14 +971,18 @@ public class Player : MonoBehaviour
 
     private void ObjectCursor(bool overObject)
     {
-        if (canClick)
+        if (!canClick)
+        {
+            Cursor.visible = false;
+        }
+        else
         {
             if (Cursor.visible == false)
             {
                 Cursor.visible = true;
             }
 
-            if (overObject && isDefaultCursor)
+            if (overObject && isDefaultCursor && !isPaused)
             {
                 isDefaultCursor = false;
                 Cursor.SetCursor(objectCursor, Vector2.zero, CursorMode.Auto);
@@ -982,10 +992,6 @@ public class Player : MonoBehaviour
                 isDefaultCursor = true;
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             }
-        }
-        else
-        {
-            Cursor.visible = false;
         }
     }
 }
