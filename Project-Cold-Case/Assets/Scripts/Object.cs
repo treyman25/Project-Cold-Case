@@ -67,6 +67,10 @@ public class Object : MonoBehaviour
             SnapToGround();
         }
 
+        if (CompareTag("Printer") && isInspectable && isVariant)
+        {
+            StartCoroutine(PrintoutPage());
+        }
     }
 
     public bool IsInspectable()
@@ -411,7 +415,6 @@ public class Object : MonoBehaviour
 
                 Player p = GameObject.Find("Player").GetComponent<Player>();
                 p.HasPrinted(true);
-
                 break;
 
             default:
@@ -477,6 +480,12 @@ public class Object : MonoBehaviour
 
                 break;
 
+            case 8: // Printed Printer
+                Hide(true);
+                createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
+
+                break;
+
             default:
                 break;
         }
@@ -521,5 +530,12 @@ public class Object : MonoBehaviour
         {
             transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
         }
+    }
+
+    IEnumerator PrintoutPage()
+    {
+        yield return new WaitForSeconds(2);
+
+        ApplySpecialComboId(8);
     }
 }

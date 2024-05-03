@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     public GameObject goBackButton;
     public GameObject openFridgeButton;
     public GameObject openLockboxButton;
+    public GameObject inspectPageButton;
 
     // Time Travel
     private bool inPast = false;
@@ -104,7 +105,9 @@ public class Player : MonoBehaviour
     public GameObject quitMenu;
     private bool couldClick = false;
     private bool isPaused = false;
-    private bool wasCursorVisible = true;
+
+    // Overlays
+    public GameObject printedOverlay;
 
     void Start()
     {
@@ -136,6 +139,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && finishedTextOnScreen)
         {
             EraseInspectText();
+            CloseOverlay();
         }
 
         if (isMoving)
@@ -396,6 +400,7 @@ public class Player : MonoBehaviour
             goBackButton.transform.Translate(-3.5f, 0, 0);
             openFridgeButton.transform.Translate(-3.5f, 0, 0);
             openLockboxButton.transform.Translate(-3.5f, 0, 0);
+            inspectPageButton.transform.Translate(-3.5f, 0, 0);
             ObjectText1.transform.Translate(-3.5f, 0, 0);
             ObjectText2.transform.Translate(-3.5f, 0, 0);
             ObjectText3.transform.Translate(-3.5f, 0, 0);
@@ -412,6 +417,7 @@ public class Player : MonoBehaviour
             goBackButton.transform.Translate(3.5f, 0, 0);
             openFridgeButton.transform.Translate(3.5f, 0, 0);
             openLockboxButton.transform.Translate(3.5f, 0, 0);
+            inspectPageButton.transform.Translate(3.5f, 0, 0);
             ObjectText1.transform.Translate(3.5f, 0, 0);
             ObjectText2.transform.Translate(3.5f, 0, 0);
             ObjectText3.transform.Translate(3.5f, 0, 0);
@@ -537,6 +543,7 @@ public class Player : MonoBehaviour
         goBackButton.SetActive(false);
         openFridgeButton.SetActive(false);
         openLockboxButton.SetActive(false);
+        inspectPageButton.SetActive(false);
 
         ObjectText1.gameObject.SetActive(false);
         ObjectText2.gameObject.SetActive(false);
@@ -603,6 +610,15 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 openLockboxButton.SetActive(true);
+                numButtons++;
+            }
+        }
+
+        if (clickedObject.CompareTag("Printer") && !clickedObject.GetComponent<Object>().IsInspectable())
+        {
+            if (hasChosenMove == false)
+            {
+                inspectPageButton.SetActive(true);
                 numButtons++;
             }
         }
@@ -944,6 +960,7 @@ public class Player : MonoBehaviour
     {
         Application.Quit();
     }
+
     public void ChooseQuit()
     {
         quitMenu.SetActive(true);
@@ -997,5 +1014,24 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         Turn(7);
+    }
+
+    public void InspectPrintout()
+    {
+        printedOverlay.SetActive(true);
+
+        string printText = clickedObject.GetComponent<Object>().GetInspectText(0);
+
+        StartCoroutine(PrintInspectText(printText));
+
+        DeselectObject();
+    }
+
+    private void CloseOverlay()
+    {
+        if (printedOverlay.activeSelf == true)
+        {
+            printedOverlay.SetActive(false);
+        }
     }
 }
