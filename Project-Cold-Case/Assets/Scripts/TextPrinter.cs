@@ -71,7 +71,7 @@ public class TextPrinter : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
-                printSpeed = .025f;
+                printSpeed = .01f;
             }
 
             currentText += printText[i];
