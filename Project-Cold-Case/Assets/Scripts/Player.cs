@@ -681,6 +681,7 @@ public class Player : MonoBehaviour
         if (!firstPastText)
         {
             StartCoroutine(PrintInspectText("???"));
+            canClick = false;
 
             yield return new WaitForSeconds(.25f);
 

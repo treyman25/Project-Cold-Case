@@ -148,5 +148,8 @@ public class ActionManager : MonoBehaviour
         //    books.GetComponent<Object>().Hide(true);
         //    player.ScatterBooks();
         //}
+
+        GameObject pickles = allObjects[13];
+        pickles.GetComponent<Object>().Hide(true);
     }
 }
