@@ -8896,6 +8896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 7044255603986069196, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: This is Alex's only furniture. He must sleep at the desk.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9571,6 +9575,14 @@ PrefabInstance:
     - target: {fileID: 4221654507784110575, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129372619111821457, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: There are no pickles inside, just juice. What could this mean?
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129372619111821457, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
+      propertyPath: myText.Array.data[1]
+      value: There are no pickles inside, just juice. What could this mean?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

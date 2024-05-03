@@ -108,8 +108,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 1
   myText:
-  - That chair was really rickety.
-  - Oops. Now where am I going to sit?
+  - It's nice to destroy something with no consequences.
+  - It's nice to destroy something with no consequences.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []
