@@ -1842,7 +1842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384698356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.17, z: 9.25}
+  m_LocalPosition: {x: 0, y: -1.17, z: 8.25}
   m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10052,6 +10052,14 @@ PrefabInstance:
     - target: {fileID: 6970057893794921835, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: What are you hiding Alex?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
+      propertyPath: myText.Array.data[1]
+      value: They appear to mostly be sci-fi novels.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
