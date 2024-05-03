@@ -314,6 +314,10 @@ public class Object : MonoBehaviour
         {
             SR.enabled = !value;
         }
+        else
+        {
+            Debug.Log("Sprite Renderer not found!");
+        }
         
         if (GetComponent<Collider2D>() != null)
         {
@@ -487,6 +491,7 @@ public class Object : MonoBehaviour
                 break;
 
             case 9: // Bloody Dumbbell && Bludgeon Note
+                Debug.Log(tag);
                 Hide(true);
                 createdVariant = Instantiate(variant[0], new Vector3(-2.06435418f, -3.20000005f, 0), Quaternion.identity);
                 createdVariant2 = Instantiate(variant[1], new Vector3(4.17749357f, -3.05999994f, 0), Quaternion.identity);

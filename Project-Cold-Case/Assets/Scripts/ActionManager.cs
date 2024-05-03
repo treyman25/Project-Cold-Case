@@ -97,11 +97,17 @@ public class ActionManager : MonoBehaviour
     public void ApplyCombos()
     {
         GameObject knife = allObjects[1];
+        GameObject dumbbell = allObjects[16];
         GameObject timeMachine = allObjects[0];
 
         if (!knife.GetComponent<Object>().IsHidden())
         {
             knife.GetComponent<Object>().ApplySpecialComboId(2);
+            player.PlaceBlood();
+        }
+        else if (!dumbbell.GetComponent<Object>().IsHidden())
+        {
+            dumbbell.GetComponent<Object>().ApplySpecialComboId(9);
             player.PlaceBlood();
         }
         else
