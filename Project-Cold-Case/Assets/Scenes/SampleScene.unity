@@ -2515,7 +2515,7 @@ MonoBehaviour:
   - {fileID: 1078988868}
   - {fileID: 1079771777}
   blackOverlay: {fileID: 1367135257}
-  objectCursor: {fileID: 2800000, guid: 545476c42ca9e424788d6eb2969ce0b7, type: 3}
+  objectCursor: {fileID: 2800000, guid: e8610dc0da6cd4d44a75f6895cd48bbd, type: 3}
   myCanvas: {fileID: 1241770242}
   inspectButton: {fileID: 1126672682}
   moveButton: {fileID: 1674836473}
