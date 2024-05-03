@@ -112,6 +112,8 @@ public class Player : MonoBehaviour
         SR = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
 
+        Cursor.visible = false;
+
         StartCoroutine(StartGameFadeIn(1));
 
         inspectText.text = "";
@@ -676,14 +678,12 @@ public class Player : MonoBehaviour
 
         CloseFridge();
 
-        canClick = true;
-
         if (!firstPastText)
         {
             StartCoroutine(PrintInspectText("???"));
-            canClick = false;
 
             yield return new WaitForSeconds(.25f);
+            canClick = false;
 
             Turn(transform.position.x - 2 * (7 - transform.position.x));
 
@@ -738,6 +738,11 @@ public class Player : MonoBehaviour
 
             firstPastText = true;
         }
+        else
+        {
+
+            canClick = true;
+        }
     }
 
     IEnumerator PresentTransition()
@@ -789,11 +794,6 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PrintInspectText("Alex must have fixed this wire before he was killed."));
             canBreakText = true;
-        }
-
-        if (hasPrinted)
-        {
-            objects[5].GetComponent<Object>().ApplySpecialComboId(7);
         }
     }
 
@@ -965,15 +965,27 @@ public class Player : MonoBehaviour
 
     private void ObjectCursor(bool overObject)
     {
-        if (overObject && isDefaultCursor)
+        if (canClick)
         {
-            isDefaultCursor = false;
-            Cursor.SetCursor(objectCursor, Vector2.zero, CursorMode.Auto);
+            if (Cursor.visible == false)
+            {
+                Cursor.visible = true;
+            }
+
+            if (overObject && isDefaultCursor)
+            {
+                isDefaultCursor = false;
+                Cursor.SetCursor(objectCursor, Vector2.zero, CursorMode.Auto);
+            }
+            else if (!overObject && !isDefaultCursor)
+            {
+                isDefaultCursor = true;
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
         }
-        else if (!overObject && !isDefaultCursor)
+        else
         {
-            isDefaultCursor = true;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            Cursor.visible = false;
         }
     }
 }
