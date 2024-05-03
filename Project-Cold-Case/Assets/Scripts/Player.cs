@@ -683,22 +683,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PrintInspectText("???"));
 
-            yield return new WaitForSeconds(.25f);
-            canClick = false;
-
-            Turn(transform.position.x - 2 * (7 - transform.position.x));
-
-            yield return new WaitForSeconds(.25f);
-
-            Turn(7);
-
-            yield return new WaitForSeconds(.5f);
-
-            Turn(transform.position.x - 2 * (7 - transform.position.x));
-
-            yield return new WaitForSeconds(.5f);
-
-            Turn(7);
+            StartCoroutine(LookAround());
 
             while (isPrinting || finishedTextOnScreen)
             {
@@ -993,5 +978,24 @@ public class Player : MonoBehaviour
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             }
         }
+    }
+
+    IEnumerator LookAround()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        Turn(transform.position.x - 2 * (7 - transform.position.x));
+
+        yield return new WaitForSeconds(.25f);
+
+        Turn(7);
+
+        yield return new WaitForSeconds(.5f);
+
+        Turn(transform.position.x - 2 * (7 - transform.position.x));
+
+        yield return new WaitForSeconds(.5f);
+
+        Turn(7);
     }
 }
