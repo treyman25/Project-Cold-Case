@@ -65,6 +65,8 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI ObjectText1;
     public TextMeshProUGUI ObjectText2;
     public TextMeshProUGUI ObjectText3;
+    private bool finishedTextOnScreen = false;
+    private bool isPrinting = false;
 
     // Special Objects
     public GameObject fridge;
@@ -93,9 +95,9 @@ public class Player : MonoBehaviour
 
     // Dialogues
     private bool canBreakText = false;
-    private bool firstPastText = true;
-    private bool firstPresentText = true;
-    private bool printStartText = false;
+    private bool firstPastText = false;
+    private bool firstPresentText = false;
+    private bool printStartText = true;
 
     // Pausing
     public GameObject pauseMenu;
@@ -126,6 +128,11 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canClick)
         {
             ProcessClick();
+        }
+
+        if (Input.GetMouseButtonDown(0) && finishedTextOnScreen)
+        {
+            EraseInspectText();
         }
 
         if (isMoving)
@@ -480,26 +487,42 @@ public class Player : MonoBehaviour
     IEnumerator PrintInspectText(string printText)
     {
         canClick = false;
+        isPrinting = true;
 
         inspectText.gameObject.SetActive(true);
 
         string currentText = "";
 
+        float printSpeed = .05f;
+
         for (int i = 0; i < printText.Length; i++)
         {
+            printSpeed = .05f;
+
+            if (Input.GetMouseButton(0))
+            {
+                printSpeed = .025f;
+            }
+
             currentText += printText[i];
 
             inspectText.text = currentText;
 
-            yield return new WaitForSeconds(.05f);
+            yield return new WaitForSeconds(printSpeed);
         }
 
-        yield return new WaitForSeconds(1);
+        isPrinting = false;
+        finishedTextOnScreen = true;
+    }
 
+    private void EraseInspectText()
+    {
         canClick = true;
 
         inspectText.text = "";
         inspectText.gameObject.SetActive(false);
+
+        finishedTextOnScreen = false;
     }
 
     private void HideButtons()
@@ -675,24 +698,38 @@ public class Player : MonoBehaviour
 
             Turn(7);
 
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+
             StartCoroutine(PrintInspectText("What happened to me? The crime scene is different, " +
                 "as if no crime was committed."));
 
-            yield return new WaitForSeconds(5.5f);
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             Turn(transform.position.x - 2 * (7 - transform.position.x));
 
             StartCoroutine(PrintInspectText("Based on the fact I was only told he was an ex-government " +
                 "employee and the oddities of his living quarters..."));
 
-            yield return new WaitForSeconds(7f);
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             Turn(7);
 
             StartCoroutine(PrintInspectText("He must've been working on time travel, " +
                 "and this is the fruits of his labor."));
 
-            yield return new WaitForSeconds(5.6f);
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             Turn(transform.position.x - 2 * (7 - transform.position.x));
 
@@ -738,7 +775,10 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PrintInspectText("That's going to take some getting used to..."));
 
-            yield return new WaitForSeconds(4f);
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             StartCoroutine(PrintInspectText("That aside, let's see how things have changed based on what I've done."));
 
@@ -856,7 +896,10 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
 
-            yield return new WaitForSeconds(5.2f);
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             StartCoroutine(PrintInspectText("The autopsy says he died from a stab wound, let's piece together what happened here."));
         }
