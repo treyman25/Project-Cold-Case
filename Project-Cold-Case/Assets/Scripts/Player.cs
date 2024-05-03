@@ -444,6 +444,12 @@ public class Player : MonoBehaviour
 
     public void ChooseMoveObject()
     {
+        if (clickedObject.CompareTag("Dumbbell") && !canBreak)
+        {
+            StartCoroutine(PrintInspectText("I don't feel strong enough to move that right now."));
+            DeselectObject();
+            return;
+        }
         clickedObject.GetComponent<Object>().SetMoving(true);
         hasChosenMove = true;
         HideButtons();
