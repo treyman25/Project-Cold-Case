@@ -980,7 +980,7 @@ public class Player : MonoBehaviour
 
     private void ObjectCursor(bool overObject)
     {
-        if (!canClick)
+        if (!canClick && !isPaused)
         {
             Cursor.visible = false;
         }
