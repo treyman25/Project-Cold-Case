@@ -2578,8 +2578,8 @@ MonoBehaviour:
   myZLevel: -1.1
   canMove: 1
   floorY: -3.5
-  leftBound: -8
-  rightBound: 16
+  leftBound: -7
+  rightBound: 19.5
   objects:
   - {fileID: 1879394037}
   - {fileID: 1437854443}

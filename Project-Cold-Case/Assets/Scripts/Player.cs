@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float myZLevel = -1.1f;
     [SerializeField] private bool canMove = true;
     [SerializeField] private float floorY = -3.5f;
-    [SerializeField] private float leftBound = -8;
-    [SerializeField] private float rightBound = 16;
+    [SerializeField] private float leftBound = -7;
+    [SerializeField] private float rightBound = 19.8f;
 
     // Objects
     public GameObject[] objects;
@@ -429,7 +429,7 @@ public class Player : MonoBehaviour
 
     private void MoveObject()
     {
-        if (mousePosition.x + offset.x < 16.2 && mousePosition.x + offset.x > - 8)
+        if (mousePosition.x + offset.x < rightBound && mousePosition.x + offset.x > - leftBound)
         {
             clickedObject.transform.position = new Vector3(mousePosition.x + offset.x, clickedObject.transform.position.y, clickedObject.transform.position.z);
         }
