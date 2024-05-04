@@ -446,7 +446,7 @@ public class Player : MonoBehaviour
     {
         if (clickedObject.CompareTag("Dumbbell") && !canBreak)
         {
-            StartCoroutine(PrintInspectText("I don't feel strong enough to move that right now."));
+            StartCoroutine(PrintInspectText("I don't feel strong enough to move that right now. The machine that sent me here must have some issues."));
             DeselectObject();
             return;
         }
@@ -491,7 +491,7 @@ public class Player : MonoBehaviour
 
             if (clickedObject != null)
             {
-                printText = "I don't feel strong enough to break that right now.";
+                printText = "I don't feel strong enough to break that right now. The machine that sent me here must have some issues.";
             }
 
             StartCoroutine(PrintInspectText(printText));
@@ -920,6 +920,7 @@ public class Player : MonoBehaviour
         newColor.a = percentage;
         SR.color = newColor;
     }
+
     public void HasPrinted(bool value)
     {
         hasPrinted = value;

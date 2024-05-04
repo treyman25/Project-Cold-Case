@@ -135,8 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 1
   myText:
-  - 
-  - 
+  - Wait what is that? It seems like there was something inside the vase after all.
+  - Looks like Alex didn't have time to clean up this mess.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []
