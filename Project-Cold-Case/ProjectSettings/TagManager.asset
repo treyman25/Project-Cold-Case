@@ -21,6 +21,7 @@ TagManager:
   - Chair
   - Pickles
   - Dumbbell
+  - Cabinet
   layers:
   - Default
   - TransparentFX

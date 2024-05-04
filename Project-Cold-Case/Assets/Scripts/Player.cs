@@ -95,10 +95,10 @@ public class Player : MonoBehaviour
     public GameObject tape;
 
     // Dialogues
-    private bool canBreakText = false; // f
-    private bool firstPastText = false; // f
-    private bool firstPresentText = false; // f
-    private bool printStartText = true; // t
+    private bool canBreakText = true; // f
+    private bool firstPastText = true; // f
+    private bool firstPresentText = true; // f
+    private bool printStartText = false; // t
 
     // Pausing
     public GameObject pauseMenu;
@@ -342,32 +342,48 @@ public class Player : MonoBehaviour
 
             float objectHeight = clickedObject.GetComponent<BoxCollider2D>().bounds.size.y;
 
-            objectCenter = new Vector3(objectCenter.x, objectCenter.y - (objectHeight/2), objectCenter.z);
+            objectCenter = new Vector3(objectCenter.x, objectCenter.y - (objectHeight / 2), objectCenter.z);
 
-            if (objectCenter.x > 11 && objectCenter.x < 15 && mousePosition.y > -2f)
+            if (objectCenter.x > 15f && objectCenter.x < 18f && mousePosition.y > -2f)  // Table
             {
-                clickedObject.transform.position = new Vector3(originalPosition.x, -1.75f + (objectHeight/2), originalPosition.z);
+                clickedObject.transform.position = new Vector3(originalPosition.x, -1.75f + (objectHeight / 2), originalPosition.z);
             }
-            else if (objectCenter.x > -.4 && objectCenter.x < 3.4)
+            else if (objectCenter.x > 5f && objectCenter.x < 6.75f && mousePosition.y > 1f && objectHeight < 1.5f)  // Fridge Top
             {
-                if (mousePosition.y > 0)
+                clickedObject.transform.position = new Vector3(originalPosition.x, .9f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (objectCenter.x > 7.5f && objectCenter.x < 10f && mousePosition.y > 1.6f && objectHeight < 1f)  // Cabinet
+            { 
+                clickedObject.transform.position = new Vector3(originalPosition.x, 1.5f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (objectCenter.x > 6.5f && objectCenter.x < 12.25f && mousePosition.y > -2f)  // Sink
+            {
+                clickedObject.transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (objectCenter.x > -.2 && objectCenter.x < 3.2)  // Shelf
+            {
+                if (mousePosition.y > 0 && objectHeight < 2)
                 {
                     clickedObject.transform.position = new Vector3(originalPosition.x, .457f + (objectHeight / 2), originalPosition.z);
                 }
-                else if (mousePosition.y > -1)
+                else if (mousePosition.y > -1 && objectHeight < 1)
                 {
                     clickedObject.transform.position = new Vector3(originalPosition.x, -.68f + (objectHeight / 2), originalPosition.z);
                 }
-                else if (mousePosition.y > -2)
+                else if (mousePosition.y > -2 && objectHeight < 1)
                 {
                     clickedObject.transform.position = new Vector3(originalPosition.x, -1.9f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > -3 && objectHeight < 1)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -3.15f + (objectHeight / 2), originalPosition.z);
                 }
                 else
                 {
                     clickedObject.transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
                 }
             }
-            else
+            else  // Floor
             {
                 clickedObject.transform.position = new Vector3(originalPosition.x, floorY + (objectHeight/2), originalPosition.z);
             }
@@ -429,7 +445,7 @@ public class Player : MonoBehaviour
 
     private void MoveObject()
     {
-        if (mousePosition.x + offset.x < rightBound && mousePosition.x + offset.x > - leftBound)
+        if (mousePosition.x + offset.x < rightBound && mousePosition.x + offset.x > leftBound)
         {
             clickedObject.transform.position = new Vector3(mousePosition.x + offset.x, clickedObject.transform.position.y, clickedObject.transform.position.z);
         }

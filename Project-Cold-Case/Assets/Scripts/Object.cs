@@ -139,7 +139,7 @@ public class Object : MonoBehaviour
         { 
             if (isMoving)
             {
-                if (!isOverlapping && !CheckHidable(collision.gameObject) && GetSpecialComboId(collision.gameObject) == 0)
+                if (!isOverlapping && !CheckHidable(collision.gameObject) && GetSpecialComboId(collision.gameObject) == 0 && !CheckFurniture(collision.gameObject))
                 {
                     isOverlapping = true;
 
@@ -544,5 +544,10 @@ public class Object : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         ApplySpecialComboId(8);
+    }
+
+    private bool CheckFurniture(GameObject other)
+    {
+        return (other.CompareTag("Machine") || other.CompareTag("Fridge") || other.CompareTag("Cabinet"));
     }
 }
