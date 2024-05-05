@@ -115,6 +115,11 @@ public class ActionManager : MonoBehaviour
             knife.GetComponent<Object>().ApplySpecialComboId(1);
         }
 
+        if (!dumbbell.GetComponent<Object>().HasBeenMoved())
+        {
+            dumbbell.GetComponent<Object>().Hide(true);
+        }
+
         GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
         GameObject cheese = allObjects[2];
 
@@ -153,6 +158,10 @@ public class ActionManager : MonoBehaviour
         //}
 
         GameObject pickles = allObjects[13];
-        pickles.GetComponent<Object>().Hide(true);
+
+        if (!pickles.GetComponent<Object>().HasBeenMoved())
+        {
+            pickles.GetComponent<Object>().Hide(true);
+        }
     }
 }
