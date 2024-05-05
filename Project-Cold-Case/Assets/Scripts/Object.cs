@@ -175,13 +175,20 @@ public class Object : MonoBehaviour
 
     public float GetInteractTarget(float playerX)
     {
+        float bonus = 0;
+
+        if (CompareTag("Sink"))
+        {
+            bonus = 1;
+        }
+
         if (playerX < transform.position.x)
         {
-            return transform.position.x - (GetComponent<Collider2D>().bounds.size.x) / 2 - pickupBuffer;
+            return transform.position.x - (GetComponent<Collider2D>().bounds.size.x) / 2 - pickupBuffer + bonus;
         }
         else
         {
-            return transform.position.x + (GetComponent<Collider2D>().bounds.size.x) / 2 + pickupBuffer;
+            return transform.position.x + (GetComponent<Collider2D>().bounds.size.x) / 2 + pickupBuffer + bonus;
         }
     }
 
@@ -381,6 +388,7 @@ public class Object : MonoBehaviour
         }
         return 0;
     }
+
     private void ApplySpecialComboId(int id, GameObject other)
     {
         specialComboApplied = true;

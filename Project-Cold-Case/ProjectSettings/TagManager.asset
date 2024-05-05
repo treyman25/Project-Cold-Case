@@ -22,6 +22,7 @@ TagManager:
   - Pickles
   - Dumbbell
   - Cabinet
+  - Sink
   layers:
   - Default
   - TransparentFX
