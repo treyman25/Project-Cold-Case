@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     public GameObject breakButton2;
     public GameObject goBackButton;
     public GameObject openFridgeButton;
+    public GameObject openCabinetButton;
     public GameObject openLockboxButton;
     public GameObject inspectPageButton;
 
@@ -73,6 +74,9 @@ public class Player : MonoBehaviour
     public GameObject fridge;
     public GameObject fridgeInterior;
     private bool fridgeOpen = false;
+    public GameObject cabinet;
+    public GameObject cabinetInterior;
+    private bool cabinetOpen = false;
     public GameObject fixedTimeMachine;
     public GameObject timeMachine;
     private bool hasPrinted = false;
@@ -415,6 +419,7 @@ public class Player : MonoBehaviour
             breakButton2.transform.Translate(-3.5f, 0, 0);
             goBackButton.transform.Translate(-3.5f, 0, 0);
             openFridgeButton.transform.Translate(-3.5f, 0, 0);
+            openCabinetButton.transform.Translate(-3.5f, 0, 0);
             openLockboxButton.transform.Translate(-3.5f, 0, 0);
             inspectPageButton.transform.Translate(-3.5f, 0, 0);
             ObjectText1.transform.Translate(-3.5f, 0, 0);
@@ -432,6 +437,7 @@ public class Player : MonoBehaviour
             breakButton2.transform.Translate(3.5f, 0, 0);
             goBackButton.transform.Translate(3.5f, 0, 0);
             openFridgeButton.transform.Translate(3.5f, 0, 0);
+            openCabinetButton.transform.Translate(3.5f, 0, 0);
             openLockboxButton.transform.Translate(3.5f, 0, 0);
             inspectPageButton.transform.Translate(3.5f, 0, 0);
             ObjectText1.transform.Translate(3.5f, 0, 0);
@@ -564,6 +570,7 @@ public class Player : MonoBehaviour
         breakButton2.SetActive(false);
         goBackButton.SetActive(false);
         openFridgeButton.SetActive(false);
+        openCabinetButton.SetActive(false);
         openLockboxButton.SetActive(false);
         inspectPageButton.SetActive(false);
 
@@ -623,6 +630,15 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 openFridgeButton.SetActive(true);
+                numButtons++;
+            }
+        }
+
+        if (clickedObject.CompareTag("Cabinet") && !cabinetOpen && inPast)
+        {
+            if (hasChosenMove == false)
+            {
+                openCabinetButton.SetActive(true);
                 numButtons++;
             }
         }
@@ -716,6 +732,7 @@ public class Player : MonoBehaviour
         scatteredBooks.SetActive(false);
 
         CloseFridge();
+        CloseCabinet();
 
         if (!firstPastText)
         {
@@ -801,6 +818,11 @@ public class Player : MonoBehaviour
             CloseFridge();
         }
 
+        if (cabinetOpen)
+        {
+            CloseCabinet();
+        }
+
         if (!firstPresentText)
         {
             StartCoroutine(PrintInspectText("That's going to take some getting used to..."));
@@ -881,6 +903,21 @@ public class Player : MonoBehaviour
     {
         fridgeOpen = false;
         fridgeInterior.SetActive(false);
+    }
+
+    public void OpenCabinet()
+    {
+        cabinetOpen = true;
+        AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
+        cabinetInterior.SetActive(true);
+        AM.UsedAction(cabinet, "Opened");
+        DeselectObject();
+    }
+
+    public void CloseCabinet()
+    {
+        cabinetOpen = false;
+        cabinetInterior.SetActive(false);
     }
 
     public void OpenLockbox()
