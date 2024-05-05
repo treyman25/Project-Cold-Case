@@ -135,8 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 1
   myText:
-  - The box is open... was it the killer? Why would they know his birthday?
-  - The box is open... was it the killer? Why would they know his birthday?
+  - Looks like research documents and building plans for the machine...
+  - Looks like research documents and building plans for the machine...
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

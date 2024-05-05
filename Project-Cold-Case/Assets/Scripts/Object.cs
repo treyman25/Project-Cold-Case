@@ -518,30 +518,46 @@ public class Object : MonoBehaviour
     {
         float objectHeight = GetComponent<SpriteRenderer>().bounds.size.y;
 
-        if (transform.position.x > 11 && transform.position.x < 15 && transform.position.y > -2f)
+        if (transform.position.x > 15f && transform.position.x < 18f && transform.position.y > -2f)  // Table
         {
             transform.position = new Vector3(originalPosition.x, -1.75f + (objectHeight / 2), originalPosition.z);
         }
-        else if (transform.position.x > -.4 && transform.position.x < 3.4)
+        else if (transform.position.x > 5f && transform.position.x < 6.75f && transform.position.y > 1f && objectHeight < 1.5f)  // Fridge Top
         {
-            if (transform.position.y > 0)
+            transform.position = new Vector3(originalPosition.x, .9f + (objectHeight / 2), originalPosition.z);
+        }
+        else if (transform.position.x > 7.5f && transform.position.x < 10f && transform.position.y > 1.6f && objectHeight < 1f)  // Cabinet
+        {
+            transform.position = new Vector3(originalPosition.x, 1.5f + (objectHeight / 2), originalPosition.z);
+        }
+        else if (transform.position.x > 6.5f && transform.position.x < 12.25f && transform.position.y > -2f)  // Sink
+        {
+            transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
+        }
+        else if (transform.position.x > -.2 && transform.position.x < 3.2)  // Shelf
+        {
+            if (transform.position.y > 0 && objectHeight < 2)
             {
                 transform.position = new Vector3(originalPosition.x, .457f + (objectHeight / 2), originalPosition.z);
             }
-            else if (transform.position.y > -1)
+            else if (transform.position.y > -1 && objectHeight < 1)
             {
                 transform.position = new Vector3(originalPosition.x, -.68f + (objectHeight / 2), originalPosition.z);
             }
-            else if (transform.position.y > -2)
+            else if (transform.position.y > -2 && objectHeight < 1)
             {
                 transform.position = new Vector3(originalPosition.x, -1.9f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > -3 && objectHeight < 1)
+            {
+                transform.position = new Vector3(originalPosition.x, -3.15f + (objectHeight / 2), originalPosition.z);
             }
             else
             {
                 transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
             }
         }
-        else
+        else  // Floor
         {
             transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
         }
