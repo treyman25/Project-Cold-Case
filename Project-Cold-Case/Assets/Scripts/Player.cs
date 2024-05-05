@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     public GameObject goBackButton;
     public GameObject openFridgeButton;
     public GameObject openCabinetButton;
+    public GameObject closeFridgeButton;
+    public GameObject closeCabinetButton;
     public GameObject openLockboxButton;
     public GameObject inspectPageButton;
 
@@ -420,6 +422,8 @@ public class Player : MonoBehaviour
             goBackButton.transform.Translate(-3.5f, 0, 0);
             openFridgeButton.transform.Translate(-3.5f, 0, 0);
             openCabinetButton.transform.Translate(-3.5f, 0, 0);
+            closeFridgeButton.transform.Translate(-3.5f, 0, 0);
+            closeCabinetButton.transform.Translate(-3.5f, 0, 0);
             openLockboxButton.transform.Translate(-3.5f, 0, 0);
             inspectPageButton.transform.Translate(-3.5f, 0, 0);
             ObjectText1.transform.Translate(-3.5f, 0, 0);
@@ -438,6 +442,8 @@ public class Player : MonoBehaviour
             goBackButton.transform.Translate(3.5f, 0, 0);
             openFridgeButton.transform.Translate(3.5f, 0, 0);
             openCabinetButton.transform.Translate(3.5f, 0, 0);
+            closeFridgeButton.transform.Translate(3.5f, 0, 0);
+            closeCabinetButton.transform.Translate(3.5f, 0, 0);
             openLockboxButton.transform.Translate(3.5f, 0, 0);
             inspectPageButton.transform.Translate(3.5f, 0, 0);
             ObjectText1.transform.Translate(3.5f, 0, 0);
@@ -571,6 +577,8 @@ public class Player : MonoBehaviour
         goBackButton.SetActive(false);
         openFridgeButton.SetActive(false);
         openCabinetButton.SetActive(false);
+        closeFridgeButton.SetActive(false);
+        closeCabinetButton.SetActive(false);
         openLockboxButton.SetActive(false);
         inspectPageButton.SetActive(false);
 
@@ -625,21 +633,43 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (clickedObject.CompareTag("Fridge") && !fridgeOpen && inPast)
+        if (clickedObject.CompareTag("Fridge") && inPast)
         {
-            if (hasChosenMove == false)
+            if (!fridgeOpen)
             {
-                openFridgeButton.SetActive(true);
-                numButtons++;
+                if (hasChosenMove == false)
+                {
+                    openFridgeButton.SetActive(true);
+                    numButtons++;
+                }
+            }
+            else
+            {
+                if (hasChosenMove == false)
+                {
+                    closeFridgeButton.SetActive(true);
+                    numButtons++;
+                }
             }
         }
 
-        if (clickedObject.CompareTag("Cabinet") && !cabinetOpen && inPast)
+        if (clickedObject.CompareTag("Cabinet") && inPast)
         {
-            if (hasChosenMove == false)
+            if (!cabinetOpen)
             {
-                openCabinetButton.SetActive(true);
-                numButtons++;
+                if (hasChosenMove == false)
+                {
+                    openCabinetButton.SetActive(true);
+                    numButtons++;
+                }
+            }
+            else
+            {
+                if (hasChosenMove == false)
+                {
+                    closeCabinetButton.SetActive(true);
+                    numButtons++;
+                }
             }
         }
 
