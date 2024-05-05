@@ -911,6 +911,8 @@ public class Player : MonoBehaviour
         AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
         cabinetInterior.SetActive(true);
         AM.UsedAction(cabinet, "Opened");
+        objects[16].GetComponent<Object>().Hide(false);
+        objects[16].transform.Translate(0, 0, -4);
         DeselectObject();
     }
 
