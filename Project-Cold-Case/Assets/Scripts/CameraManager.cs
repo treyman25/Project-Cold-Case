@@ -65,11 +65,11 @@ public class CameraManager : MonoBehaviour
 
         if (isFollowingMouse)
         {
-            if (camX - mousePosition.x > 5 && mousePosition.x > -10)
+            if (camX - mousePosition.x > 5 && mousePosition.x > -9)
             {
                 transform.Translate(Time.deltaTime * -speed, 0, 0);
             }
-            else if (camX - mousePosition.x < -5 && mousePosition.x < 18)
+            else if (camX - mousePosition.x < -5 && mousePosition.x < 21.8)
             {
                 transform.Translate(Time.deltaTime * speed, 0, 0);
             }
