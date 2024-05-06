@@ -128,7 +128,7 @@ public class ActionManager : MonoBehaviour
         GameObject loadedTrap = GameObject.Find("Mousetrap_Set(Clone)");
         GameObject cheese = allObjects[2];
 
-        if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f && !player.CanBreak())
+        if (loadedTrap != null && loadedTrap.transform.position.y < -3.2f)
         {
             player.TriggerCanBreak();
             loadedTrap.GetComponent<Object>().ApplySpecialComboId(3);
