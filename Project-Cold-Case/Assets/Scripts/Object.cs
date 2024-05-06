@@ -526,9 +526,43 @@ public class Object : MonoBehaviour
         {
             transform.position = new Vector3(originalPosition.x, .9f + (objectHeight / 2), originalPosition.z);
         }
+        else if (transform.position.x > 4.6f && transform.position.x < 5f && objectHeight < .5f) // Fridge Shelves
+        {
+            if (transform.position.y > -1.1f)
+            {
+                transform.position = new Vector3(originalPosition.x, -1.2f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > -1.6f)
+            {
+                transform.position = new Vector3(originalPosition.x, -1.7f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > -2.1f)
+            {
+                transform.position = new Vector3(originalPosition.x, -2.2f + (objectHeight / 2), originalPosition.z);
+            }
+            else
+            {
+                transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
+            }
+        }
         else if (transform.position.x > 7.5f && transform.position.x < 10f && transform.position.y > 1.6f && objectHeight < 1f)  // Cabinet
         {
             transform.position = new Vector3(originalPosition.x, 1.5f + (objectHeight / 2), originalPosition.z);
+        }
+        else if (transform.position.x > 7.5f && transform.position.x < 9.9f && objectHeight < .7f)  // Cabinet Shelves
+        {
+            if (transform.position.y > .8f)
+            {
+                transform.position = new Vector3(originalPosition.x, .7f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > .15f)
+            {
+                transform.position = new Vector3(originalPosition.x, 0.05f + (objectHeight / 2), originalPosition.z);
+            }
+            else
+            {
+                transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
+            }
         }
         else if (transform.position.x > 6.5f && transform.position.x < 12.25f && transform.position.y > -2f)  // Sink
         {
