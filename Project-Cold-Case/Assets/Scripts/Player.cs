@@ -188,7 +188,7 @@ public class Player : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        ObjectCursor(CheckMouseOverObject());
+        UpdateObjectCursor(CheckMouseOverObject());
     }
 
     private void MoveToLocation(Vector2 target)
@@ -1158,7 +1158,7 @@ public class Player : MonoBehaviour
         quitMenu.SetActive(false);
     }
 
-    private void ObjectCursor(bool overObject)
+    private void UpdateObjectCursor(bool overObject)
     {
         if (!canClick && !isPaused)
         {
@@ -1174,7 +1174,8 @@ public class Player : MonoBehaviour
             if (overObject && isDefaultCursor && !isPaused)
             {
                 isDefaultCursor = false;
-                Cursor.SetCursor(objectCursor, Vector2.zero, CursorMode.Auto);
+                Vector2 hotSpot = new Vector2(objectCursor.width / 5, objectCursor.height / 5);
+                Cursor.SetCursor(objectCursor, hotSpot, CursorMode.Auto);
             }
             else if (!overObject && !isDefaultCursor)
             {
