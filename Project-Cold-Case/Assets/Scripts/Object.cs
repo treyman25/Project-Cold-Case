@@ -574,4 +574,32 @@ public class Object : MonoBehaviour
     {
         return (other.CompareTag("Machine") || other.CompareTag("Fridge") || other.CompareTag("Cabinet"));
     }
+
+    public void HideInRange(bool value, float minX, float maxX, float minY, float maxY)
+    {
+        float myHeight = GetComponent<BoxCollider2D>().bounds.size.y;
+        float myWidth = GetComponent<BoxCollider2D>().bounds.size.x;
+
+        if (myBrokenVersion != null)
+        {
+            myBrokenVersion.GetComponent<Object>().HideInRange(value, minX, maxX, minY, maxY);
+        }
+
+        if (createdVariant != null)
+        {
+            createdVariant.GetComponent<Object>().HideInRange(value, minX, maxX, minY, maxY);
+        }
+
+        if (createdVariant2 != null)
+        {
+            createdVariant2.GetComponent<Object>().HideInRange(value, minX, maxX, minY, maxY);
+        }
+
+        if (transform.position.x > minX && transform.position.x < maxX
+            && transform.position.y > minY && transform.position.y < maxY
+            && myHeight < maxY - minY && myWidth < maxX - minX)
+        {
+            Hide(value);
+        }
+    }
 }

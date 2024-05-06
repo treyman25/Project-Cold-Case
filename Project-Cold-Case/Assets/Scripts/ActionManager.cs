@@ -131,7 +131,7 @@ public class ActionManager : MonoBehaviour
         {
             cheese.GetComponent<Object>().Hide(true);
         }
-        else
+        else if (!cheese.GetComponent<Object>().IsHidden())
         {
             cheese.GetComponent<Object>().ApplySpecialComboId(5);
         }

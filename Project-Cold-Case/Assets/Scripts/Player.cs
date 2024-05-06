@@ -103,10 +103,10 @@ public class Player : MonoBehaviour
     public GameObject tape;
 
     // Dialogues
-    private bool canBreakText = false; // f
-    private bool firstPastText = false; // f
-    private bool firstPresentText = false; // f
-    private bool printStartText = true; // t
+    private bool canBreakText = true; // f
+    private bool firstPastText = true; // f
+    private bool firstPresentText = true; // f
+    private bool printStartText = false; // t
 
     // Pausing
     public GameObject pauseMenu;
@@ -931,11 +931,12 @@ public class Player : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
         fridgeInterior.SetActive(true);
-        
-        objects[2].GetComponent<Object>().Hide(false);
-        objects[2].transform.Translate(0, 0, -3);
-        objects[13].GetComponent<Object>().Hide(false);
-        objects[13].transform.Translate(0, 0, -3);
+
+        foreach (var item in objects)
+        {
+            item.GetComponent<Object>().HideInRange(false, 4.5f, 5, -2.5f, -.5f);
+        }
+
         DeselectObject();
     }
 
@@ -943,6 +944,11 @@ public class Player : MonoBehaviour
     {
         fridgeOpen = false;
         fridgeInterior.SetActive(false);
+
+        foreach (var item in objects)
+        {
+            item.GetComponent<Object>().HideInRange(true, 4.5f, 5, -2.5f, -.5f);
+        }
 
         DeselectObject();
     }
@@ -959,9 +965,12 @@ public class Player : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
         cabinetInterior.SetActive(true);
-        
-        objects[16].GetComponent<Object>().Hide(false);
-        objects[16].transform.Translate(0, 0, -5);
+
+        foreach (var item in objects)
+        {
+            item.GetComponent<Object>().HideInRange(false, 7.5f, 10, 0f, 1.5f);
+        }
+
         DeselectObject();
     }
 
@@ -969,6 +978,11 @@ public class Player : MonoBehaviour
     {
         cabinetOpen = false;
         cabinetInterior.SetActive(false);
+
+        foreach (var item in objects)
+        {
+            item.GetComponent<Object>().HideInRange(true, 7.5f, 10, 0f, 1.5f);
+        }
 
         DeselectObject();
     }
@@ -992,7 +1006,10 @@ public class Player : MonoBehaviour
     private IEnumerator StartGameFadeIn(float time)
     {
         yield return new WaitForEndOfFrame();
+        CloseCabinet();
+        CloseFridge();
         AM.ApplyCombos();
+        
 
         SpriteRenderer fader = blackOverlay.GetComponent<SpriteRenderer>();
         Color currentColor = fader.color;
