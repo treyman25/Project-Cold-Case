@@ -76,9 +76,11 @@ public class Player : MonoBehaviour
     public GameObject fridge;
     public GameObject fridgeInterior;
     private bool fridgeOpen = false;
+    private bool fridgeBeenOpened = false;
     public GameObject cabinet;
     public GameObject cabinetInterior;
     private bool cabinetOpen = false;
+    private bool cabinetBeenOpened = false;
     public GameObject fixedTimeMachine;
     public GameObject timeMachine;
     private bool hasPrinted = false;
@@ -764,6 +766,17 @@ public class Player : MonoBehaviour
         CloseFridge();
         CloseCabinet();
 
+
+        if (fridgeBeenOpened)
+        {
+            fridgeBeenOpened = false;
+        }
+
+        if (cabinetBeenOpened)
+        {
+            cabinetBeenOpened = false;
+        }
+
         if (!firstPastText)
         {
             StartCoroutine(PrintInspectText("???"));
@@ -843,16 +856,6 @@ public class Player : MonoBehaviour
         AM.ResetActions();
         HUD.SetActive(false);
 
-        if (fridgeOpen)
-        {
-            CloseFridge();
-        }
-
-        if (cabinetOpen)
-        {
-            CloseCabinet();
-        }
-
         if (!firstPresentText)
         {
             StartCoroutine(PrintInspectText("That's going to take some getting used to..."));
@@ -919,9 +922,16 @@ public class Player : MonoBehaviour
     public void OpenFridge()
     {
         fridgeOpen = true;
+
+        if (!fridgeBeenOpened)
+        {
+            AM.UsedAction(fridge, "Opened");
+            fridgeBeenOpened = true;
+        }
+
         AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
         fridgeInterior.SetActive(true);
-        AM.UsedAction(fridge, "Opened");
+        
         objects[2].GetComponent<Object>().Hide(false);
         objects[2].transform.Translate(0, 0, -3);
         objects[13].GetComponent<Object>().Hide(false);
@@ -933,14 +943,23 @@ public class Player : MonoBehaviour
     {
         fridgeOpen = false;
         fridgeInterior.SetActive(false);
+
+        DeselectObject();
     }
 
     public void OpenCabinet()
     {
         cabinetOpen = true;
+
+        if (!cabinetBeenOpened)
+        {
+            AM.UsedAction(cabinet, "Opened");
+            cabinetBeenOpened = true;
+        }
+
         AudioSource.PlayClipAtPoint(fridgeClip, transform.position, .4f);
         cabinetInterior.SetActive(true);
-        AM.UsedAction(cabinet, "Opened");
+        
         objects[16].GetComponent<Object>().Hide(false);
         objects[16].transform.Translate(0, 0, -5);
         DeselectObject();
@@ -950,6 +969,8 @@ public class Player : MonoBehaviour
     {
         cabinetOpen = false;
         cabinetInterior.SetActive(false);
+
+        DeselectObject();
     }
 
     public void OpenLockbox()
