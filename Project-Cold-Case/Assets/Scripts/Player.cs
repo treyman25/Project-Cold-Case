@@ -379,9 +379,24 @@ public class Player : MonoBehaviour
                     clickedObject.transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
                 }
             }
-            else if (objectCenter.x > 7.5f && objectCenter.x < 10f && mousePosition.y > 1.6f && objectHeight < 1f)  // Cabinet
+            else if (objectCenter.x > 7.4f && objectCenter.x < 10f && mousePosition.y > 1.6f && objectHeight < 1f)  // Cabinet
             { 
                 clickedObject.transform.position = new Vector3(originalPosition.x, 1.5f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (cabinetOpen && objectCenter.x > 7.5f && objectCenter.x < 9.9f && objectHeight < .7f)  // Cabinet Shelves
+            {
+                if (mousePosition.y > .8f)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, .7f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > .15f)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, 0.05f + (objectHeight / 2), originalPosition.z);
+                }
+                else
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
+                }
             }
             else if (objectCenter.x > 6.5f && objectCenter.x < 12.25f && mousePosition.y > -2f)  // Sink
             {
