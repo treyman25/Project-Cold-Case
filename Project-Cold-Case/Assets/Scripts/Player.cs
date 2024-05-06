@@ -40,9 +40,6 @@ public class Player : MonoBehaviour
     private bool hasChosenMove = false;
     private bool isHoldingObject = false;
 
-    // Object Breaking
-    private bool canBreak = false;
-
     // Menus
     public GameObject myCanvas;
     public GameObject inspectButton;
@@ -83,7 +80,7 @@ public class Player : MonoBehaviour
     private bool cabinetBeenOpened = false;
     public GameObject fixedTimeMachine;
     public GameObject timeMachine;
-    private bool hasPrinted = false;
+   
 
     // Sound
     private AudioSource source;
@@ -117,6 +114,13 @@ public class Player : MonoBehaviour
     // Overlays
     public GameObject printedOverlay;
 
+    // Progression
+    private bool canBreak = false;
+    private bool hasSeenDate = false;
+    private bool hasPrinted = false;
+    private bool hasSolvedCode = false;
+    private bool hasReadDocuments = false;
+
     void Start()
     {
         Anim = GetComponent<Animator>();
@@ -147,7 +151,6 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && finishedTextOnScreen)
         {
             EraseInspectText();
-            CloseOverlay();
         }
 
         if (isMoving)
@@ -536,6 +539,18 @@ public class Player : MonoBehaviour
         if (clickedObject != null)
         {
             printText = clickedObject.GetComponent<Object>().GetInspectText(id);
+
+            if (clickedObject.CompareTag("Family Photo"))
+            {
+                hasSeenDate = true;
+
+                if (hasPrinted && !hasSolvedCode)
+                {
+                    StartCoroutine(PrintInspectText("There is a date on this photo, maybe I should try using it for the cipher that got printed."));
+                    DeselectObject();
+                    return;
+                }
+            }
         }
 
         StartCoroutine(PrintInspectText(printText));
@@ -1031,7 +1046,7 @@ public class Player : MonoBehaviour
 
     public void OpenLockbox()
     {
-        if (hasPrinted)
+        if (hasSolvedCode)
         {
             StartCoroutine(PrintInspectText("The code worked!"));
             objects[5].GetComponent<Object>().ApplySpecialComboId(7);
@@ -1192,9 +1207,24 @@ public class Player : MonoBehaviour
     {
         printedOverlay.SetActive(true);
 
-        string printText = clickedObject.GetComponent<Object>().GetInspectText(0);
+        if (hasSeenDate)
+        {
+            if (!hasSolvedCode)
+            {
+                hasSolvedCode = true;
 
-        StartCoroutine(PrintInspectText(printText));
+                StartCoroutine(SolveCipher());
+            }
+            else
+            {
+                StartCoroutine(ReviewCipher());
+            }
+        }
+        else
+        {
+            StartCoroutine(InspectCipher());
+        }
+
 
         DeselectObject();
     }
@@ -1205,5 +1235,55 @@ public class Player : MonoBehaviour
         {
             printedOverlay.SetActive(false);
         }
+    }
+
+    IEnumerator SolveCipher()
+    {
+        StartCoroutine(PrintInspectText("This cipher needs a key, some sort of number. Maybe if I try the date from the picture..."));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        StartCoroutine(PrintInspectText("I just need to separate the date into coordinates..."));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        StartCoroutine(PrintInspectText("It made a word! I should go try this on the lockbox."));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        CloseOverlay();
+    }
+
+    IEnumerator ReviewCipher()
+    {
+        StartCoroutine(PrintInspectText("I should try this solved code on the lockbox!"));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        CloseOverlay();
+    }
+
+    IEnumerator InspectCipher()
+    {
+        StartCoroutine(PrintInspectText("Looks like a cipher key, but I don't have any input."));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        CloseOverlay();
     }
 }
