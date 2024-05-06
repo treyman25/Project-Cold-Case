@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     public GameObject tape;
 
     // Dialogues
-    private bool canBreakText = true; // f
+    private bool canBreakText = false; // f
     private bool firstPastText = true; // f
     private bool firstPresentText = true; // f
     private bool printStartText = false; // t
@@ -856,6 +856,11 @@ public class Player : MonoBehaviour
 
             firstPastText = true;
         }
+        else if (canBreak && !canBreakText)
+        {
+            StartCoroutine(PrintInspectText("Ouch! Did that just zap me?"));
+            canBreakText = true;
+        }
         else
         {
 
@@ -886,6 +891,9 @@ public class Player : MonoBehaviour
 
         canClick = true;
 
+        fixedTimeMachine.SetActive(false);
+        timeMachine.SetActive(true);
+
         AM.ApplyCombos();
         AM.ResetActions();
         HUD.SetActive(false);
@@ -905,8 +913,7 @@ public class Player : MonoBehaviour
         }
         else if (canBreak && !canBreakText)
         {
-            StartCoroutine(PrintInspectText("Alex must have fixed this wire before he was killed."));
-            canBreakText = true;
+            //StartCoroutine(PrintInspectText("Alex must have fixed the wire before he was killed."));
         }
     }
 
@@ -925,10 +932,11 @@ public class Player : MonoBehaviour
 
     public void TriggerCanBreak()
     {
+        fixedTimeMachine.SetActive(true);
+        timeMachine.SetActive(false);
+
         if (!canBreak)
         {
-            fixedTimeMachine.SetActive(true);
-            timeMachine.SetActive(false);
             canBreak = true;
         }
     }

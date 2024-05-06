@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4840401222365276447
 SpriteRenderer:
@@ -108,7 +108,7 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - This chair looks kinda rickety.
+  - This is Alex's only furniture. He must sleep at the desk.
   - Only one chair? He must have been lonely.
   brokenVersion: {fileID: 2657441434904718084, guid: baf1ae7207cfe6747b78084a4cdc70fd, type: 3}
   variant: []

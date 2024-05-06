@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6700157438618813197
 SpriteRenderer:
@@ -180,8 +180,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - I never cared for pickles.
-  - I never cared for pickles.
+  - There are no pickles inside, just juice. What could this mean?
+  - There are no pickles inside, just juice. What could this mean?
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

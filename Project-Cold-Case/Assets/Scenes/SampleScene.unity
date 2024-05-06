@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 59524344}
   - component: {fileID: 59524345}
   m_Layer: 0
-  m_Name: HUD
+  m_Name: HUD_Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,15 +232,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59524343}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.71899974, y: -0.44999972, z: -0.58386385}
-  m_LocalScale: {x: 0.7162024, y: 0.7162024, z: 0.7162024}
+  m_LocalPosition: {x: 6.752137, y: -2.3406818, z: 0.1}
+  m_LocalScale: {x: 0.30666497, y: 0.30666497, z: 0.30666497}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1719510885}
   - {fileID: 2042930128}
   - {fileID: 236475264}
-  m_Father: {fileID: 1879394042}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &59524345
 SpriteRenderer:
@@ -4124,7 +4124,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824412575
 GameObject:
@@ -4510,7 +4510,7 @@ Transform:
   m_Children:
   - {fileID: 1367135258}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872854232 stripped
 GameObject:
@@ -5841,7 +5841,7 @@ Transform:
   m_Children:
   - {fileID: 1564413937}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109046354
 GameObject:
@@ -7937,7 +7937,7 @@ Transform:
   - {fileID: 1565928757}
   - {fileID: 277787426}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661339908
 GameObject:
@@ -9163,11 +9163,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8407572412184064894, guid: a916ca76712356b4280dba96931dd858, type: 3}
   m_PrefabInstance: {fileID: 2294678530316174159}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1879394042 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2221128222991113407, guid: a916ca76712356b4280dba96931dd858, type: 3}
-  m_PrefabInstance: {fileID: 2294678530316174159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1904313636 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2344370854517616025, guid: 091167d9d39e81545bfa7e9a09485544, type: 3}
@@ -10254,15 +10249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
       propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10304,17 +10291,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4429779754056808054, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
       propertyPath: m_Name
       value: Chair
-      objectReference: {fileID: 0}
-    - target: {fileID: 7044255603986069196, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
-      propertyPath: myText.Array.data[0]
-      value: This is Alex's only furniture. He must sleep at the desk.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10336,7 +10315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3311222959793670074, guid: a7ad378c3803d5c42a7958f533a06687, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3311222959793670074, guid: a7ad378c3803d5c42a7958f533a06687, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10399,13 +10378,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
-    - target: {fileID: 2229521916577163112, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4820036524080377312, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4820036524080377312, guid: 14e01e1c362a8584eb0a0e7b4c9e1799, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10479,13 +10454,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheese
       objectReference: {fileID: 0}
-    - target: {fileID: 4024730485257238723, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6908600850706166186, guid: 6d24e24c8a72d28469324e0276a82295, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10542,7 +10513,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4311745312254112519, guid: 3a79ed1a18bd7fe4e97bd4037d7be085, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4311745312254112519, guid: 3a79ed1a18bd7fe4e97bd4037d7be085, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10608,7 +10579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2221128222991113407, guid: a916ca76712356b4280dba96931dd858, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2221128222991113407, guid: a916ca76712356b4280dba96931dd858, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10656,10 +10627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2221128222991113407, guid: a916ca76712356b4280dba96931dd858, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 59524344}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a916ca76712356b4280dba96931dd858, type: 3}
 --- !u!1001 &2301221492647449772
@@ -10672,7 +10640,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4282038916066492014, guid: 2c30dffdef14f5b43b79d7d0d0566791, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4282038916066492014, guid: 2c30dffdef14f5b43b79d7d0d0566791, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10733,7 +10701,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4742081851071799925, guid: 014e6ea3cc3070b4a8ee2c1053f79800, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4742081851071799925, guid: 014e6ea3cc3070b4a8ee2c1053f79800, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10827,7 +10795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5730226981346463989, guid: ff152e2b062132945ae51d1813e67d8b, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 5730226981346463989, guid: ff152e2b062132945ae51d1813e67d8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10899,6 +10867,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3152034236975461881, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: I think fixing the wires has given me more strength in the past.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152034236975461881, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
+      propertyPath: myText.Array.data[1]
+      value: Look, the wires aren't chewed. Alex must have fixed them before getting
+        killed.
+      objectReference: {fileID: 0}
     - target: {fileID: 4436484761333592867, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
       propertyPath: m_Name
       value: TimeMachine_Fixed
@@ -10909,7 +10886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5120442162602968247, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5120442162602968247, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10966,7 +10943,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5987972493576755535, guid: e685f7edf9b2d9a46b2f6aef69746054, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5987972493576755535, guid: e685f7edf9b2d9a46b2f6aef69746054, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11081,13 +11058,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickles
       objectReference: {fileID: 0}
-    - target: {fileID: 1894197638008998327, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4221654507784110575, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4221654507784110575, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11128,14 +11101,6 @@ PrefabInstance:
     - target: {fileID: 4221654507784110575, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9129372619111821457, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
-      propertyPath: myText.Array.data[0]
-      value: There are no pickles inside, just juice. What could this mean?
-      objectReference: {fileID: 0}
-    - target: {fileID: 9129372619111821457, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
-      propertyPath: myText.Array.data[1]
-      value: There are no pickles inside, just juice. What could this mean?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11223,7 +11188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8332957033535137051, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8332957033535137051, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11440,17 +11405,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumbbell
       objectReference: {fileID: 0}
-    - target: {fileID: 1381056715834754282, guid: 66522428bb89e394984361ae224bb77a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3591724090895847006, guid: 66522428bb89e394984361ae224bb77a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7107919131544010812, guid: 66522428bb89e394984361ae224bb77a, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7107919131544010812, guid: 66522428bb89e394984361ae224bb77a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11507,7 +11464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7543574769621559588, guid: 74bad7f5f8080c9428362517b84fec9f, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7543574769621559588, guid: 74bad7f5f8080c9428362517b84fec9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11568,7 +11525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 442332081978660504, guid: 091167d9d39e81545bfa7e9a09485544, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 442332081978660504, guid: 091167d9d39e81545bfa7e9a09485544, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11648,13 +11605,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Books
       objectReference: {fileID: 0}
-    - target: {fileID: 2103871795723051317, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6970057893794921835, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6970057893794921835, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11695,14 +11648,6 @@ PrefabInstance:
     - target: {fileID: 6970057893794921835, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: myText.Array.data[0]
-      value: What are you hiding Alex?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8429160538140084707, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: myText.Array.data[1]
-      value: They appear to mostly be sci-fi novels.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11790,7 +11735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6619363014765365224, guid: f7a6713c7aebbae4bbaf87984a7a8645, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11992,7 +11937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146224273774225875, guid: 304386f488940da46af74918a3c40cfb, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8146224273774225875, guid: 304386f488940da46af74918a3c40cfb, type: 3}
       propertyPath: m_LocalPosition.x

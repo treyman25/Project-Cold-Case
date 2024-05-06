@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7188937404428974915
 SpriteRenderer:
@@ -135,7 +135,7 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - Now that I have a closer look, this must be an antique.
+  - If I am in the past... Maybe I can prevent the murder from happening...
   - It's not bloody anymore.
   brokenVersion: {fileID: 0}
   variant:
