@@ -8,6 +8,7 @@ public class ActionManager : MonoBehaviour
     private int maxActions = 3;
 
     public GameObject[] actionUI;
+    public GameObject[] actionTM;
 
     private Player player;
 
@@ -20,7 +21,6 @@ public class ActionManager : MonoBehaviour
     private string action1;
     private string action2;
     private string action3;
-
 
     void Start()
     {
@@ -67,12 +67,22 @@ public class ActionManager : MonoBehaviour
             actionUI[actionCount].SetActive(true);
         }
 
+        if (actionCount < actionTM.Length)
+        {
+            actionTM[actionCount].SetActive(true);
+        }
+
         actionCount++;
     }
 
     public void ResetActions()
     {
         foreach (var indicator in actionUI)
+        {
+            indicator.SetActive(false);
+        }
+
+        foreach (var indicator in actionTM)
         {
             indicator.SetActive(false);
         }
