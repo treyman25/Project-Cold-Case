@@ -360,6 +360,25 @@ public class Player : MonoBehaviour
             {
                 clickedObject.transform.position = new Vector3(originalPosition.x, .9f + (objectHeight / 2), originalPosition.z);
             }
+            else if (fridgeOpen && objectCenter.x > 4.6f && objectCenter.x < 5f && objectHeight < .5f) // Fridge Shelves
+            {
+                if (mousePosition.y > -1.1f)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.2f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > -1.6f)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.7f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > -2.1f)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -2.2f + (objectHeight / 2), originalPosition.z);
+                }
+                else
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, floorY + (objectHeight / 2), originalPosition.z);
+                }
+            }
             else if (objectCenter.x > 7.5f && objectCenter.x < 10f && mousePosition.y > 1.6f && objectHeight < 1f)  // Cabinet
             { 
                 clickedObject.transform.position = new Vector3(originalPosition.x, 1.5f + (objectHeight / 2), originalPosition.z);

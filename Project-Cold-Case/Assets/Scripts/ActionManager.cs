@@ -143,11 +143,11 @@ public class ActionManager : MonoBehaviour
 
         GameObject books = allObjects[8];
 
-        //if (books.transform.position.x > -1 && books.transform.position.x < 5)
-        //{
-        //    books.GetComponent<Object>().Hide(true);
-        //    player.ScatterBooks();
-        //}
+        if (books.transform.position.x > -1 && books.transform.position.x < 4)
+        {
+            //books.GetComponent<Object>().Hide(true);
+            //player.ScatterBooks();
+        }
 
         GameObject pickles = allObjects[13];
     }

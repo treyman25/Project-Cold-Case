@@ -10730,6 +10730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickles
       objectReference: {fileID: 0}
+    - target: {fileID: 1894197638008998327, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4221654507784110575, guid: d318e1aa6ae4114468932f7ec83bc89e, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -11292,6 +11296,10 @@ PrefabInstance:
     - target: {fileID: 2103871795723051317, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_Name
       value: Books
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103871795723051317, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6970057893794921835, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_RootOrder
