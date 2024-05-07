@@ -23,6 +23,7 @@ TagManager:
   - Dumbbell
   - Cabinet
   - Sink
+  - Toy Robot
   layers:
   - Default
   - TransparentFX
