@@ -912,6 +912,9 @@ public class Player : MonoBehaviour
         fixedTimeMachine.SetActive(false);
         timeMachine.SetActive(true);
 
+        CloseCabinet();
+        CloseFridge();
+
         AM.ApplyCombos();
         AM.ResetActions();
         HUD.SetActive(false);
