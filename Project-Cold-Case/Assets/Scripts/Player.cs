@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     public GameObject closeCabinetButton;
     public GameObject openLockboxButton;
     public GameObject inspectPageButton;
+    public GameObject inspectDocumentsButton;
 
     // Time Travel
     private bool inPast = false;
@@ -113,11 +114,12 @@ public class Player : MonoBehaviour
 
     // Overlays
     public GameObject printedOverlay;
+    public GameObject[] documentOverlay;
 
     // Progression
     private bool canBreak = false;
     private bool hasSeenDate = false;
-    private bool hasPrinted = false;
+    private bool hasSeenPrintout = false;
     private bool hasSolvedCode = false;
     private bool hasReadDocuments = false;
 
@@ -469,6 +471,7 @@ public class Player : MonoBehaviour
             closeCabinetButton.transform.Translate(-3.5f, 0, 0);
             openLockboxButton.transform.Translate(-3.5f, 0, 0);
             inspectPageButton.transform.Translate(-3.5f, 0, 0);
+            inspectDocumentsButton.transform.Translate(-3.5f, 0, 0);
             ObjectText1.transform.Translate(-3.5f, 0, 0);
             ObjectText2.transform.Translate(-3.5f, 0, 0);
             ObjectText3.transform.Translate(-3.5f, 0, 0);
@@ -489,6 +492,7 @@ public class Player : MonoBehaviour
             closeCabinetButton.transform.Translate(3.5f, 0, 0);
             openLockboxButton.transform.Translate(3.5f, 0, 0);
             inspectPageButton.transform.Translate(3.5f, 0, 0);
+            inspectDocumentsButton.transform.Translate(3.5f, 0, 0);
             ObjectText1.transform.Translate(3.5f, 0, 0);
             ObjectText2.transform.Translate(3.5f, 0, 0);
             ObjectText3.transform.Translate(3.5f, 0, 0);
@@ -548,7 +552,7 @@ public class Player : MonoBehaviour
             {
                 hasSeenDate = true;
 
-                if (hasPrinted && !hasSolvedCode)
+                if (hasSeenPrintout && !hasSolvedCode)
                 {
                     StartCoroutine(PrintInspectText("There is a date on this photo, maybe I should try using it for the cipher that got printed."));
                     DeselectObject();
@@ -558,7 +562,19 @@ public class Player : MonoBehaviour
 
             if (clickedObject.CompareTag("Lockbox") && hasSolvedCode)
             {
-                hasReadDocuments = true;
+                if (inPast)
+                {
+                    StartCoroutine(PrintInspectText("I should try to open the lockbox with the code I got from the cipher."));
+                    DeselectObject();
+                    hasReadDocuments = true;
+                    return;
+                }
+                else
+                {
+                    StartCoroutine(PrintInspectText("I should go back in time to see if the code works. I'm not supposed to disturb the crime scene."));
+                    DeselectObject();
+                    return;
+                }
             }
         }
 
@@ -641,6 +657,7 @@ public class Player : MonoBehaviour
         closeCabinetButton.SetActive(false);
         openLockboxButton.SetActive(false);
         inspectPageButton.SetActive(false);
+        inspectDocumentsButton.SetActive(false);
 
         ObjectText1.gameObject.SetActive(false);
         ObjectText2.gameObject.SetActive(false);
@@ -738,6 +755,15 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 openLockboxButton.SetActive(true);
+                numButtons++;
+            }
+        }
+
+        if (clickedObject.CompareTag("Lockbox") && !clickedObject.GetComponent<Object>().IsInspectable())
+        {
+            if (hasChosenMove == false)
+            {
+                inspectDocumentsButton.SetActive(true);
                 numButtons++;
             }
         }
@@ -1116,11 +1142,6 @@ public class Player : MonoBehaviour
         SR.color = newColor;
     }
 
-    public void HasPrinted(bool value)
-    {
-        hasPrinted = value;
-    }
-
     public void PlaceBlood()
     {
         floorBlood.SetActive(true);
@@ -1222,6 +1243,7 @@ public class Player : MonoBehaviour
     public void InspectPrintout()
     {
         printedOverlay.SetActive(true);
+        hasSeenPrintout = true;
 
         if (hasSeenDate)
         {
@@ -1250,6 +1272,14 @@ public class Player : MonoBehaviour
         if (printedOverlay.activeSelf == true)
         {
             printedOverlay.SetActive(false);
+        }
+
+        foreach (var doc in documentOverlay)
+        {
+            if (doc.activeSelf == true)
+            {
+                doc.SetActive(false);
+            }
         }
     }
 
@@ -1294,6 +1324,30 @@ public class Player : MonoBehaviour
     IEnumerator InspectCipher()
     {
         StartCoroutine(PrintInspectText("Looks like a cipher key, but I don't have any input."));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        CloseOverlay();
+    }
+
+    public void InspectDocuments()
+    {
+        hasReadDocuments = true;
+
+        StartCoroutine(DisplayDocuments());
+
+
+        DeselectObject();
+    }
+
+    IEnumerator DisplayDocuments()
+    {
+        documentOverlay[0].SetActive(true);
+
+        StartCoroutine(PrintInspectText("Look at all these documents..."));
 
         while (isPrinting || finishedTextOnScreen)
         {

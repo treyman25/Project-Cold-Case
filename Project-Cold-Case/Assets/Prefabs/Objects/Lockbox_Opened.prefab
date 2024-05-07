@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectID: 6
-  isInspectable: 1
+  isInspectable: 0
   isMovable: 1
   isBreakable: 0
   isHider: 0

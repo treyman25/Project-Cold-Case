@@ -428,7 +428,6 @@ public class Object : MonoBehaviour
                 createdVariant.transform.Translate(.131f, 0, 0);
 
                 Player p = GameObject.Find("Player").GetComponent<Player>();
-                p.HasPrinted(true);
                 break;
 
             default:
