@@ -807,6 +807,9 @@ public class Player : MonoBehaviour
         HUD.SetActive(true);
         AM.ResetActions();
 
+        fixedTimeMachine.SetActive(true);
+        timeMachine.SetActive(false);
+
         ShowDayDecor(true);
         floorBlood.SetActive(false);
         fridgeBlood.SetActive(false);
