@@ -401,6 +401,10 @@ public class Player : MonoBehaviour
                     clickedObject.transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
                 }
             }
+            else if (clickedObject.CompareTag("Dumbbell") && hasReadDocuments && objectCenter.x > 7.06f && objectCenter.x < 7.3f && mousePosition.y > -.85f)  // Crystal
+            {
+                clickedObject.transform.position = new Vector3(originalPosition.x, -0.735f, originalPosition.z);
+            }
             else if (objectCenter.x > 6.5f && objectCenter.x < 12.25f && mousePosition.y > -2f)  // Sink
             {
                 clickedObject.transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
@@ -550,6 +554,11 @@ public class Player : MonoBehaviour
                     DeselectObject();
                     return;
                 }
+            }
+
+            if (clickedObject.CompareTag("Lockbox") && hasSolvedCode)
+            {
+                hasReadDocuments = true;
             }
         }
 
