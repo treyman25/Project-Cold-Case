@@ -24,6 +24,7 @@ TagManager:
   - Cabinet
   - Sink
   - Toy Robot
+  - Gear
   layers:
   - Default
   - TransparentFX

@@ -211,6 +211,7 @@ public class Object : MonoBehaviour
 
         if (myBrokenVersion != null)
         {
+            myBrokenVersion.GetComponent<Object>().ResetObject();
             Destroy(myBrokenVersion);
         }
 
@@ -310,6 +311,11 @@ public class Object : MonoBehaviour
             if (CompareTag("Vase"))
             {
                 ApplySpecialComboId(6);
+            }
+
+            if (CompareTag("Toy Robot"))
+            {
+                ApplySpecialComboId(10);
             }
         }
     }
@@ -499,6 +505,11 @@ public class Object : MonoBehaviour
                 createdVariant = Instantiate(variant[0], new Vector3(-2.06435418f, -3.20000005f, 0), Quaternion.identity);
                 createdVariant2 = Instantiate(variant[1], new Vector3(4.17749357f, -3.05999994f, 0), Quaternion.identity);
 
+                break;
+
+            case 10: // Gear
+                createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
+                createdVariant.transform.Translate(0, -.12f, 0);
                 break;
 
             default:

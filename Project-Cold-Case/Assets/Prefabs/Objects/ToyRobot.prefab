@@ -184,6 +184,6 @@ MonoBehaviour:
   - It's an old toy robot.
   brokenVersion: {fileID: 8572870677409103380, guid: e88efb34e77eddd488b250d8812e37e1, type: 3}
   variant:
-  - {fileID: 0}
+  - {fileID: 4502066682111496841, guid: 7d7ddcd6f516eb34290eff053db4b66a, type: 3}
   audioclips:
   - {fileID: 8300000, guid: 549876c3da66f4349af10e865198f9d3, type: 3}
