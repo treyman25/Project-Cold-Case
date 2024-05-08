@@ -138,7 +138,8 @@ MonoBehaviour:
   - Looks like research documents and building plans for the machine...
   - Looks like research documents and building plans for the machine...
   brokenVersion: {fileID: 0}
-  variant: []
+  variant:
+  - {fileID: 2893769051580570177, guid: 9aeb6441740cbfb4e8ea29defd0b1366, type: 3}
   audioclips: []
 --- !u!61 &4147880243838582598
 BoxCollider2D:

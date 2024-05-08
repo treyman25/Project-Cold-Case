@@ -522,6 +522,21 @@ public class Object : MonoBehaviour
                 p.BreakCrystal();
                 break;
 
+            case 12: // Empty Lockbox
+                Hide(true);
+
+                if (createdVariant != null)
+                {
+                    createdVariant.GetComponent<Object>().ResetObject();
+                    Destroy(createdVariant);
+                }
+
+                createdVariant = Instantiate(variant[1], transform.position, Quaternion.identity);
+                offset = GetVerticalOffset(gameObject, variant[0]);
+                createdVariant.transform.Translate(0, offset, 0);
+
+                break;
+
             default:
                 break;
         }

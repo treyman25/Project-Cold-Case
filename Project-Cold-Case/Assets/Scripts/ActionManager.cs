@@ -159,6 +159,8 @@ public class ActionManager : MonoBehaviour
             //player.ScatterBooks();
         }
 
-        GameObject pickles = allObjects[13];
+        GameObject lockbox = allObjects[5];
+
+        lockbox.GetComponent<Object>().ApplySpecialComboId(12);
     }
 }
