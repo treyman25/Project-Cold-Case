@@ -11557,6 +11557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Books
       objectReference: {fileID: 0}
+    - target: {fileID: 5807330303018841834, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: What are you hiding Alex?
+      objectReference: {fileID: 0}
     - target: {fileID: 7519219583447136682, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -11797,6 +11801,14 @@ PrefabInstance:
     - target: {fileID: 1850448407565507448, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_Name
       value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: It's a nice vase. Maybe I can hide something in it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
+      propertyPath: myText.Array.data[1]
+      value: It's a nice vase.
       objectReference: {fileID: 0}
     - target: {fileID: 8332957033535137051, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_RootOrder
