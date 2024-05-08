@@ -913,7 +913,7 @@ public class Player : MonoBehaviour
         }
         else if (canBreak && !canBreakText)
         {
-            StartCoroutine(PrintInspectText("Ouch! Did that just zap me?"));
+            StartCoroutine(PrintInspectText("Ouch! Did that just zap me? I feel different, as if I'm fully present."));
             canBreakText = true;
         }
         else
