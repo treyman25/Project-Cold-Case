@@ -349,24 +349,6 @@ public class Object : MonoBehaviour
         {
             SR.color = Color.white;
         }
-
-        if (CompareTag("Books"))
-        {
-            if (value)
-            {
-                foreach (var book in variant)
-                {
-                    book.GetComponent<SpriteRenderer>().color = Color.red;
-                }
-            }
-            else
-            {
-                foreach (var book in variant)
-                {
-                    book.GetComponent<SpriteRenderer>().color = Color.white;
-                }
-            }
-        }
     }
 
     private bool CheckHidable(GameObject hider)

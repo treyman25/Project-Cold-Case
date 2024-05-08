@@ -155,8 +155,8 @@ public class ActionManager : MonoBehaviour
 
         if (books.transform.position.x > -1 && books.transform.position.x < 4)
         {
-            //books.GetComponent<Object>().Hide(true);
-            //player.ScatterBooks();
+            books.GetComponent<Object>().Hide(true);
+            player.ScatterBooks();
         }
 
         GameObject lockbox = allObjects[5];

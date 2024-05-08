@@ -576,12 +576,6 @@ public class Player : MonoBehaviour
                     hasReadDocuments = true;
                     return;
                 }
-                else
-                {
-                    StartCoroutine(PrintInspectText("I should go back in time to see if the code works. I'm not supposed to disturb the crime scene."));
-                    DeselectObject();
-                    return;
-                }
             }
         }
 
