@@ -122,6 +122,7 @@ public class Player : MonoBehaviour
     private bool hasSeenPrintout = false;
     private bool hasSolvedCode = false;
     private bool hasReadDocuments = false;
+    private bool machineIsBroken = false;
 
     void Start()
     {
@@ -222,6 +223,12 @@ public class Player : MonoBehaviour
                 {
                     AM.UsedAction(clickedObject, "Moved");
                     
+                }
+
+
+                if (clickedObject.CompareTag("Dumbbell"))
+                {
+                    clickedObject.GetComponent<Object>().CheckBreakCrystal();
                 }
 
                 clickedObject.GetComponent<Object>().Moved();
@@ -844,6 +851,7 @@ public class Player : MonoBehaviour
 
         fixedTimeMachine.SetActive(true);
         timeMachine.SetActive(false);
+        machineIsBroken = false;
 
         ShowDayDecor(true);
         floorBlood.SetActive(false);
@@ -1355,5 +1363,12 @@ public class Player : MonoBehaviour
         }
 
         CloseOverlay();
+    }
+
+    public void BreakCrystal()
+    {
+        machineIsBroken = true;
+
+        Debug.Log("******** Machine Broken ********");
     }
 }

@@ -511,6 +511,12 @@ public class Object : MonoBehaviour
                 createdVariant.transform.Translate(0, -.12f, 0);
                 break;
 
+            case 11: // Broken Crystal
+                transform.position = new Vector3(transform.position.x, -1.65f + (GetComponent<BoxCollider2D>().bounds.size.y / 2), transform.position.z);
+                Player p = GameObject.Find("Player").GetComponent<Player>();
+                p.BreakCrystal();
+                break;
+
             default:
                 break;
         }
@@ -644,6 +650,14 @@ public class Object : MonoBehaviour
             && myHeight < maxY - minY && myWidth < maxX - minX)
         {
             Hide(value);
+        }
+    }
+
+    public void CheckBreakCrystal()
+    {
+        if (transform.position.x > 7.06 && transform.position.x < 7.3 && transform.position.y == -0.735f)
+        {
+            ApplySpecialComboId(11);
         }
     }
 }
