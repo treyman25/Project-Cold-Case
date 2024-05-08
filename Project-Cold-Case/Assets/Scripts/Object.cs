@@ -98,6 +98,11 @@ public class Object : MonoBehaviour
         return isHidden;
     }
 
+    public bool IsVariant()
+    {
+        return isVariant;
+    }
+
     public bool CanHide()
     {
         return canHide && hiddenObject == null;

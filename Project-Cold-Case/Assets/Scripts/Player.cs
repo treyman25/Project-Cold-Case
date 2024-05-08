@@ -757,7 +757,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (clickedObject.CompareTag("Lockbox") && inPast)
+        if (clickedObject.CompareTag("Lockbox") && inPast && !clickedObject.GetComponent<Object>().IsVariant())
         {
             if (hasChosenMove == false)
             {
