@@ -128,6 +128,9 @@ public class Player : MonoBehaviour
     private bool hasReadDocuments = true; // f
     private bool machineIsUpgraded = false; // f
 
+    // The Ending
+    public GameObject alex;
+
     void Start()
     {
         Anim = GetComponent<Animator>();
@@ -924,6 +927,10 @@ public class Player : MonoBehaviour
             StartCoroutine(PrintInspectText("Ouch! Did that just zap me? I feel different, as if I'm fully present."));
             canBreakText = true;
         }
+        else if (machineIsUpgraded)
+        {
+            StartCoroutine(TheMurder());
+        }
         else
         {
 
@@ -1391,5 +1398,17 @@ public class Player : MonoBehaviour
         upgradedTimeMachine.SetActive(true);
 
         machineIsUpgraded = true;
+    }
+
+    IEnumerator TheMurder()
+    {
+        canClick = false;
+
+        alex.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        Vector3 originalScale = alex.transform.localScale;
+        alex.transform.localScale = new Vector3(originalScale.x * -1, originalScale.y, originalScale.z);
     }
 }
