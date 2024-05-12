@@ -75,4 +75,9 @@ public class CameraManager : MonoBehaviour
             }
         }
     }
+
+    public void MoveToMurder()
+    {
+        transform.position = new Vector3(5, transform.position.y, transform.position.z);
+    }
 }

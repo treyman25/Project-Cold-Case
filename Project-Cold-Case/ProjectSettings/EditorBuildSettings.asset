@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroCard.unity
     guid: e8122323cc14c5142816dc5fa2c37573
+  - enabled: 1
+    path: Assets/Scenes/EndCard.unity
+    guid: 072b89c59c10a964295fd86f690d207b
   m_configObjects: {}

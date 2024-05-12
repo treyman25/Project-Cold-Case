@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class TextPrinter : MonoBehaviour
 {
+    public int sceneID;
+
     public string myText1;
     public string myText2;
 
@@ -105,7 +107,14 @@ public class TextPrinter : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        SceneManager.LoadScene("SampleScene");
+        if (sceneID == 0)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        else if (sceneID == 1)
+        {
+            SceneManager.LoadScene("TimeLoopEnding");
+        }
     }
 
 }

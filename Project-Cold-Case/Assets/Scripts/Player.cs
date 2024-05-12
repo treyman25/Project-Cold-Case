@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -1402,6 +1403,8 @@ public class Player : MonoBehaviour
 
     IEnumerator TheMurder()
     {
+        GameObject.Find("Main Camera").GetComponent<CameraManager>().MoveToMurder();
+
         canClick = false;
 
         alex.SetActive(true);
@@ -1410,5 +1413,23 @@ public class Player : MonoBehaviour
 
         Vector3 originalScale = alex.transform.localScale;
         alex.transform.localScale = new Vector3(originalScale.x * -1, originalScale.y, originalScale.z);
+        Turn(-20f);
+
+        yield return new WaitForSeconds(1);
+
+        blackOverlay.SetActive(true);
+        SpriteRenderer fader = blackOverlay.GetComponent<SpriteRenderer>();
+        Color currentColor = fader.color;
+
+        while (fader.color.a < 1)
+        {
+            yield return new WaitForEndOfFrame();
+            currentColor.a += Time.deltaTime / 1f;
+            fader.color = currentColor;
+        }
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("EndCard");
     }
 }
