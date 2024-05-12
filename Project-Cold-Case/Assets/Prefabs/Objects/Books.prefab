@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7158731031925283045
 SpriteRenderer:
@@ -180,7 +180,7 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - These are mostly sci-fi novels.
+  - What are you hiding Alex?
   - These are mostly sci-fi novels.
   brokenVersion: {fileID: 0}
   variant: []
