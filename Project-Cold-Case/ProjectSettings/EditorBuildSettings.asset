@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimeLoopEnding.unity
     guid: cd62b55f22647d74f94cfee0d4476089
+  - enabled: 1
+    path: Assets/Scenes/EightDaysLater.unity
+    guid: 582172480f52c604990e850a5720212f
   m_configObjects: {}

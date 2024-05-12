@@ -31,7 +31,11 @@ public class TextPrinter : MonoBehaviour
     {
         if (!isPrinting)
         {
-            if (Input.GetMouseButtonDown(0) && isDone2)
+            if (Input.GetMouseButtonDown(0) && isDone1 && sceneID == 2)
+            {
+                SceneManager.LoadScene("TimeLoopEnding");
+            }
+            else if (Input.GetMouseButtonDown(0) && isDone2)
             {
                 StartCoroutine(CloseIntro());
             }
@@ -67,21 +71,25 @@ public class TextPrinter : MonoBehaviour
                 break;
         }
 
-        for (int i = 0; i < printText.Length; i++)
+        if (printText != "")
         {
-            printSpeed = .05f;
-
-            if (Input.GetMouseButton(0))
+            for (int i = 0; i < printText.Length; i++)
             {
-                printSpeed = .01f;
+                printSpeed = .05f;
+
+                if (Input.GetMouseButton(0))
+                {
+                    printSpeed = .01f;
+                }
+
+                currentText += printText[i];
+
+                currentTMPro.text = currentText;
+
+                yield return new WaitForSeconds(printSpeed);
             }
-
-            currentText += printText[i];
-
-            currentTMPro.text = currentText;
-
-            yield return new WaitForSeconds(printSpeed);
         }
+        
 
         switch (id)
         {
@@ -112,6 +120,10 @@ public class TextPrinter : MonoBehaviour
             SceneManager.LoadScene("SampleScene");
         }
         else if (sceneID == 1)
+        {
+            SceneManager.LoadScene("EightDaysLater");
+        }
+        else if (sceneID == 2)
         {
             SceneManager.LoadScene("TimeLoopEnding");
         }

@@ -85,7 +85,7 @@ public class NPC : MonoBehaviour
         blackOverlay.SetActive(false);
         MoveToLocation(new Vector2(-5.15999985f, -1.33000004f));
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(4.5f);
 
         StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
 
