@@ -62,7 +62,7 @@ public class Object : MonoBehaviour
 
         inspectText = null;
 
-        if (isVariant)
+        if (isVariant && !CompareTag("Machine"))
         {
             SnapToGround();
         }
@@ -379,6 +379,10 @@ public class Object : MonoBehaviour
         {
             return 2;
         }
+        else if (other.CompareTag("Machine") && other.GetComponent<Object>().isVariant && this.CompareTag("Gear"))
+        {
+            return 3;
+        }
         return 0;
     }
 
@@ -414,7 +418,14 @@ public class Object : MonoBehaviour
                 createdVariant = Instantiate(variant[0], otherPosition, Quaternion.identity);
                 createdVariant.transform.Translate(.131f, 0, 0);
 
+                break;
+
+            case 3: // Upgraded Time Machine
+                Hide(true);
+
                 Player p = GameObject.Find("Player").GetComponent<Player>();
+                p.UpgradeTimeMachine();
+
                 break;
 
             default:

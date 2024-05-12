@@ -119,12 +119,12 @@ public class Player : MonoBehaviour
     public GameObject[] documentOverlay;
 
     // Progression
-    private bool canBreak = false;
-    private bool hasSeenDate = false;
-    private bool hasSeenPrintout = false;
-    private bool hasSolvedCode = false;
-    private bool hasReadDocuments = false;
-    private bool machineIsBroken = false;
+    private bool canBreak = true; // f
+    private bool hasSeenDate = true; // f
+    private bool hasSeenPrintout = true; // f
+    private bool hasSolvedCode = true; // f
+    private bool hasReadDocuments = true; // f
+    private bool machineIsBroken = false; // f
 
     void Start()
     {
@@ -1381,5 +1381,10 @@ public class Player : MonoBehaviour
         timeMachine.SetActive(false);
 
         Debug.Log("******** Machine Broken ********");
+    }
+
+    public void UpgradeTimeMachine()
+    {
+        brokenTimeMachine.SetActive(false);
     }
 }
