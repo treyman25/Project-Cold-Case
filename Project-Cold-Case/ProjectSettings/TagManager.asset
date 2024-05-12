@@ -25,6 +25,7 @@ TagManager:
   - Sink
   - Toy Robot
   - Gear
+  - Wires
   layers:
   - Default
   - TransparentFX
