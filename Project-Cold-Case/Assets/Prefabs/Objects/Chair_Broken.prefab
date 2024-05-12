@@ -102,7 +102,7 @@ MonoBehaviour:
   objectID: 14
   isInspectable: 1
   isMovable: 1
-  isBreakable: 1
+  isBreakable: 0
   isHider: 0
   hiderX: 0
   hiderY: 0
