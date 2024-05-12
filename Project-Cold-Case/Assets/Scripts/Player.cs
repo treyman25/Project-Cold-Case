@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
     public GameObject[] documentOverlay;
 
     // Progression
-    private bool canBreak = false;
+    public bool canBreak = false;
     private bool hasSeenDate = false;
     private bool hasSeenPrintout = false;
     private bool hasSolvedCode = false;
