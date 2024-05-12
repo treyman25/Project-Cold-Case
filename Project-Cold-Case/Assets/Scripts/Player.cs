@@ -84,6 +84,8 @@ public class Player : MonoBehaviour
     public GameObject wires;
     public GameObject chewedWires;
     public GameObject brokenTimeMachine;
+    public GameObject upgradedTimeMachine;
+    public GameObject machineHUD;
 
     // Sound
     private AudioSource source;
@@ -124,7 +126,7 @@ public class Player : MonoBehaviour
     private bool hasSeenPrintout = true; // f
     private bool hasSolvedCode = true; // f
     private bool hasReadDocuments = true; // f
-    private bool machineIsBroken = false; // f
+    private bool machineIsUpgraded = false; // f
 
     void Start()
     {
@@ -846,11 +848,12 @@ public class Player : MonoBehaviour
         AM.ResetActions();
 
         fixedTimeMachine.SetActive(true);
+        machineHUD.SetActive(true);
         wires.SetActive(true);
         timeMachine.SetActive(false);
         chewedWires.SetActive(false);
-        machineIsBroken = false;
         brokenTimeMachine.SetActive(false);
+        upgradedTimeMachine.SetActive(false);
 
         ShowDayDecor(true);
         floorBlood.SetActive(false);
@@ -954,9 +957,10 @@ public class Player : MonoBehaviour
         fixedTimeMachine.SetActive(false);
         wires.SetActive(false);
 
-        if (brokenTimeMachine.activeSelf == false)
+        if (brokenTimeMachine.activeSelf == false && upgradedTimeMachine.activeSelf == false)
         {
             timeMachine.SetActive(true);
+            machineHUD.SetActive(true);
         }
 
         chewedWires.SetActive(true);
@@ -1375,16 +1379,17 @@ public class Player : MonoBehaviour
 
     public void BreakCrystal()
     {
-        machineIsBroken = true;
         brokenTimeMachine.SetActive(true);
         fixedTimeMachine.SetActive(false);
         timeMachine.SetActive(false);
-
-        Debug.Log("******** Machine Broken ********");
+        machineHUD.SetActive(false);
     }
 
     public void UpgradeTimeMachine()
     {
         brokenTimeMachine.SetActive(false);
+        upgradedTimeMachine.SetActive(true);
+
+        machineIsUpgraded = true;
     }
 }
