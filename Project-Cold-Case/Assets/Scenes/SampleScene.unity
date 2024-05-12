@@ -2897,6 +2897,7 @@ MonoBehaviour:
   timeMachine: {fileID: 1879394037}
   wires: {fileID: 731136896}
   chewedWires: {fileID: 3931542082296363775}
+  brokenTimeMachine: {fileID: 8407572412495902547}
   pastClip: {fileID: 8300000, guid: 5f64b45a70d936f4aa8e5b4f98e9f93c, type: 3}
   presentClip: {fileID: 8300000, guid: dbcb51dda9aa1234292950a41d38261a, type: 3}
   pickupClip: {fileID: 8300000, guid: 9908afc2f758d8e41a802ce5f43eeca2, type: 3}
@@ -2914,7 +2915,6 @@ MonoBehaviour:
   printedOverlay: {fileID: 384698356}
   documentOverlay:
   - {fileID: 2076909017}
-  canBreak: 0
 --- !u!212 &498146444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12516,6 +12516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeMachine_Broken
       objectReference: {fileID: 0}
+    - target: {fileID: 4357522551353923887, guid: fb27e331addb2d04ea782eeab0f5d85c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12690,6 +12694,11 @@ SpriteRenderer:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4436484761333592867, guid: b4d084623fea6e845bb61a6e4f646ca0, type: 3}
   m_PrefabInstance: {fileID: 4100325369863729406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8407572412495902547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4357522551353923887, guid: fb27e331addb2d04ea782eeab0f5d85c, type: 3}
+  m_PrefabInstance: {fileID: 7798365275328671626}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8470973692468303130
 GameObject:

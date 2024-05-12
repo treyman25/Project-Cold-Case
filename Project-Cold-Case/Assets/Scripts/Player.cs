@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
     public GameObject timeMachine;
     public GameObject wires;
     public GameObject chewedWires;
+    public GameObject brokenTimeMachine;
 
     // Sound
     private AudioSource source;
@@ -118,7 +119,7 @@ public class Player : MonoBehaviour
     public GameObject[] documentOverlay;
 
     // Progression
-    public bool canBreak = false;
+    private bool canBreak = false;
     private bool hasSeenDate = false;
     private bool hasSeenPrintout = false;
     private bool hasSolvedCode = false;
@@ -849,6 +850,7 @@ public class Player : MonoBehaviour
         timeMachine.SetActive(false);
         chewedWires.SetActive(false);
         machineIsBroken = false;
+        brokenTimeMachine.SetActive(false);
 
         ShowDayDecor(true);
         floorBlood.SetActive(false);
@@ -951,7 +953,12 @@ public class Player : MonoBehaviour
 
         fixedTimeMachine.SetActive(false);
         wires.SetActive(false);
-        timeMachine.SetActive(true);
+
+        if (brokenTimeMachine.activeSelf == false)
+        {
+            timeMachine.SetActive(true);
+        }
+
         chewedWires.SetActive(true);
 
         CloseCabinet();
@@ -1369,6 +1376,9 @@ public class Player : MonoBehaviour
     public void BreakCrystal()
     {
         machineIsBroken = true;
+        brokenTimeMachine.SetActive(true);
+        fixedTimeMachine.SetActive(false);
+        timeMachine.SetActive(false);
 
         Debug.Log("******** Machine Broken ********");
     }
