@@ -2867,8 +2867,6 @@ MonoBehaviour:
   - {fileID: 1079771777}
   - {fileID: 995619997}
   - {fileID: 959331227}
-  - {fileID: 959331227}
-  - {fileID: 731136896}
   blackOverlay: {fileID: 1367135257}
   objectCursor: {fileID: 2800000, guid: e8610dc0da6cd4d44a75f6895cd48bbd, type: 3}
   myCanvas: {fileID: 1241770242}
@@ -2897,6 +2895,8 @@ MonoBehaviour:
   cabinetInterior: {fileID: 6346033037730636211}
   fixedTimeMachine: {fileID: 8407572412487405219}
   timeMachine: {fileID: 1879394037}
+  wires: {fileID: 731136896}
+  chewedWires: {fileID: 3931542082296363775}
   pastClip: {fileID: 8300000, guid: 5f64b45a70d936f4aa8e5b4f98e9f93c, type: 3}
   presentClip: {fileID: 8300000, guid: dbcb51dda9aa1234292950a41d38261a, type: 3}
   pickupClip: {fileID: 8300000, guid: 9908afc2f758d8e41a802ce5f43eeca2, type: 3}
@@ -4311,7 +4311,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824412575
 GameObject:
@@ -4697,7 +4697,7 @@ Transform:
   m_Children:
   - {fileID: 1367135258}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872854232 stripped
 GameObject:
@@ -6033,7 +6033,7 @@ Transform:
   m_Children:
   - {fileID: 1564413937}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109046354
 GameObject:
@@ -8349,7 +8349,7 @@ Transform:
   - {fileID: 1565928757}
   - {fileID: 277787426}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661339908
 GameObject:
@@ -11061,14 +11061,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToyRobot
       objectReference: {fileID: 0}
-    - target: {fileID: 3073834510824921079, guid: f6d25763d50bc6a44b16ee9a01b24d1d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911370211971944774, guid: f6d25763d50bc6a44b16ee9a01b24d1d, type: 3}
-      propertyPath: brokenVersion
-      value: 
-      objectReference: {fileID: 8572870677409103380, guid: e88efb34e77eddd488b250d8812e37e1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11346,10 +11338,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cabinets_Open
       objectReference: {fileID: 0}
-    - target: {fileID: 7526312091351267683, guid: 014e6ea3cc3070b4a8ee2c1053f79800, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11387,10 +11375,6 @@ PrefabInstance:
     - target: {fileID: 5265483605756811508, guid: ff152e2b062132945ae51d1813e67d8b, type: 3}
       propertyPath: m_Name
       value: Fridge_Open
-      objectReference: {fileID: 0}
-    - target: {fileID: 5265483605756811508, guid: ff152e2b062132945ae51d1813e67d8b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5730226981346463989, guid: ff152e2b062132945ae51d1813e67d8b, type: 3}
       propertyPath: m_RootOrder
@@ -11458,6 +11442,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &3931542082296363775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9005368852964472954, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+  m_PrefabInstance: {fileID: 9007482457892933450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4100325369863729406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11623,10 +11612,6 @@ PrefabInstance:
     - target: {fileID: 246526142554578517, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_Name
       value: Books
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807330303018841834, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
-      propertyPath: myText.Array.data[0]
-      value: What are you hiding Alex?
       objectReference: {fileID: 0}
     - target: {fileID: 7519219583447136682, guid: 1d09f2784d365e64e9a7695bda217008, type: 3}
       propertyPath: m_RootOrder
@@ -11868,14 +11853,6 @@ PrefabInstance:
     - target: {fileID: 1850448407565507448, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_Name
       value: Vase
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
-      propertyPath: myText.Array.data[0]
-      value: It's a nice vase. Maybe I can hide something in it?
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816258687624065520, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
-      propertyPath: myText.Array.data[1]
-      value: It's a nice vase.
       objectReference: {fileID: 0}
     - target: {fileID: 8332957033535137051, guid: 97666caa595771e47a31d2e8e311d55f, type: 3}
       propertyPath: m_RootOrder
@@ -12488,7 +12465,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 985761076025490053, guid: cb6040638e9e6354482e8f9c9f469642, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 985761076025490053, guid: cb6040638e9e6354482e8f9c9f469642, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12741,3 +12718,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 304386f488940da46af74918a3c40cfb, type: 3}
+--- !u!1001 &9007482457892933450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383127259356381944, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005368852964472954, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}
+      propertyPath: m_Name
+      value: Wires_Chewed
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5fdad98daaa53c7438c062031f64e875, type: 3}

@@ -81,7 +81,8 @@ public class Player : MonoBehaviour
     private bool cabinetBeenOpened = false;
     public GameObject fixedTimeMachine;
     public GameObject timeMachine;
-   
+    public GameObject wires;
+    public GameObject chewedWires;
 
     // Sound
     private AudioSource source;
@@ -844,7 +845,9 @@ public class Player : MonoBehaviour
         AM.ResetActions();
 
         fixedTimeMachine.SetActive(true);
+        wires.SetActive(true);
         timeMachine.SetActive(false);
+        chewedWires.SetActive(false);
         machineIsBroken = false;
 
         ShowDayDecor(true);
@@ -947,7 +950,9 @@ public class Player : MonoBehaviour
         canClick = true;
 
         fixedTimeMachine.SetActive(false);
+        wires.SetActive(false);
         timeMachine.SetActive(true);
+        chewedWires.SetActive(true);
 
         CloseCabinet();
         CloseFridge();
@@ -991,7 +996,9 @@ public class Player : MonoBehaviour
     public void TriggerCanBreak()
     {
         fixedTimeMachine.SetActive(true);
+        wires.SetActive(true);
         timeMachine.SetActive(false);
+        chewedWires.SetActive(false);
 
         if (!canBreak)
         {

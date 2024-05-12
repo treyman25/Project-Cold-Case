@@ -26,6 +26,7 @@ TagManager:
   - Toy Robot
   - Gear
   - Wires
+  - Wire
   layers:
   - Default
   - TransparentFX

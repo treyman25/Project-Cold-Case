@@ -109,8 +109,7 @@ MonoBehaviour:
   isVariant: 0
   myText:
   - The machine's wires may carry some function when returning to the past.
-  - They're fixed now. It must've been the rat chewing on them. I wonder what happens
-    now?
+  - These wires were severed. Maybe it happened during the crime.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []
