@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
     public AudioClip pickupClip;
     public AudioClip putdownClip;
     public AudioClip fridgeClip;
+    public AudioClip finalClip;
 
     // Decor
     public GameObject darkOverlay;
@@ -123,10 +124,10 @@ public class Player : MonoBehaviour
 
     // Progression
     private bool canBreak = true; // f
-    private bool hasSeenDate = false; // f
-    private bool hasSeenPrintout = false; // f
-    private bool hasSolvedCode = false; // f
-    private bool hasReadDocuments = false; // f
+    private bool hasSeenDate = true; // f
+    private bool hasSeenPrintout = true; // f
+    private bool hasSolvedCode = true; // f
+    private bool hasReadDocuments = true; // f
     private bool machineIsUpgraded = false; // f
 
     // The Ending
@@ -1421,14 +1422,12 @@ public class Player : MonoBehaviour
         SpriteRenderer fader = blackOverlay.GetComponent<SpriteRenderer>();
         Color currentColor = fader.color;
 
-        while (fader.color.a < 1)
-        {
-            yield return new WaitForEndOfFrame();
-            currentColor.a += Time.deltaTime / 1f;
-            fader.color = currentColor;
-        }
 
-        yield return new WaitForSeconds(1);
+        currentColor.a = 1f;
+        fader.color = currentColor;
+
+        AudioSource.PlayClipAtPoint(finalClip, transform.position);
+        yield return new WaitForSeconds(20);
 
         SceneManager.LoadScene("EndCard");
     }
