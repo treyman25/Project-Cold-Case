@@ -12949,6 +12949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeMachine_Broken
       objectReference: {fileID: 0}
+    - target: {fileID: 6361307694565323757, guid: fb27e331addb2d04ea782eeab0f5d85c, type: 3}
+      propertyPath: myText.Array.data[0]
+      value: The front panel fell off from the force of the dumbbell. Looking inside
+        it seems I need a gear like in the diagram I saw.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
