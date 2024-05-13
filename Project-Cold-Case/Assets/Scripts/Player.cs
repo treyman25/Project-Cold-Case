@@ -106,10 +106,10 @@ public class Player : MonoBehaviour
     public GameObject tape;
 
     // Dialogues
-    private bool canBreakText = false; // f
-    private bool firstPastText = false; // f
-    private bool firstPresentText = false; // f
-    private bool printStartText = true; // t
+    private bool canBreakText = true; // f
+    private bool firstPastText = true; // f
+    private bool firstPresentText = true; // f
+    private bool printStartText = false; // t
 
     // Pausing
     public GameObject pauseMenu;
@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
     public GameObject[] documentOverlay;
 
     // Progression
-    private bool canBreak = false; // f
+    private bool canBreak = true; // f
     private bool hasSeenDate = false; // f
     private bool hasSeenPrintout = false; // f
     private bool hasSolvedCode = false; // f

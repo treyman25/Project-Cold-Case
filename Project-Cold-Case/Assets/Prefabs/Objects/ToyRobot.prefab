@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3073834510824921079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.67, y: -0.18, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: -0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.924171, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ac2d5d51c1af35a4c81d44f67c09a6a2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -143,21 +143,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.33, y: 4.65}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.33, y: 4.65}
   m_EdgeRadius: 0
 --- !u!114 &7911370211971944774
 MonoBehaviour:
@@ -180,8 +180,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - It's an old toy robot.
-  - It's an old toy robot.
+  - It's a kid's toy... interesting.
+  - It's a kid's toy... interesting.
   brokenVersion: {fileID: 8572870677409103380, guid: e88efb34e77eddd488b250d8812e37e1, type: 3}
   variant:
   - {fileID: 4502066682111496841, guid: 7d7ddcd6f516eb34290eff053db4b66a, type: 3}
