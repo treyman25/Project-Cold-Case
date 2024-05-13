@@ -427,23 +427,27 @@ public class Player : MonoBehaviour
             {
                 clickedObject.transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
             }
-            else if (objectCenter.x > -.2 && objectCenter.x < 3.2)  // Shelf
+            else if (objectCenter.x > 0 && objectCenter.x < 3.1)  // Shelf
             {
-                if (mousePosition.y > 0 && objectHeight < 2)
+                if (mousePosition.y > .7f && objectHeight < 2)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, .457f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, .95f + (objectHeight / 2), originalPosition.z);
                 }
-                else if (mousePosition.y > -1 && objectHeight < 1)
+                else if (mousePosition.y > -.4 && objectHeight < 1)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, -.68f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -.2f + (objectHeight / 2), originalPosition.z);
                 }
-                else if (mousePosition.y > -2 && objectHeight < 1)
+                else if (mousePosition.y > -1.4 && objectHeight < 1)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.9f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -1.2f + (objectHeight / 2), originalPosition.z);
                 }
-                else if (mousePosition.y > -3 && objectHeight < 1)
+                else if (mousePosition.y > -2.4 && objectHeight < 1)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, -3.15f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -2.2f + (objectHeight / 2), originalPosition.z);
+                }
+                else if (mousePosition.y > -3.2 && objectHeight < 1)
+                {
+                    clickedObject.transform.position = new Vector3(originalPosition.x, -3.2f + (objectHeight / 2), originalPosition.z);
                 }
                 else
                 {

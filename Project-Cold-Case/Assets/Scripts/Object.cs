@@ -599,23 +599,27 @@ public class Object : MonoBehaviour
         {
             transform.position = new Vector3(originalPosition.x, -1.65f + (objectHeight / 2), originalPosition.z);
         }
-        else if (transform.position.x > -.2 && transform.position.x < 3.2)  // Shelf
+        else if (transform.position.x > 0 && transform.position.x < 3.1)  // Shelf
         {
-            if (transform.position.y > 0 && objectHeight < 2)
+            if (transform.position.y > .7f && objectHeight < 2)
             {
-                transform.position = new Vector3(originalPosition.x, .457f + (objectHeight / 2), originalPosition.z);
+                transform.position = new Vector3(originalPosition.x, .95f + (objectHeight / 2), originalPosition.z);
             }
-            else if (transform.position.y > -1 && objectHeight < 1)
+            else if (transform.position.y > -.4 && objectHeight < 1)
             {
-                transform.position = new Vector3(originalPosition.x, -.68f + (objectHeight / 2), originalPosition.z);
+                transform.position = new Vector3(originalPosition.x, -.2f + (objectHeight / 2), originalPosition.z);
             }
-            else if (transform.position.y > -2 && objectHeight < 1)
+            else if (transform.position.y > -1.4 && objectHeight < 1)
             {
-                transform.position = new Vector3(originalPosition.x, -1.9f + (objectHeight / 2), originalPosition.z);
+                transform.position = new Vector3(originalPosition.x, -1.2f + (objectHeight / 2), originalPosition.z);
             }
-            else if (transform.position.y > -3 && objectHeight < 1)
+            else if (transform.position.y > -2.4 && objectHeight < 1)
             {
-                transform.position = new Vector3(originalPosition.x, -3.15f + (objectHeight / 2), originalPosition.z);
+                transform.position = new Vector3(originalPosition.x, -2.2f + (objectHeight / 2), originalPosition.z);
+            }
+            else if (transform.position.y > -3.2 && objectHeight < 1)
+            {
+                transform.position = new Vector3(originalPosition.x, -3.2f + (objectHeight / 2), originalPosition.z);
             }
             else
             {
