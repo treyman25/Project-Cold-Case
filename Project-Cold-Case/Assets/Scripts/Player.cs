@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
     private bool isPaused = false;
 
     // Overlays
-    public GameObject printedOverlay;
+    public GameObject[] printedOverlay;
     public GameObject[] documentOverlay;
 
     // Progression
@@ -1275,7 +1275,7 @@ public class Player : MonoBehaviour
 
     public void InspectPrintout()
     {
-        printedOverlay.SetActive(true);
+        printedOverlay[0].SetActive(true);
         hasSeenPrintout = true;
 
         if (hasSeenDate)
@@ -1302,9 +1302,12 @@ public class Player : MonoBehaviour
 
     private void CloseOverlay()
     {
-        if (printedOverlay.activeSelf == true)
+        foreach (var page in printedOverlay)
         {
-            printedOverlay.SetActive(false);
+            if (page.activeSelf == true)
+            {
+                page.SetActive(false);
+            }
         }
 
         foreach (var doc in documentOverlay)
@@ -1325,12 +1328,18 @@ public class Player : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        printedOverlay[0].SetActive(false);
+        printedOverlay[1].SetActive(true);
+
         StartCoroutine(PrintInspectText("I just need to separate the date into coordinates..."));
 
         while (isPrinting || finishedTextOnScreen)
         {
             yield return new WaitForEndOfFrame();
         }
+
+        printedOverlay[1].SetActive(false);
+        printedOverlay[2].SetActive(true);
 
         StartCoroutine(PrintInspectText("It made a word! I should go try this on the lockbox."));
 
@@ -1344,6 +1353,9 @@ public class Player : MonoBehaviour
 
     IEnumerator ReviewCipher()
     {
+        printedOverlay[0].SetActive(false);
+        printedOverlay[2].SetActive(true);
+
         StartCoroutine(PrintInspectText("I should try this solved code on the lockbox!"));
 
         while (isPrinting || finishedTextOnScreen)
