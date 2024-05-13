@@ -513,6 +513,8 @@ public class Object : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, -1.65f + (GetComponent<BoxCollider2D>().bounds.size.y / 2), transform.position.z);
                 Player p = GameObject.Find("Player").GetComponent<Player>();
                 p.BreakCrystal();
+                AudioSource.PlayClipAtPoint(audioclips[0], transform.position, 1f);
+
                 break;
 
             case 12: // Empty Lockbox

@@ -114,7 +114,8 @@ MonoBehaviour:
   variant:
   - {fileID: 5501910628541257669, guid: f85fcdec667dc154292e20bf227389a8, type: 3}
   - {fileID: 7866956273873489714, guid: 89c5a0ca8502e4346a94d7faea029df0, type: 3}
-  audioclips: []
+  audioclips:
+  - {fileID: 8300000, guid: 465926d4b69f11642adb786b14f504ee, type: 3}
 --- !u!61 &3591724090895847006
 BoxCollider2D:
   m_ObjectHideFlags: 0
