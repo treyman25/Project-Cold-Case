@@ -12,8 +12,6 @@ public class NPC : MonoBehaviour
     private Animator Anim;
     private Vector2 targetPosition;
     private bool isMoving = false;
-    private Vector3 savedPosition;
-    private bool isFacingRight = true;
     private AudioSource source;
     public GameObject blackOverlay;
     public GameObject quitButton;

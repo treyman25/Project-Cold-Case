@@ -628,6 +628,8 @@ public class Object : MonoBehaviour
 
     IEnumerator PrintoutPage()
     {
+        AudioSource.PlayClipAtPoint(audioclips[0], transform.position);
+
         yield return new WaitForSeconds(2);
 
         ApplySpecialComboId(8);
