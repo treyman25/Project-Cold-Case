@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150.3}
-  m_SizeDelta: {x: 597.5, y: 50}
+  m_AnchoredPosition: {x: 0, y: 150.8}
+  m_SizeDelta: {x: 664, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360576454
 MonoBehaviour:
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -651,9 +651,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneID: 1
-  myText1: Alex attacks Hunter.
-  myText2: Hunter accidentally kills Alex. In a fit of panic, he runs off with the
-    time machine documents.
+  myText1: 'Both Alex and Hunter were surprised to see each other, but before Hunter
+    could explain himself Alex lunged at him. The two of them fought for their lives
+    struggling against each other until Hunter got the upper hand and accidentally
+    stabbed Alex. '
+  myText2: Hunter panicked now knowing that he was the killer and decided that he
+    needed to escape the scene. Hunter opened the lockbox to steal the papers needed
+    to finish the time machine. Without them no one can time  travel and maybe he
+    would be able to find a way to not commit this murder. If he cannot, he can make
+    sure that this becomes a cold case that only he himself will ever solve.
   myTMPro1: {fileID: 360576454}
   myTMPro2: {fileID: 1951248585}
 --- !u!1 &1951248584
@@ -721,8 +727,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -788,6 +794,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -68.23}
-  m_SizeDelta: {x: 597.5, y: 50}
+  m_AnchoredPosition: {x: 0, y: -6.5}
+  m_SizeDelta: {x: 664, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
