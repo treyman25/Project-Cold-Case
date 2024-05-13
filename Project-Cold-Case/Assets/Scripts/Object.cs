@@ -47,7 +47,7 @@ public class Object : MonoBehaviour
     public AudioClip[] audioclips;
 
     // Spawning
-    private float floorY = -3.5f;
+    private float floorY = -3.53f;
 
 
     private void Start()
@@ -603,7 +603,7 @@ public class Object : MonoBehaviour
         {
             if (transform.position.y > .7f && objectHeight < 2)
             {
-                transform.position = new Vector3(originalPosition.x, .95f + (objectHeight / 2), originalPosition.z);
+                transform.position = new Vector3(originalPosition.x, .92f + (objectHeight / 2), originalPosition.z);
             }
             else if (transform.position.y > -.4 && objectHeight < 1)
             {

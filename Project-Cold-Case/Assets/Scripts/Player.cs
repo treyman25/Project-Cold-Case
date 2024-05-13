@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float myZLevel = -1.1f;
     [SerializeField] private bool canMove = true;
-    [SerializeField] private float floorY = -3.5f;
+    [SerializeField] private float floorY = -3.53f;
     [SerializeField] private float leftBound = -7;
     [SerializeField] private float rightBound = 19.8f;
 
@@ -431,7 +431,7 @@ public class Player : MonoBehaviour
             {
                 if (mousePosition.y > .7f && objectHeight < 2)
                 {
-                    clickedObject.transform.position = new Vector3(originalPosition.x, .95f + (objectHeight / 2), originalPosition.z);
+                    clickedObject.transform.position = new Vector3(originalPosition.x, .92f + (objectHeight / 2), originalPosition.z);
                 }
                 else if (mousePosition.y > -.4 && objectHeight < 1)
                 {
@@ -1426,6 +1426,7 @@ public class Player : MonoBehaviour
         canClick = false;
 
         alex.SetActive(true);
+        objects[1].SetActive(false);
 
         HUD.SetActive(false);
 

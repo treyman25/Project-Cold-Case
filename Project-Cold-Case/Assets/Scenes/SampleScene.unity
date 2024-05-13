@@ -2928,7 +2928,7 @@ MonoBehaviour:
   speed: 5
   myZLevel: -1.1
   canMove: 1
-  floorY: -3.5
+  floorY: -3.53
   leftBound: -7
   rightBound: 19.5
   objects:
@@ -8147,7 +8147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564413936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.096, y: -0.001, z: -9}
+  m_LocalPosition: {x: 0.0982, y: -0.001, z: -9}
   m_LocalScale: {x: 1.0682034, y: 1.0456594, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11191,7 +11191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.29
+      value: -2.33
       objectReference: {fileID: 0}
     - target: {fileID: 2031926106301452772, guid: a649e0bffb33ea34eaf6a01f2f55165a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12587,7 +12587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7107919131544010812, guid: 66522428bb89e394984361ae224bb77a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.194
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 7107919131544010812, guid: 66522428bb89e394984361ae224bb77a, type: 3}
       propertyPath: m_LocalPosition.z
