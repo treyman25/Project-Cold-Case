@@ -136,7 +136,7 @@ MonoBehaviour:
   isVariant: 0
   myText:
   - There's no option to return, but I can reset.
-  - What a strange machine...
+  - I can set the machine to the time of the murder. There's no returning now.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []

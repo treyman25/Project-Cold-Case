@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8876251106183975550
 SpriteRenderer:
@@ -135,7 +135,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - There's no option to return, but I can reset.
+  - The front panel fell off from the force of the demo. Looking inside it seems
+    I need a gear like in the diagram I saw.
   - What a strange machine...
   brokenVersion: {fileID: 0}
   variant: []
