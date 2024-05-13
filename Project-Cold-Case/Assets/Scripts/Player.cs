@@ -1405,10 +1405,13 @@ public class Player : MonoBehaviour
     IEnumerator TheMurder()
     {
         GameObject.Find("Main Camera").GetComponent<CameraManager>().MoveToMurder();
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
 
         canClick = false;
 
         alex.SetActive(true);
+
+        HUD.SetActive(false);
 
         yield return new WaitForSeconds(1);
 
