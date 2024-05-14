@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     public GameObject openLockboxButton;
     public GameObject inspectPageButton;
     public GameObject inspectDocumentsButton;
+    public GameObject inspectPicButton;
 
     // Time Travel
     private bool inPast = false;
@@ -121,6 +122,7 @@ public class Player : MonoBehaviour
     // Overlays
     public GameObject[] printedOverlay;
     public GameObject[] documentOverlay;
+    public GameObject[] pictureOverlay;
 
     // Progression
     private bool canBreak = false; // f
@@ -493,6 +495,7 @@ public class Player : MonoBehaviour
             openLockboxButton.transform.Translate(-3.5f, 0, 0);
             inspectPageButton.transform.Translate(-3.5f, 0, 0);
             inspectDocumentsButton.transform.Translate(-3.5f, 0, 0);
+            inspectPicButton.transform.Translate(-3.5f, 0, 0);
             ObjectText1.transform.Translate(-3.5f, 0, 0);
             ObjectText2.transform.Translate(-3.5f, 0, 0);
             ObjectText3.transform.Translate(-3.5f, 0, 0);
@@ -514,6 +517,7 @@ public class Player : MonoBehaviour
             openLockboxButton.transform.Translate(3.5f, 0, 0);
             inspectPageButton.transform.Translate(3.5f, 0, 0);
             inspectDocumentsButton.transform.Translate(3.5f, 0, 0);
+            inspectPicButton.transform.Translate(3.5f, 0, 0);
             ObjectText1.transform.Translate(3.5f, 0, 0);
             ObjectText2.transform.Translate(3.5f, 0, 0);
             ObjectText3.transform.Translate(3.5f, 0, 0);
@@ -568,18 +572,6 @@ public class Player : MonoBehaviour
         if (clickedObject != null)
         {
             printText = clickedObject.GetComponent<Object>().GetInspectText(id);
-
-            if (clickedObject.CompareTag("Family Photo"))
-            {
-                hasSeenDate = true;
-
-                if (hasSeenPrintout && !hasSolvedCode)
-                {
-                    StartCoroutine(PrintInspectText("There is a date on this photo, maybe I should try using it for the cipher that got printed."));
-                    DeselectObject();
-                    return;
-                }
-            }
 
             if (clickedObject.CompareTag("Lockbox") && hasSolvedCode)
             {
@@ -673,6 +665,7 @@ public class Player : MonoBehaviour
         openLockboxButton.SetActive(false);
         inspectPageButton.SetActive(false);
         inspectDocumentsButton.SetActive(false);
+        inspectPicButton.SetActive(false);
 
         ObjectText1.gameObject.SetActive(false);
         ObjectText2.gameObject.SetActive(false);
@@ -788,6 +781,15 @@ public class Player : MonoBehaviour
             if (hasChosenMove == false)
             {
                 inspectPageButton.SetActive(true);
+                numButtons++;
+            }
+        }
+
+        if (clickedObject.CompareTag("Family Photo"))
+        {
+            if (hasChosenMove == false)
+            {
+                inspectPicButton.SetActive(true);
                 numButtons++;
             }
         }
@@ -1318,6 +1320,14 @@ public class Player : MonoBehaviour
                 doc.SetActive(false);
             }
         }
+
+        foreach (var pic in pictureOverlay)
+        {
+            if (pic.activeSelf == true)
+            {
+                pic.SetActive(false);
+            }
+        }
     }
 
     IEnumerator SolveCipher()
@@ -1462,5 +1472,43 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(20);
 
         SceneManager.LoadScene("EndCard");
+    }
+
+    public void InspectPicture()
+    {
+        hasSeenDate = true;
+
+        if (hasSeenPrintout && !hasSolvedCode)
+        {
+            StartCoroutine(PrintInspectText("There is a date on this photo, maybe I should try using it for the cipher that got printed."));
+        }
+        else
+        {
+            StartCoroutine(PrintInspectText("This must be Alex's family. There's also a date on the picture...must be significant."));
+        }
+
+        StartCoroutine(DisplayPicture());
+
+
+        DeselectObject();
+    }
+
+    IEnumerator DisplayPicture()
+    {
+        if (objects[11].GetComponent<Object>().IsHidden())
+        {
+            pictureOverlay[1].SetActive(true);
+        }
+        else
+        {
+            pictureOverlay[0].SetActive(true);
+        }
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        CloseOverlay();
     }
 }
