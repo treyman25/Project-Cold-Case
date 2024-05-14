@@ -159,7 +159,7 @@ public class Object : MonoBehaviour
                     Hide(true);
                 }
 
-                if (GetSpecialComboId(collision.gameObject) != 0  && !specialComboApplied)
+                if (GetSpecialComboId(collision.gameObject) != 0  && !specialComboApplied && !isMoving && !collision.gameObject.GetComponent<Object>().isMoving)
                 {
                     myCollision = collision.gameObject;
                     ApplySpecialComboId(GetSpecialComboId(collision.gameObject), myCollision);
