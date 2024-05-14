@@ -12560,6 +12560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeMachine_Upgraded
       objectReference: {fileID: 0}
+    - target: {fileID: 6494875900451659219, guid: 0496e3555b38e4d4c9fa538015d868f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
