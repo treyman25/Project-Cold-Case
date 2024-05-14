@@ -180,8 +180,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - There are no pickles inside, just juice. What could this mean?
-  - There are no pickles inside, just juice. What could this mean?
+  - The same number of pickles are here in the past.
+  - I never cared for pickles myself.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []
