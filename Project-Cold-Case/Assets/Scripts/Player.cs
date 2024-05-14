@@ -368,6 +368,7 @@ public class Player : MonoBehaviour
         {
             Vector3 originalPosition = clickedObject.transform.position;
             Vector3 objectCenter = mousePosition + offset;
+            float objectWidth = clickedObject.GetComponent<Collider2D>().bounds.size.x;
 
             float objectHeight = clickedObject.GetComponent<BoxCollider2D>().bounds.size.y;
 
@@ -381,7 +382,7 @@ public class Player : MonoBehaviour
             {
                 clickedObject.transform.position = new Vector3(originalPosition.x, .9f + (objectHeight / 2), originalPosition.z);
             }
-            else if (fridgeOpen && objectCenter.x > 4.6f && objectCenter.x < 5f && objectHeight < .5f) // Fridge Shelves
+            else if (fridgeOpen && objectWidth < .5f && objectCenter.x > 4.6f && objectCenter.x < 5f && objectHeight < .5f) // Fridge Shelves
             {
                 if (mousePosition.y > -1.1f)
                 {

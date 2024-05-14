@@ -108,10 +108,8 @@ MonoBehaviour:
   hiderY: 0
   isVariant: 0
   myText:
-  - It's a printer, nothing of note here since it doesn't look to be part of the
-    murder.
-  - It's a printer, nothing of note here since it doesn't look to be part of the
-    murder.
+  - I don't see a computer anywhere... There is a usb slot on the side though.
+  - I wonder what he would use this printer for.
   brokenVersion: {fileID: 0}
   variant: []
   audioclips: []
