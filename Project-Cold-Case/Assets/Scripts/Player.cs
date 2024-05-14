@@ -1001,9 +1001,16 @@ public class Player : MonoBehaviour
 
             firstPresentText = true;
         }
-        else if (canBreak && !canBreakText)
+        else if (machineIsUpgraded)
         {
-            //StartCoroutine(PrintInspectText("Alex must have fixed the wire before he was killed."));
+            StartCoroutine(PrintInspectText("I think I've done it, I've finished his time machine. Time to truly stop this murder from taking place."));
+
+            while (isPrinting || finishedTextOnScreen)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+
+            StartCoroutine(PrintInspectText("This will be the last time that I time travel... It's almost surreal."));
         }
     }
 
@@ -1422,6 +1429,20 @@ public class Player : MonoBehaviour
         }
 
         CloseOverlay();
+
+        StartCoroutine(PrintInspectText("Alex wasn't finished with the time machine, maybe I can save him by finishing it!"));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        StartCoroutine(PrintInspectText("I know who you did this for Alex, I just hope I can not only save you but also help you with your goal."));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     public void BreakCrystal()
