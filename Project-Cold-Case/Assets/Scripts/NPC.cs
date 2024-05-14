@@ -87,7 +87,16 @@ public class NPC : MonoBehaviour
 
         StartCoroutine(PrintInspectText("This is Alex's apartment, let's see what I can figure out from the scene."));
 
-        yield return new WaitForSeconds(2);
+        bool hasClicked = false;
+        while (!hasClicked)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                hasClicked = true;
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
 
         blackOverlay.SetActive(true);
         while (fader.color.a < 1)
