@@ -111,7 +111,7 @@ public class Object : MonoBehaviour
     public void HideObject(GameObject hidden)
     {
         hiddenObject = hidden;
-        inspectText += " It holds " + hidden.tag.ToLower() + ".";
+        inspectText += " There is a " + hidden.tag.ToLower() + " in it.";
     }
 
     public GameObject GetHidden()
@@ -277,7 +277,7 @@ public class Object : MonoBehaviour
     {
         if (inspectText != null)
         {
-            return inspectText;
+            return (myText[id] + inspectText);
         }
         else
         {
