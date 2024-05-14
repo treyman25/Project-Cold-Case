@@ -506,7 +506,7 @@ public class Object : MonoBehaviour
 
             case 10: // Gear
                 createdVariant = Instantiate(variant[0], transform.position, Quaternion.identity);
-                createdVariant.transform.Translate(-.05f, -.348f, -.1f);
+                createdVariant.transform.Translate(-.05f, -.248f, -.1f);
                 break;
 
             case 11: // Broken Crystal
