@@ -1393,7 +1393,18 @@ public class Player : MonoBehaviour
     {
         documentOverlay[0].SetActive(true);
 
-        StartCoroutine(PrintInspectText("Look at all these documents..."));
+        StartCoroutine(PrintInspectText(""));
+
+        while (isPrinting || finishedTextOnScreen)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        CloseOverlay();
+
+        documentOverlay[1].SetActive(true);
+
+        StartCoroutine(PrintInspectText(""));
 
         while (isPrinting || finishedTextOnScreen)
         {
